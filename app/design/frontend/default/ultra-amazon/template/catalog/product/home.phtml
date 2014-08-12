@@ -1,0 +1,31 @@
+<?php 
+$_productCollection = clone $this->getLoadedProductCollection();
+$_productCollection->clear()
+                   ->setPageSize(4)
+                   ->load();
+?>
+<h2><?php echo $this->__('Hot Goods, Cool Everyday Prices') ?></h2>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div class="category-products">
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = $this->getColumnCount(); ?>	
+	<ul class="products-grid">
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+            <li class="item">
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135,135); ?>" width="135" height="135" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
+                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+                <div class="shortDescription" title="<?php echo nl2br($_product->getShortDescription()); ?>">
+	                <?php echo nl2br($_product->getShortDescription()); ?>
+                </div>
+                <?php echo $this->getPriceHtml($_product, true) ?>
+            </li>
+        <?php endforeach ?>
+		        </ul>
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+</div>
+<?php endif; ?>
+
+
+

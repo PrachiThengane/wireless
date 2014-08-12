@@ -1,0 +1,22 @@
+.awafpgrid { font-family: Arial, Helvetica, sans-serif; clear:both; overflow:visible; width:962px !important;border:1px solid #E4E4DC;display:block;float:left;padding-top:10px;border-top:0px !important;}
+.awafpgrid a,.awafpgrid a .label { color:#000; }
+.awafpgrid ul { clear:both; }
+.awafpgrid ul li { float:left; margin:0px 0px 10px 10px; -background:url(../../../images/page_bg.png) no-repeat scroll right bottom #F3F0E7; -border-radius:8px;padding:10px; border:1px solid #E5E5DD;-box-shadow:1px 1px 3px rgba(33, 33, 33, 0.1);position:relative;}
+.awafpgrid .awafpprice,.awafpgrid .awafpbutton,.awafpgrid .awafptitle { font-size:11px; color:#000;}
+.awafpgrid .awafptitle a { -font-weight:700; -font-size:12px; padding:2px 0;color:#5D5D5D; }
+.awafpgrid .awafptitle a:hover{ color: #E47911;text-decoration:underline;}
+
+.awafpgrid .afp-addtocart button { font-size:12px; border:0;cursor:pointer; }
+.awafpgrid .afp-addtocart button div {    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    height: 22px;
+    left: 14px;
+    line-height: 22px;
+    position: absolute;
+    -text-indent: -10000px;
+    top: 4px;
+    width: 78px;}
+.afp-thumbnail .onsale-category-container-list {margin: 0 16px 4px 16px;}
+.awafpgrid .afp-details,.awafpgrid .awafptitle,.awafpgrid .afp-thumbnail,.awafpgrid .price-box,.awafpgrid .afp-addtocart { -text-align:center; }
+.afp-details{    max-height: 38px;overflow: hidden;}

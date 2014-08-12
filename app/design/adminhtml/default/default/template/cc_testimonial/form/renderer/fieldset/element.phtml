@@ -1,0 +1,32 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ /***************************************
+ *         MAGENTO EDITION USAGE NOTICE *
+ *****************************************/
+ /* This package designed for Magento COMMUNITY edition
+ * This extension is only for developers as a technology exchange
+ * Based on EasyTestimonial_v1.5.8 by mage-world.com
+ * Fixed the bug that when compilation has been enabled, the testimonial tab in the backend will be blank page.
+ *****************************************************
+ * @category   Cc
+ * @package    Cc_Testimonial
+ * @Author     Chimy
+ */
+?>
+<?php $_element = $this->getElement() ?>
+<?php if (!$_element->getNoDisplay()): ?>
+<tr>
+    <?php if ($_element->getType()=='hidden'): ?>
+    <td colspan="3" class="hidden"><?php echo trim($_element->getElementHtml()) ?></td>
+    <?php else: ?>
+    <td class="label"><?php echo trim($_element->getLabelHtml()) ?></td>
+    <td class="value"><?php echo trim($_element->getElementHtml()) ?></td>
+    <td<?php if ($_element->getNote()): ?> class="note"<?php endif ?> id="note_<?php echo $_element->getId()?>"><small><?php echo $_element->getNote()?$_element->getNote():'&nbsp;' ?></small></td>
+    <?php endif; ?>
+</tr>
+<?php endif; ?>

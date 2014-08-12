@@ -1,0 +1,106 @@
+<?php $active_recent_ids = $this->getActiveRecentIds(); ?>
+<div id="popup-subscribe-bg" class="groupdeals-popup-subscribe-bg" style="display:none;" onClick="$('light').fade();$('popup-subscribe-bg').fade(); return false;"></div>
+<div id="light" class="white_content_groupdeals" style="display:none;"><div class="close"><a href="javascript:void(0)" onClick="$('light').fade();$('popup-subscribe-bg').fade(); return false;"><?php echo $this->__('(x) close'); ?></a></div>
+	<div class="titles">
+		<h1 class="title"><?php echo $this->__('Search by Country:'); ?></h1> 
+		<ul class="state">
+			<?php 
+				$crc = $this->getCurrentCrc();
+				$count = 0;
+				$main_url = '';
+				$countryCollection = $this->getCountryCollection($active_recent_ids);
+				$i = 1;
+				$last_tab = 'tab1';
+				foreach ($countryCollection as $country):					
+			?>
+				<?php if ($crc['country']!=''): ?>
+					<li <?php if ($crc['country']==$country['value']): $last_tab = 'tab'.$i; ?>class="tab_hover"<?php else: ?>class="tab"<?php endif; ?> id="tab<?php echo $i; ?>" onClick="javascript:show_next('tab<?php echo $i; ?>')"><?php echo $country['label']; ?></li>
+				<?php else: ?>
+					<li <?php if ($i==1): ?>class="tab_hover"<?php else: ?>class="tab"<?php endif; ?> id="tab<?php echo $i; ?>" onClick="javascript:show_next('tab<?php echo $i; ?>')"><?php echo $country['label']; ?></li>
+				<?php endif; ?>
+			<?php 
+				$i++;
+				endforeach; 
+				
+				if ($universal_url = $this->getCityUrl('Universal')): ?>
+					<?php $count++; ?>
+					<?php if ($i==1): ?>
+						<?php $main_url = $universal_url; ?>
+					<?php endif; ?>
+					<?php if ($crc['country']!=''): ?>
+					<li <?php if ($crc['country']=='Universal'): ?>class="tab_hover"<?php else: ?>class="tab"<?php endif; ?> id="universal" onClick="javascript:show_next('universal')"><a id="universal_anchor" href="<?php echo $universal_url; ?>"><?php echo $this->__('Universal'); ?></a></li>
+				<?php else: ?>
+					<li class="tab"><a href="<?php echo $universal_url; ?>"><?php echo $this->__('Universal'); ?></a></li>
+				<?php endif; ?>	
+			<?php endif; ?>
+		</ul>
+	</div>
+	<div class="states">
+		<?php 
+			$i = 1;
+			foreach ($countryCollection as $country):
+				$regionCollection = $this->getRegionCollection($country['value'], $active_recent_ids);		
+		?>
+			<?php if ($crc['country']!=''): ?>
+				<ul id="tab<?php echo $i; ?>_data" class="tab-content" <?php if ($crc['country']!=$country['value']): ?>style="display:none"<?php endif; ?>>
+			<?php else: ?>
+				<ul id="tab<?php echo $i; ?>_data" class="tab-content" <?php if ($i!=1): ?>style="display:none"<?php endif; ?>>
+			<?php endif; ?>
+					<?php foreach ($regionCollection as $region): ?>
+					<?php $cityCollection = $this->getCityCollection($region, $active_recent_ids); ?>
+						<li class="main-city"><?php echo $region; ?></li>
+						<?php $j = 0; foreach ($cityCollection as $city): $j++; ?>
+							<?php $count++; ?>
+							<?php $city_url = $this->getCityUrl($city); ?>
+							<?php if ($i==1 && $j==1): ?>
+								<?php $main_url = $city_url; ?>
+							<?php endif; ?>
+							<?php if ($crc['city']!=''): ?>
+								<li <?php if ($crc['city']==$city): ?>class="city_tab_hover"<?php endif; ?>><a id="city<?php echo $i.$j; ?>" href="<?php echo $city_url; ?>"><?php echo $city; ?></a></li>
+							<?php else: ?>
+								<li><a id="city<?php echo $i.$j; ?>" href="<?php echo $city_url; ?>"><?php echo $city; ?></a></li>
+							<?php endif; ?>
+						<?php endforeach; ?>					
+					<?php endforeach; ?>
+				</ul>
+		<?php				
+			$i++;
+			endforeach; 
+		?>
+	</div>
+</div>
+	
+<script type="text/javascript">
+	last_tab = '<?php echo $last_tab; ?>';
+	
+	function show(layerName) { 
+		document.getElementById(layerName).style.display = '';
+	} 
+
+	function hide(layerName) { 
+		document.getElementById(layerName).style.display = 'none';
+	} 
+	
+	function show_next(tab_name) {
+		document.getElementById(last_tab).className = 'tab';
+		if (document.getElementById('universal')) {
+			document.getElementById('universal').className = 'tab';
+		}
+		
+		var curr = document.getElementById(tab_name);
+		curr.className='tab_hover';
+		hide(last_tab+'_data');
+		show(tab_name+'_data');
+		last_tab=tab_name;
+	}
+	function openGroupdealsPopup() {
+		<?php if ($count>1): ?>
+			$('light').appear({ duration: 0.7 });
+			$('popup-subscribe-bg').appear({ duration: 0.7 });
+		<?php elseif ($count==1): ?> 
+			window.location = '<?php echo $main_url; ?>';
+		<?php else: ?> 
+			window.location = '<?php echo $this->getNoDealsMessage(); ?>';
+		<?php endif; ?> 
+	}
+</script>

@@ -1,0 +1,29 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ /***************************************
+ *         MAGENTO EDITION USAGE NOTICE *
+ *****************************************/
+ /* This package designed for Magento COMMUNITY edition
+ * This extension is only for developers as a technology exchange
+ * Based on EasyTestimonial_v1.5.8 by mage-world.com
+ * Fixed the bug that when compilation has been enabled, the testimonial tab in the backend will be blank page.
+ *****************************************************
+ * @category   Cc
+ * @package    Cc_Testimonial
+ * @Author     Chimy
+ */
+?>
+<?php $_element = $this->getElement() ?>
+<?php if($_element->getNoSpan() !== true): ?>
+<span class="field-row">
+<?php endif; ?>
+<?php echo $_element->getLabelHtml() ?>
+<?php echo $_element->getElementHtml() ?>
+<?php if($_element->getNoSpan() !== true): ?>
+</span>
+<?php endif; ?>

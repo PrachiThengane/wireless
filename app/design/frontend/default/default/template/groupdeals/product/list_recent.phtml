@@ -1,0 +1,91 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+	$groupdealsModel = Mage::getModel('groupdeals/groupdeals');
+?>
+
+<div id="messages_deals_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<?php if ($this->getCity()!=''): ?>
+<div class="page-title category-title">
+	<?php if ($this->getCity()=='Universal'): ?>
+		<h1><?php echo $this->__('Past Group Deals', $this->__($this->getCity())) ?></h1> (<a href="<?php echo $this->getUrl('groupdeals/product/list').'city/'.urlencode($this->getCity()); ?>"><?php echo $this->__('view active group deals') ?></a>)
+	<?php else: ?>
+		<h1><?php echo $this->__('Past Group Deals', $this->getCity()) ?></h1> (<a href="<?php echo $this->getUrl('groupdeals/product/list').'city/'.urlencode($this->getCity()); ?>"><?php echo $this->__('view active group deals') ?></a>)
+	<?php endif; ?>
+</div>
+<?php endif; ?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no recent deals.') ?></p>
+<?php else: ?>
+<div class="category-products groupdeals-category-products">   
+
+    <?php // Grid Mode ?>
+
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = 4; ?>
+	<ul class="products-grid">
+		<?php $i=0; foreach ($_productCollection as $_product): $i++; ?>
+			<?php $product_url = $this->getProductUrl($_product); ?>
+			<?php $_groupdeals = $this->getGroupdeals($_product); ?>
+            <li class="item<?php if($i==0): ?> main<?php elseif($i%2==0): ?> last<?php endif; ?>">
+				<a href="<?php echo $product_url; ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(160,160); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+				<div class="info">
+					<h2 class="product-name"><a href="<?php echo $product_url; ?>" title="<?php echo $this->htmlEscape($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+					<div class="box">										
+						<div class="box-item old-price">
+							<span class="box-label"><?php echo $this->__('Value:') ?></span>
+							<span class="price" id="old-price-<?php echo $_product->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_product, $_product->getPrice()); ?></span>
+						</div>
+						<div class="box-item special-price">
+							<span class="box-label"><?php echo $this->__('Price:') ?></span>
+							<span class="price" id="product-price-<?php echo $_product->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_product, $_product->getSpecialPrice()); ?></span>
+						</div>	
+					</div>
+					<div class="actions target-box">
+						<b><?php echo $this->__('Purchased:') ?></b> <?php echo $this->getSalesNumber($_groupdeals).'/'.$_groupdeals->getMinimumQty(); ?><br/>
+						<?php if ($this->getSalesNumber($_groupdeals)>=$_groupdeals->getMinimumQty()): ?>
+							<span class="target-green"><?php echo $this->__('Target Met!') ?></span>
+						<?php else: ?>
+							<span class="target-red"><?php echo $this->__('Target wasn\'t met.') ?></span>
+						<?php endif; ?>
+					</div>
+				</div>
+            </li>
+        <?php endforeach ?>
+	</ul>
+    <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+</div>
+<?php endif; ?>

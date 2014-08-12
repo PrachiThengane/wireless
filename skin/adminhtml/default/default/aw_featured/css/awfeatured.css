@@ -1,0 +1,21 @@
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Rma
+ * @copyright  Copyright (c) 2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+
+#automation_settings table.form-list { width: 100%; }
+    #automation_settings table.form-list td.value { width: auto; }
+#automation_settings .grid table { border: solid 1px #CCC; }
+    #automation_settings .grid table tr { cursor: default !important; }
+#awfeatured_productsselector_table td { border-width: 0px 1px 1px 0px !important; border-color: #DADFE0 !important; border-style: solid !important; }

@@ -1,0 +1,82 @@
+<HTML>
+<BODY>
+<TABLE WIDTH=100% CELLPADDING=5 BORDER=1>
+<TD WIDTH=60%>
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Nokia</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=GREEN><B><U>Frequently Asked Questions relating to your Nokia Phone and Accessories.</U></B></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+
+<B><I>I just inserted a new SIM card into my phone and it is asking me for a security code. What is the security code?</I></B>
+</FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<BR>
+<P>The default security code is 12345. If the default code does not work, it may have been changed. The best option will then be to take the phone to a Nokia Authorised Service Centre for a reset. Please take note that you will be charged for this service.</P>
+
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>My phone is asking for a PUK code. What should I do?</I></B>
+</FONT>
+<BR>
+<P>The phone prompts for a PUK code when the PIN code has been entered incorrectly 3 times. To obtain your PUK code, please contact your service provider.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+
+<B><I>My phone displays "SIM card rejected" or "SIM card unaccepted".</I></B>
+</FONT>
+<BR>
+<P>The SIM (subscriber identity module) card is a small card inside your phone that establishes a network connection. The SIM card is provided by your operator or service provider. In most cases, they are the best source of assistance with SIM card problems. Your phone may display a SIM card error message if:</P>
+<UL>
+<LI>The SIM card is out of alignment. If the phone has recently been dropped, bumped, or opened, the SIM card may need adjusting. Follow the SIM card installation instructions in your user guide.
+<LI>The PUK (Personal Unblocking Key) code is entered incorrectly multiple times. This can inactivate the SIM card. If inactivation appears to be permanent, contact your operator or service provider for a new SIM card.
+<LI>You have recently changed service providers. In this case, either your SIM card or your phone may be configured for your previous operator and may require reconfiguring. It may also be that your phone is configured so that it cannot be used with a SIM card from a different operator or service provider. Please contact your current operator or service provider for assistance.
+</UL>
+<P>If none of the situations above apply and you continue to receive this error message, your SIM card may be damaged. Please contact your operator or service provider to have the SIM card tested and/or replaced. Or alternately, bring your phone to the nearest Nokia service centre for inspection.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>How can I activate multimedia messaging (MMS)?</I></B>
+</FONT>
+<BR>
+<P>This is a network related enquiry. Please refer to your network operator for further information.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+
+<B><I>Can I update my phone's firmware?</I></B>
+</FONT>
+<BR><BR>
+Firmware is your phone's built-in software. Occasionally Nokia releases firmware updates for certain phone models. If you are experiencing trouble with your phone that appears to be firmware related, contact your local Nokia Service Centre to see if an update is available and if it is covered by warranty. 
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>I am unable to use the camera on my phone. There is an error message: "Camera already used in application." Why does this happen?</I></B>
+<P>Press and hold the menu key to check if the camera is already active. The phone will display all opened applications. The camera application may already be opened.</P>
+
+
+</FONT>
+</TD>
+<TD WIDTH=40% VALIGN=TOP>
+
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Nokia Phone or Accessory, please click <A HREF=http://www.nokia.com.au/nokia/0,8764,79712,00.html</A>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Warranty Terms and Conditions relating to your Nokia Phone or Accessory, please click <A HREF=http://www.nokia.com.au/nokia/0,,81298,00.html</A>
+ Here</A></B>  
+ </FONT>
+ <BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Nokia Phone or Accessory is faulty? Who do i contact?</B>
+<BR><BR>
+</FONT>
+
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+Please follow the link to contact your nearest <a href=http://www.nokia.com.au/nokia/0,,37170,00.html> Nokia Care Centre</a> for Faulty and Warranty issues.
+
+
+
+
+
+               
+</FONT>
+</TD>
+</TABLE>
+</BODY>
+</HTML>

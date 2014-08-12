@@ -1,0 +1,37 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Points
+ * @copyright  Copyright (c) 2008-2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-customer-view"><?php echo Mage::helper('points')->__('Reward Point Balance') ?></h4></div>
+    <fieldset>
+
+        <?php 
+        $balanceLimit =  $this->getBalanceLimit();
+        $pointsConvertedIntoMoney = $this->getCurrentBalanceInCurrency();
+        ?>
+
+        <?php if ($balanceLimit): ?>
+            <?php echo Mage::helper('points')->__('Points Balance Limit: <strong> %s </strong>', $balanceLimit); ?>
+            <br/>
+        <?php endif; ?>
+
+        <?php echo Mage::helper('points')->__('Current Balance: <strong> %s %s </strong>', $this->getCurrentBalanceInPoints(), $pointsConvertedIntoMoney ? "($pointsConvertedIntoMoney)" : "" ) ?>
+       
+    </fieldset>
+</div>

@@ -1,0 +1,118 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if($this->getItems()->getSize()): ?>
+<div class="product-collateral" style="PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-BOTTOM: 0px; BACKGROUND-IMAGE: none;">
+<div class="collateral-box box-collateral">
+<div class="head">
+		<h2><?php echo $this->__('Add Accessories to this purchase') ?></h2>
+</div>
+	<div class="content" id="__bt_Content">
+        <ol id="block-related">
+        <?php foreach($this->getItems() as $_item): ?>
+           <li <?php if(!$_item->isSaleable()): ?> class="super-products"<?php endif; ?> style="PADDING: 2px 0px 2px 0px;">
+				<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(75) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="75" height="75" />		
+					<?php if($_item->isSaleable()): ?>
+						<span class="checkbox-container">
+							 <?php if(!$_item->isComposite() && $_item->isSaleable()): ?>
+								<?php if (!$_item->getRequiredOptions()): ?>
+									<br /><span class="check-action check"></span>
+									<input type="checkbox" class="checkbox related-checkbox" id="related-checkbox<?php echo $_item->getId() ?>" name="related_products[]" value="<?php echo $_item->getId() ?>" style="display:none;"/>
+								<?php endif; ?>
+							<?php endif; ?>					
+						</span>
+					<?php else: ?>
+						<span class="checkbox-container">&nbsp;</span>
+					<?php endif; ?>
+					<a id="__bt_product_<?php print $_item->getId() ?>_Name" href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+				</li>
+        <?php endforeach ?>
+        </ol>
+        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+    <script type="text/javascript">
+    //<![CDATA[
+    $$('.related-checkbox').each(function(elem){
+        Event.observe(elem, 'click', addRelatedToProduct)
+    });
+
+    var relatedProductsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (relatedProductsCheckFlag == false) {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            relatedProductsCheckFlag = true;
+            txt.innerHTML="<?php echo $this->__('unselect all') ?>";
+        } else {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            relatedProductsCheckFlag = false;
+            txt.innerHTML="<?php echo $this->__('select all') ?>";
+        }
+        addRelatedToProduct();
+    }
+
+    function addRelatedToProduct(){
+        var checkboxes = $$('.related-checkbox');
+        var values = [];
+        for(var i=0;i<checkboxes.length;i++){
+            if(checkboxes[i].checked) values.push(checkboxes[i].value);
+        }
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    //]]>
+    </script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('#__bt_Content span.check-action').click(function(){
+			if($(this).hasClass('check')){
+				$(this).parent('.checkbox-container').children('input').attr("checked", true);
+				var id = $(this).parent('.checkbox-container').children('input').attr('id');
+				// id = id.split("related-checkbox");
+				// bt_itemClick(id[1]);
+				addRelatedToProduct();
+				$(this).removeClass('check');
+				$(this).addClass('checked');
+			}else if($(this).hasClass('checked')){
+				$(this).parent('.checkbox-container').children('input').attr("checked", false);
+				var id = $(this).parent('.checkbox-container').children('input').attr('id');
+				// id = id.split("related-checkbox");
+				// bt_itemClick(id[1]);
+				addRelatedToProduct();
+				$(this).removeClass('checked');
+				$(this).addClass('check');
+			}		
+		});
+	
+	});
+</script>
+</div>
+</div>
+</div>
+<?php endif ?>

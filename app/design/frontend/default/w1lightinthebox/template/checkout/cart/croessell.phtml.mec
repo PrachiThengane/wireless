@@ -1,0 +1,99 @@
+﻿<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Cart cross sell items template
+ *
+ * @see Mage_Checkout_Block_Cart_Crosssell
+ */
+?>
+<?php if($this->getItemCount()): ?>
+<?php $i = 0; ?>
+<div class="crosssell">
+    <form method="post" action="<?php echo $this->getAddMuiltAction()?>" > 
+	<div class="actions add-to-cart">
+	<button type="submit" id="crosssell-btn-top" title="<?php echo $this->__('Buy Now') ?>" class="button btn-cart"><span><span><?php echo $this->__('Buy Now') ?></span></span></button>
+	</div>
+    <ul id="crosssell-products-list">
+    <?php foreach ($this->getItems() as $_item): ?>
+		<?php if($i <= 9){ ?>
+			<li class="item">
+				<a class="product-image" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(130); ?>" width="130" height="130" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+				<div class="product-details">
+					<h3 class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></h3>
+
+					<div class="cross-short">
+						<?php echo nl2br($_item->getShortDescription()); ?>
+					</div>
+
+				</div>
+					<?php $_product = Mage::getModel('catalog/product')->load($_item->getEntityId()); ?>
+					<div class="actions cart-add-action">
+						<div class="cross-prices">
+							<div class="market-price"><?php echo $this->__("Don't pay") ?><?php echo Mage::helper('checkout')->formatPrice($_product->getMarketPrice()) ?></div>
+							<?php $mprice = $_product->getMarketPrice()?>
+							<?php $oprice = $_product->getPrice()?>
+							<div class="our-price"><?php echo $this->__('Our Price') ?><?php echo $this->getPriceHtml($_item, true) ?></div>
+							<div class="save-price"><?php echo $this->__('You save') ?><span class="price-difference"><?php echo Mage::helper('checkout')->formatPrice(round(( $mprice - $oprice ) ))?></span><span class="save"><?php echo round(( $mprice - $oprice )*100/ $mprice )?>%</span></div>
+							<input name="accessories_id[]" id="check-<?php echo $_item->getId();?>" type="checkbox" value="<?php echo $_item->getId(); ?>" style="display:none;"></input>
+						</div>
+						<span class="check-action check"></span>
+					</div>
+			</li>
+			<?php $i++; ?>
+		<?php }else{ ?>
+			<?php break; ?>
+		<?php } ?>
+    <?php endforeach; ?>
+    </ul>
+    <script type="text/javascript">decorateList('crosssell-products-list', 'none-recursive')</script>
+	<div class="actions add-to-cart">
+		<button type="submit" title="<?php echo $this->__('Buy Now') ?>" class="button btn-cart"><span><span><?php echo $this->__('Buy Now') ?></span></span></button>
+	</div>
+	</form>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('.cart-add-action span.check-action').click(function(){
+			if($(this).hasClass('check')){
+				$(this).parent('.cart-add-action').children('input').attr("checked", true);
+				$(this).removeClass('check');
+				$(this).addClass('checked');
+			}else if($(this).hasClass('checked')){
+				$(this).parent('.cart-add-action').children('input').attr("checked", false);
+				$(this).removeClass('checked');
+				$(this).addClass('check');
+			}
+			
+			
+		});
+	
+	});
+</script>
+
+
+<?php endif; ?>

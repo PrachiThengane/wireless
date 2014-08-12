@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <customer_account_login>
+        <reference name="head">
+            <action method="addCss">
+                <script>css/fbintegrator.css</script>
+            </action>
+            <block type="fbintegrator/meta" template="fbintegrator/fb_meta.phtml" name="fbintegrator.meta-tags"/>
+        </reference>
+        <reference name="content">
+            <block type="fbintegrator/fb" template="fbintegrator/fb_inc.phtml" before="-" name="fbintegrator.fb-inc"/>
+        </reference>
+        <reference name="content">
+            <block type="fbintegrator/fb" template="fbintegrator/fb_login.phtml" name="fbintegrator.login-page-connect-container">
+                <block type="fbintegrator/connect" template="fbintegrator/fb_connect.phtml" name="fbintegrator.connect-button"/>
+            </block>
+        </reference>
+    </customer_account_login>
+    <catalog_product_view>
+        <reference name="head">
+            <block type="fbintegrator/meta" template="fbintegrator/fb_meta.phtml" name="fbintegrator.meta-tags"/>
+        </reference>
+        <reference name="content"> <!-- Use name="after_body_start" for ver. >= CE 1.4.0.0  -->
+            <block type="fbintegrator/fb" template="fbintegrator/fb_like_root.phtml" before="-" name="fbintegrator.like-root"/>
+        </reference>
+        <reference name="product.info">
+            <block type="fbintegrator/like" name="fbintegrator.like-button-on-product-page" template="fbintegrator/fb_like.phtml" as="other"/>
+        </reference>
+    </catalog_product_view>
+</layout>

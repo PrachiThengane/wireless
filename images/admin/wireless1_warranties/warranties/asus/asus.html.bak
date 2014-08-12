@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Xcelicom - Warranty Centre</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript">
+	function go() { 
+		location.href = document.typeSelect.type.options[document.typeSelect.type.selectedIndex].value 
+<!--		location.href = "warrantyform.htm"; -->
+	}
+</script>
+</head>
+
+<body>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="20" height="70" valign="bottom"> <div align="right"><img src="http://xcelicom.com/eBayPics/layout/navigation/endcap-left.jpg" width="20" height="70"></div></td>
+    <td height="70" align="left" valign="bottom" background="http://xcelicom.com/eBayPics/layout/navigation/blank.jpg">&nbsp;</td>
+    <td width="92" height="70" align="left" valign="bottom"><a href="howtopay.htm"><img src="http://xcelicom.com/eBayPics/layout/navigation/bankinfo.jpg" width="92" height="70" border="0"></a></td>
+    <td width="92" height="70" align="left" valign="bottom"><a href="shipping.htm"><img src="http://xcelicom.com/eBayPics/layout/navigation/parceltrack.jpg" width="92" height="70" border="0"></a></td>
+    <td width="92" height="70" align="left" valign="bottom"><a href="salescondition.htm"><img src="http://xcelicom.com/eBayPics/layout/navigation/salescon.jpg" width="92" height="70" border="0"></a></td>
+    <td width="92" height="70" align="left" valign="bottom"><a href="warranty.htm"><img src="http://xcelicom.com/eBayPics/layout/navigation/warranty.jpg" width="92" height="70" border="0"></a></td>
+    <td width="92" height="70" align="left" valign="bottom"><a href="contactus.htm"><img src="http://xcelicom.com/eBayPics/layout/navigation/contactus.jpg" width="92" height="70" border="0"></a></td>
+    <td width="92" align="left" valign="bottom"><a href="aboutus.htm"><img src="http://xcelicom.com/eBayPics/layout/navigation/aboutus.jpg" width="92" height="70" border="0"></a></td>
+    <td height="70" align="left" valign="bottom" background="http://xcelicom.com/eBayPics/layout/navigation/blank.jpg">&nbsp;</td>
+    <td width="20" height="70" align="right" valign="bottom"><img src="http://xcelicom.com/eBayPics/layout/navigation/endcap.jpg" width="20" height="70"></td>
+  </tr>
+  <tr> 
+    <td valign="bottom">&nbsp;</td>
+    <td align="left" valign="bottom">&nbsp;</td>
+    <td align="center" valign="top"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"></font></strong></td>
+    <td align="center" valign="top"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"></font></strong></td>
+    <td align="center" valign="top"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"></font></strong></td>
+    <td align="center" valign="top"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"><strong><img src="http://xcelicom.com/eBayPics/layout/navigation/marker.jpg"></strong></font></strong></td>
+    <td align="center" valign="top"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"></font></strong></td>
+    <td align="center" valign="top"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"></font></strong></td>
+    <td align="left" valign="bottom">&nbsp;</td>
+    <td align="right" valign="bottom">&nbsp;</td>
+  </tr>
+</table>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td align="left" valign="top"> <br> 
+      <!-----------------------------------------------footer start----------------------------------------->
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="20" height="25" align="right" valign="top" background="http://xcelicom.com/eBayPics/layout/images/spanoff-left-blue.gif"><img src="http://xcelicom.com/eBayPics/layout/images/fullcorner-TL-blue.gif" width="11" height="11"></td>
+          <td width="15%" height="25" align="left" valign="bottom" nowrap bgcolor="#5561AC">
+<p><font color="#0099FF"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Warranty<strong> 
+              Centre</strong></font></font></p></td>
+          <td width="40" align="right" valign="top" nowrap bgcolor="#5561AC"><strong><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"><strong><img src="http://xcelicom.com/eBayPics/layout/images/lensflare-blue.gif" width="40" height="20"></strong></font></strong></td>
+          <td width="20" align="left" valign="top" background="http://xcelicom.com/eBayPics/layout/images/spanoff-right-blue.gif"><img src="http://xcelicom.com/eBayPics/layout/images/fullcorner-TR-blue.gif" width="11" height="11"></td>
+          <td width="80%" align="right" valign="bottom"> <table border="0" cellspacing="0" cellpadding="0">
+              <FORM NAME="search" METHOD="get" ACTION="http://search.stores.ebay.com.au/search/search.dll">
+                <tr> 
+                  <td><input type="hidden" name="fp" value="0"> <input type="hidden" name="colorid" value="5"> 
+                    <input type="hidden" name="store" value="Xcelicom"> <input type="hidden" name="sid" value="85623729"> 
+                    <input type="hidden" name="MfcISAPICommand" value="GetResult"> 
+                    <input type="hidden" name="srchdesc" value="y"></td>
+                  <td align="center" valign="middle" nowrap><strong> <font color="#5561AC" size="2" face="Arial, Helvetica, sans-serif">Search 
+                    our listings</font><font color="#5561AC" face="Arial, Helvetica, sans-serif">&nbsp;</font><font color="#FFFFFF" face="Arial, Helvetica, sans-serif"> 
+                    </font></strong></td>
+                  <td align="center" valign="middle"> <INPUT TYPE="text" SIZE="25" NAME="query"></td>
+                  <td align="center" valign="middle"> <input name="image" type="image" value="search" src="http://xcelicom.com/eBayPics/layout/navigation/go-white.jpg" action="submit"></td>
+                </tr>
+              </FORM>
+            </table></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr> 
+          <td width="20" align="right" valign="top" background="http://xcelicom.com/eBayPics/layout/images/virtical-blue.gif"><img src="http://xcelicom.com/eBayPics/layout/images/top-left-hook-blue.gif" width="20" height="20"></td>
+          <td colspan="5" align="right" valign="bottom" background="http://xcelicom.com/eBayPics/layout/images/tall-top-horizontal-blue.gif">&nbsp;</td>
+          <td width="20" align="left" valign="top" background="http://xcelicom.com/eBayPics/layout/images/virtical-blue.gif"><img src="http://xcelicom.com/eBayPics/layout/images/top-corner-TR-blue.gif" width="20" height="11"></td>
+        </tr>
+        <tr>
+          <td width="20" height="20" background="http://xcelicom.com/eBayPics/layout/images/virtical-blue.gif">&nbsp;</td>
+          <td colspan="5" valign="middle">
+
+
+<TABLE>
+<FONT FACE=ARIAL SIZE=5>
+<B>Asus</B></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Asus Product is faulty? Who do i contact?</B>
+<BR><BR>
+<I>You can contact Asus direct via the following details:</I>
+</FONT>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<BR><BR>
+Hotline:1300 2787 88
+<BR>
+
+<BR>
+<A HREF=mailto:http://vip.asus.com/eservice/techserv.aspx>Email</A>
+<BR><BR>
+</font></TD></TR></TABLE>
+
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<B>Further Support</B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Asus Product, please click <A HREF=http://support.asus.com/faq/faq.aspx?SLanguage=en-us>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For troubleshooting tips for your Asus Product, please click <A HREF=http://support.asus.com/troubleshooting/troubleshooting.aspx?SLanguage=en-us>
+ Here</a></B>  
+ </FONT>
+ <BR><BR>
+</TR>
+</TABLE>
+		  
+		  </td>
+          <td height="20" align="left" valign="top" background="http://xcelicom.com/eBayPics/layout/images/virtical-blue.gif">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="20" height="20"><img src="http://xcelicom.com/eBayPics/layout/images/corner-BL-blue.gif" width="20" height="20"></td>
+          <td height="20" colspan="5" background="http://xcelicom.com/eBayPics/layout/images/horizontal-blue.gif">&nbsp;</td>
+          <td width="20" height="20"><img src="http://xcelicom.com/eBayPics/layout/images/corner-BR-blue.gif" width="20" height="20"></td>
+        </tr>
+      </table>
+      <p align="center"><font face="Arial, Helvetica, sans-serif" size="1">Copyright Xcelicom &copy; 2005</font></p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<cms_page>
+        <reference name="content">
+			<!--
+			<remove name="cms_page" />
+			-->
+            <block type="hometabspro/home" name="aw.hometabspro.home.top" template="hometabspro/home.phtml" after="quicksand">
+            	<action method="setPosition"><value>top</value></action>
+            </block>				
+			<block type="hometabspro/cms_page" name="hometabspro_cms_page" >
+				<action method="disableBlock">
+					<alias>cms_page</alias>
+				</action>
+				<action method="disableBlock">
+					<alias>cms.wrapper</alias>
+				</action>				
+			</block>
+            <block type="hometabspro/home" name="aw.hometabspro.home.bottom" template="hometabspro/home.phtml">
+            	<action method="setPosition"><value>bottom</value></action>
+            </block>																			
+        </reference>		
+	</cms_page>	
+</layout>
+
+ 

@@ -1,0 +1,26 @@
+<!--<?php $quote = Mage::getSingleton('checkout/session')->getQuote(); ?>
+<span id="link">
+	<?php if ($quote->getGroupdealsCouponTo() != ''): ?>
+		<?php echo $this->__('Gift for:') ?> <strong><?php echo $quote->getGroupdealsCouponTo(); ?></strong><br/><span id="link-actions"><a href="#" onClick="giftpopupcode(); return false;"><?php echo $this->__('Edit') ?></a> <?php echo $this->__('or') ?> <a href="#" onClick="new Ajax.Updater('link', '<?php echo $this->getUrl('groupdeals/coupons/removeGift') ?>', {asynchronous:true, evalScripts:true, onComplete:function(request, json){ changeTextRemove(); }, onLoading:function(request, json){Element.hide('link-actions');Element.show('gift-please-wait-link')}}); "><?php echo $this->__('Remove') ?></a></span>
+		<span class="please-wait" id="gift-please-wait-link" style="display:none;">
+			<img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading...') ?>" title="<?php echo $this->__('Loading...') ?>" class="v-middle" /> <?php echo $this->__('Loading...') ?>
+		</span>
+	<?php else: ?>
+		<a href="#" onClick="giftpopupcode(); return false;"><?php echo $this->__('Give the Coupon(s) as a Gift') ?></a>
+	<?php endif; ?>
+</span>
+
+<script type="text/javascript">
+function changeTextRemove(){
+	document.getElementById('coupon_from').value='';
+	document.getElementById('coupon_to').value='';
+	document.getElementById('coupon_to_email').value='';
+	document.getElementById('coupon_message').value='';
+	document.getElementById('email_radio1').checked='checked';
+	document.getElementById('link').innerHTML = '<a href="#" onClick="giftpopupcode(); return false;">Give this Groupon as a Gift</a>';
+}
+</script>
+-->
+
+
+

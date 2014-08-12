@@ -1,0 +1,142 @@
+
+
+<div class = 'sliderContainer'>
+				<div class = 'iosSlider'>
+				
+					<div class = 'slider'>
+					
+						<div class = 'item item1'>
+							<div class = 'inner'>
+								<div class = 'selectorShadow'></div>
+								<a href="#"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab1-banner')->toHtml(); ?></a>
+							</div>
+						</div>
+						
+						<div class = 'item item2'>
+							<div class = 'inner'>
+								<div class = 'selectorShadow'></div>
+								<a href="#"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab2-banner')->toHtml(); ?></a>
+							</div>
+						</div>
+						
+						<div class = 'item item3'>
+							<div class = 'inner'>
+								<div class = 'selectorShadow'></div>
+								<a href="#"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab3-banner')->toHtml(); ?></a>
+							</div>
+						</div>
+						
+						<div class = 'item item4'>
+							<div class = 'inner'>
+								<div class = 'selectorShadow'></div>
+								<a href="#"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab4-banner')->toHtml(); ?></a>
+							</div>
+						</div>
+
+						<div class = 'item item5'>
+							<div class = 'inner'>
+								<div class = 'selectorShadow'></div>
+								<a href="#"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab5-banner')->toHtml(); ?></a>
+							</div>
+						</div>
+
+						<div class = 'item item6'>
+							<div class = 'inner'>
+								<div class = 'selectorShadow'></div>
+								<a href="#"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab6-banner')->toHtml(); ?></a>
+							</div>
+						</div>
+
+					</div>
+				
+				</div>
+				
+					<div class = 'slideSelectors'>
+				
+						<div class = 'item selected'>1</div>
+					
+						<div class = 'item'>2</div>
+					
+						<div class = 'item'>3</div>
+					
+						<div class = 'item'>4</div>
+					
+						<div class = 'item'>5</div>
+					
+						<div class = 'item'>6</div>
+					
+					</div>
+				
+				<div class = 'scrollbarContainer'></div>
+</div>
+
+	<script type="text/javascript">
+	jQuery.noConflict();
+	jQuery(document).ready(function($){
+			$(document).ready(function() {
+				
+				$('.iosSlider').iosSlider({
+					desktopClickDrag: true,
+					snapToChildren: true,
+					navSlideSelector: '.sliderContainer .slideSelectors .item',
+					onSlideComplete: slideComplete,
+					onSliderLoaded: sliderLoaded,
+					onSlideChange: slideChange,
+					autoSlide: true,
+					scrollbar: true,
+					scrollbarContainer: '.sliderContainer .scrollbarContainer',
+					scrollbarMargin: '0',
+					scrollbarBorderRadius: '0'
+				});
+				
+			});
+			
+			function slideChange(args) {
+						
+				$('.sliderContainer .slideSelectors .item').removeClass('selected');
+				$('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+			
+			}
+			
+			function slideComplete(args) {
+				
+				if(!args.slideChanged) return false;
+				
+				$(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				$(args.currentSlideObject).find('.text1').animate({
+					right: '100px',
+					opacity: '0.8'
+				}, 400, 'easeOutQuint');
+				
+				$(args.currentSlideObject).find('.text2').delay(200).animate({
+					right: '50px',
+					opacity: '0.8'
+				}, 400, 'easeOutQuint');
+				
+			}
+			
+			function sliderLoaded(args) {
+					
+				$(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				$(args.currentSlideObject).find('.text1').animate({
+					right: '100px',
+					opacity: '0.8'
+				}, 400, 'easeOutQuint');
+				
+				$(args.currentSlideObject).find('.text2').delay(200).animate({
+					right: '50px',
+					opacity: '0.8'
+				}, 400, 'easeOutQuint');
+				
+				slideChange(args);
+				
+			}
+			
+			var marginTop;
+			marginTop = $('#allCatSon').height() + 15;
+			//alert(marginTop);
+			$('.cms-index-index .col-left').css("margin-top",marginTop)
+			});		
+		</script>

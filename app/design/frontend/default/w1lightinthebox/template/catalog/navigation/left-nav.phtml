@@ -1,0 +1,41 @@
+<?php 
+/**
+ * Top menu for store
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+?>
+<!--<script type="text/javascript">
+
+function displayB(){
+document.getElementById('light_menu').style.display ='block'; 
+document.getElementById('displayB').style.display ='none'; 
+document.getElementById('displayN').style.display ='block'; 
+}
+
+function displayN(){
+document.getElementById('light_menu').style.display ='none'; 
+document.getElementById('displayB').style.display ='block'; 
+document.getElementById('displayN').style.display ='none'; 
+}
+</script> -->
+
+
+<div id="light_menu" class="menu" >
+
+	<ul id="nav">
+		<?php 
+		$menu = $this->renderCategoriesMenuHtml(0);
+		echo $menu ;
+		?>
+		<li  class="level0 nav-6" id="ligth_menu_last">
+		<a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>catalog/seo_sitemap/category/" >
+		<span><?php echo  $this->__("all");?></span>
+		</a>
+		</li>
+	</ul>
+	
+</div>
+
+<?php //echo $this->getChildHtml('topLeftLinks') ?>
+

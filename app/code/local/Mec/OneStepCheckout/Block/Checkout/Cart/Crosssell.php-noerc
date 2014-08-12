@@ -1,0 +1,30 @@
+<?php
+class Mec_OneStepCheckout_Block_Checkout_Cart_Crosssell extends Mage_Checkout_Block_Cart_Crosssell{
+	
+	public function getCartUpSellProducts()
+	{
+		// Mage::log('getCartUpSellProducts');
+		$last_add = Mage::getSingleton('core/session')->getLastAddProduct();
+		// Mage::log($last_add);
+		if($last_add){
+			$product = Mage::getModel('catalog/product')->load($last_add);
+			$collection = $product->getRelatedProductCollection()
+				->addAttributeToSort('position', 'asc')
+				->addStoreFilter();
+			$this->_addProductAttributesAndPrices($collection);
+			$collection->load();
+			return $collection;
+		}else{
+			return '';
+		}
+		
+	}
+	
+	public function getAddMuiltAction(){
+		
+		return $this->getUrl('checkout/cart').'addCheckoutProductList';
+	
+	}
+	
+
+}

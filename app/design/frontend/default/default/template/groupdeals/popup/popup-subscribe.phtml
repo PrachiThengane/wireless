@@ -1,0 +1,53 @@
+<?php $cityCollection = $this->getCityCollection(null, $this->getActiveRecentIds()); ?>
+<?php if (count($cityCollection)>0 && Mage::getStoreConfig('groupdeals/configuration/subscribe_popup')): ?>
+<?php Mage::getModel('core/cookie')->set('popup-subscribe', true); ?>
+<script language='javascript'>
+function popupcode(){
+  $('popup-subscribe-bg').appear({ duration: 0.7 });
+  $('popup-subscribe-content').appear({ duration: 0.7 });
+}
+<?php if (!Mage::getModel('core/cookie')->get('popup-subscribe')): ?>
+window.onload = function(){
+	popupcode()
+} 
+<?php endif; ?>
+</script>
+<div id="popup-subscribe-bg" class="groupdeals-popup-subscribe-bg" style="display:none;" ></div>
+<div id="popup-subscribe-content" class="groupdeals-popup-subscribe-content" style="display:none;"> 
+	<div class="content">
+		<div class="title">
+			<h1><?php echo $this->__('Subscribe to our deals!') ?></h1>
+			<p><?php echo $this->__('Subscribe to receive updates whenever a new deal is posted, when it reaches it\'s target or when it\'s over.') ?></p>
+		</div>
+		<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="groupdeals-subscriptions">
+			<ul class="form-list">
+				<li>
+					<label class="required" for="telephone"><em>*</em><?php echo $this->__('City') ?></label>
+					<div class="input-box">
+						<select class="input-text required-entry" name="city" id="city" >
+							  <?php foreach ($cityCollection as $city): ?>
+								<option value="<?php echo $city ?>"><?php echo $city ?></option>
+							  <?php endforeach; ?>
+						</select> 
+					</div>
+				</li>
+				<li>
+                    <label class="required" for="email_address"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                    <div class="input-box">
+                        <input type="text" class="input-text validate-email required-entry" title="Email Address" value="" id="email_address" name="email">
+                    </div>
+                </li>
+			</ul>
+			<div class="actions">
+				<span class="close" onClick="$('popup-subscribe-bg').fade(); $('popup-subscribe-content').fade(); return false;" ><?php echo $this->__('Already Subscribed?') ?></span>
+				<button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
+			</div>
+		</form>
+		<script type="text/javascript">
+		//<![CDATA[
+			var groupdealsSubscriberFormDetail = new VarienForm('groupdeals-subscriptions');
+		//]]>
+		</script>
+	</div>
+</div>
+<?php endif; ?>

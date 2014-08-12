@@ -1,0 +1,62 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Buy Now'); ?>
+<?php $now = Mage::getModel('core/date')->timestamp(time());?>
+<?php $prds = Mage::getModel('core/date')->timestamp($_product->getProductReleaseDate());?>
+<?php $exper_time = Mage::getModel('core/date')->timestamp($_product->getExpiredate()); ?>
+
+<?php if($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+        <?php if(!$_product->isGrouped()): ?>
+        <!--<label for="qty"><?php //echo $this->__('Qty:') ?></label>-->
+				<span id="subqty">-</span>
+        <input type="text" name="qty" id="rightqty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+
+		<span id="addqty">+ </span>
+        <?php endif; ?>
+		
+		<!-- <?php //if(count($_product->getRelatedProductCollection) ==0){ ?>
+			<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+		<?php //} ?> -->
+		
+		<?php //var_dump(number_format(Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty(), 0)); ?>
+		<?php
+		$Qty = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty(); ?>
+		<?php if($now<$prds && $_product->getProductReleaseDate() != null):?>
+			<span class="stock-item"><?php echo $this->__('Available for Pre-Order')?></span>
+		<?php elseif($Qty <= 0): ?>
+			<span class="stock-item"><?php echo $this->__('Contact us for Stock Availability')?></span>
+		<?php elseif($Qty == 1): ?>
+			<span class="stock-item stock-item-red"><?php echo $this->__('Only 1 Left!')?></span>
+		<?php elseif($Qty == 2): ?>
+			<span class="stock-item stock-item-red"><?php echo $this->__('Only 2 Left!')?></span>
+		<?php elseif($Qty < 5): ?>
+			<span class="stock-item"><?php echo $this->__('Less Than 5 Left')?></span>
+		<?php elseif($Qty < 10 && $Qty >=5): ?>
+			<span class="stock-item"><?php echo $this->__('Less Than 10 Left')?></span>
+		<?php elseif($Qty >= 10): ?>
+			<span class="stock-item"><?php echo $this->__('More Than 10 Available')?></span>
+		<?php endif; ?>
+		
+		
+		
+        <?php echo $this->getChildHtml('', true, true) ?>
+		
+		
+    </div>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$('#addqty').click(function(){
+				$('#rightqty').val(parseInt($('#rightqty').val()) + 1);
+			});
+			
+			
+			$('#subqty').click(function(){
+				if($('#rightqty').val() > 1){
+					$('#rightqty').val(parseInt($('#rightqty').val()) - 1);
+				}
+			});
+			
+		});
+	</script>
+<?php endif; ?>

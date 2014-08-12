@@ -1,0 +1,51 @@
+<?php
+	/**
+	 * aheadWorks Co.
+	 *
+	 * NOTICE OF LICENSE
+	 *
+	 * This source file is subject to the EULA
+	 * that is bundled with this package in the file LICENSE.txt.
+	 * It is also available through the world-wide-web at this URL:
+	 * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 *
+	 * @category   AW
+	 * @package    AW_Hometabspro
+	 * @copyright  Copyright (c) 2010 aheadWorks Co. (http://www.aheadworks.com)
+	 * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 */
+?>
+ 
+<?php $skey = Mage::helper('hometabspro')->getSessionKey(); ?>
+<div class="aw-htp aw-htp<?php echo $this->getUniqueClassKey(); ?>"<?php if ($this->getStyleId()): ?> id="<?php echo $this->getStyleId(); ?>"<?php endif; ?>>
+	<?php if ($count = count($items = $this->getItemsCollection())):  ?>
+	<ul class="aw-htp-tabs">
+	<?php $i = 1; ?>	
+	<?php foreach ($items as $item): ?>
+		<li id="<?php echo $item->getIndex(); ?>" class="htp-item<?php if ($i == 1): ?> first active<?php endif; ?><?php if ($i == $count): ?> last<?php endif; ?>">
+			<a href="#"><?php echo $item->getTitle(); ?></a>	
+		</li>	
+		<?php $i++; ?> 	
+	<?php endforeach; ?>
+	</ul>	
+	<div class="aw-htp-padder" id="htp-padder">
+	<?php echo $this->getActiveContent(); ?>		 			
+	</div>
+	<?php endif; ?>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+    var AW_Tabs_Class = new AW_Tabs('.aw-htp-tabs', '<?php echo $this->getAjaxUrl(); ?>', 'htp-padder', '<?php echo $skey; ?>');
+	centerLoader();
+
+        document.observe("dom:loaded", function() {
+		 AW_Tabs_Class.moveMessagesBefore('aw-htp<?php $this->getUniqueClassKey(); ?>');
+	});
+	//]]>
+</script>
+
+
+
+
+
+

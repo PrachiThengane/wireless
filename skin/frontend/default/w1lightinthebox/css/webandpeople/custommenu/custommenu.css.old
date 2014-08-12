@@ -1,0 +1,125 @@
+#custommenu {
+    position:relative;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 0;
+    float:left;
+    z-index: 999;
+	height:36px;
+width:18%	
+}
+div.menu {
+    float: left;
+	clear:both;
+	line-height:32px;
+	width:100%;
+	position:relative; 
+	z-index:10001
+}
+div.menu.act {
+    background-color:#ADD8E6;
+}
+
+div.wp-custom-menu-popup {
+	background-color: #FFFFFF;
+    border: 1px solid #63A1DE;
+    display: none;
+    left: 100%  !important;
+    position: absolute;
+    text-align: left;
+    top: 0 !important;
+    z-index: 3000;
+	width:680px;
+	height: 454px;
+}
+
+div.menu, div.wp-custom-menu-popup {
+    padding: 0;
+}
+div.menu a:hover{color:#FC6701;}
+div.menu a, div.wp-custom-menu-popup a {
+    color: #434343;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+div.wp-custom-menu-popup a.actParent {
+    color: #4D4D4D;
+}
+div.wp-custom-menu-popup a.act {
+    color: #A52A2A;
+}
+div.column {
+    width:200px; /* column width */
+    padding:0;
+	line-height:20px;
+	margin-left:15px;
+	float:left;
+}
+div.itemSubMenu {
+    margin-left:20px;
+}
+.clearBoth {
+    clear:both;
+}
+
+.menu-list {	   background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C4C1BC;
+    clear: both;
+    position: absolute;
+    top: 34px;
+    width: 212px;
+	height: 455px;}
+	
+.cms-home .menu-list {
+    display: block !important;
+
+}
+.parentMenu{width:200px;}
+/*parentMenu a{margin-left:15px;}*/
+#allCat a{color:#fff;}
+#allCatSon > .menu{width:199px; height:48px; line-height:24px;}
+
+#allCatSon div.menu.active {
+    background-color:#E1F3F9;
+	border:1px solid #63A1DE;
+	border-right:none;
+	left:-1px;
+	padding-top: 7px;
+	padding-bottom: 0px;
+	padding-left: 14px;
+}
+
+.block1{padding:10px;min-height:140px;float:left;position:relative;z-index:20;}
+.block2{position:absolute; bottom:0;clear:both;z-index:1;}
+.block2 p{margin:0}
+.fliterblock{   
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 14px 10px 10px 32px;
+    width: 670px;
+	position:relative;
+	z-index:10;
+}
+.brandblock{    float: left;
+    padding: 10px;
+    width: 170px;}
+.brandblock .itemMenuName span.cqyt{line-height:40px;}	
+	
+.col-tit{color: #E47911;font-size:18px;margin-bottom:15px;font-family:Arial, Helvetica, sans-serif;padding-top:12px;}
+.itemMenuName{clear:both;}
+.itemMenuName span{width:100%;float:left;}
+.itemMenuName span.cname{width:auto; float:left;background:#fff;}
+.itemMenuName span.cqyt{width:auto; float:right;background:#fff}
+.itemMenu a{font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+.sub-head{   color: #999999;
+    font-size: 12px;
+    line-height: 12px;
+	position:relative;
+	top:-8px;
+	}
+.level1>span{font-weight:bold;}

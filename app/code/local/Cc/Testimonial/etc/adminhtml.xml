@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ /***************************************
+ *         MAGENTO EDITION USAGE NOTICE *
+ *****************************************/
+ /* This package designed for Magento COMMUNITY edition
+ * This extension is only for developers as a technology exchange
+ * Based on EasyTestimonial_v1.5.8 by mage-world.com
+ * Fixed the bug that when compilation has been enabled, the testimonial tab in the backend will be blank page.
+ *****************************************************
+ * @category   Cc
+ * @package    Cc_Testimonial
+ * @Author     Chimy
+ */
+-->
+<config>
+	<translate>
+	    <modules>
+  			<Cc_Testimonial>
+  			    <files>
+  				<default>Cc_Testimonial.csv</default>
+  			    </files>
+  			</Cc_Testimonial>
+	    </modules>
+		</translate>	
+		<menu>
+		    <testimonial module="testimonial">
+			<title>Testimonials</title>
+			<sort_order>71</sort_order>               
+			<children>
+			    <items module="testimonial">
+				<title>Manage Testimonials</title>
+				<sort_order>0</sort_order>
+				<action>testimonial_admin/adminhtml_testimonial</action>
+			    </items>		    
+			</children>
+		    </testimonial>
+		</menu>
+		<acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+				<Cc_Testimonial>
+					<title>Testimonial Module</title>
+					<sort_order>10</sort_order>
+				</Cc_Testimonial>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <cc_testimonial>
+                                        <title>Hello Magento Testimonial</title>
+                                    </cc_testimonial>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>		
+		<layout>
+			<updates>
+				<testimonial>
+					<file>testimonial.xml</file>
+				</testimonial>
+			</updates>
+		</layout>
+</config>

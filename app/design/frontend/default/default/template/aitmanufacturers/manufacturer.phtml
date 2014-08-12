@@ -1,0 +1,28 @@
+<?php
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/design/frontend/default/default/template/aitmanufacturers/manufacturer.phtml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+?>
+<?php
+/**
+* @copyright  Copyright (c) 2009 AITOC, Inc. 
+*/
+?>
+<?php $manufacturer = $this->getManufacturer() ?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<!-- <div class="category-head">
+<h2><//?php echo $manufacturer->getManufacturer()?></h2>
+</div> -->
+<?php if ($image = $manufacturer->getImage()): ?>
+<img src="<?php echo Mage::helper('aitmanufacturers/image')->getUrl($image) ?>" alt="<?php echo $this->htmlEscape($manufacturer->getTitle()) ?>" title="<?php echo $this->htmlEscape($manufacturer->getTitle()) ?>" style="float: left; padding: 0 10px 10px 0" />
+<?php endif ?>
+<?php if ($content = $manufacturer->getContent()): ?>
+<?php echo $content ?>
+<?php endif ?>
+<div style="clear:both;"></div>
+<?php echo $this->getChildHtml('product_list');?>

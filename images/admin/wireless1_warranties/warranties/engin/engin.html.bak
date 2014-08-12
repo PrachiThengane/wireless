@@ -1,0 +1,93 @@
+<HTML>
+<BODY>
+<TABLE WIDTH=100%>
+<TD WIDTH=60%>
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Engin</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Engin Product is faulty? Who do i contact?</B>
+<BR><BR>
+<I>You can contact Engin direct via the following details:</I>
+</FONT>
+</TD>
+</TABLE>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<BR><BR>
+Customer Care:
+<BR>
+8am-9pm (AEST or AEDT) Mon-Fri
+<BR>
+9am-3pm (AEST or AEDT) Sat & Sun
+<BR>
+Phone: 1300-305-000
+<BR>
+Fax: 02-9004-4436<BR>
+feedback@engin.com.au
+<P>Address:</P>
+431 Warringah Road<BR>
+Frenchs Forest NSW 2086
+<BR><BR>
+<IMG SRC=Map/Map.jpg BORDER=1 ALT=MAP>
+</FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+Before contacting Engin, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT></TD></TR>
+</TABLE>
+<BR><BR><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Engin Product.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<I><B>Q: How do I set up my Voice Box Series 2?</B></I></FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<BR>
+<P>A: Your Voice Box Series 2 can be set up under a number of different conditions. Set up will depend on how many spare PSTN telephone ports you have. An ADSL filter may be needed depending on how you wish to set up your Voice Box Series 2.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Q: What is PSTN?</B></I></FONT>
+<P>A: PSTN stands for Public Switched Telephone Network. Basically, this is a normal landline copper wired network carrying analog voice data.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Q: My Switchback service is active yet my call will not connect, why?</B></I></FONT>
+<P>A: If you try and make a call approximately 3-5 seconds after your Internet or voice service has gone down you may receive a busy tone, you will need to hang up and redial.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Q: If I have an incoming call to my regular PSTN landline, can I answer this call from my VoIP telephone?</B></I></FONT>
+<P>A: Yes, when an incoming call comes through on your regular PSTN phone number, both your VoIP Telephone and your PSTN telephone (if you still have one connected) will ring. To receive the call you can answer either phone.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Q: If I have an incoming call to my regular VoIP line, can I answer this call from my PSTN telephone?</B></I></FONT>
+<P>A: No, incoming VoIP calls will only ring on the VoIP telephone. To answer an incoming VoIP call you must answer the call on the VoIP telephone.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Q: Can I receive calls from my VoIP number when Switchback is active (loss of power or Internet)?</B></I></FONT>
+<P>A: Yes, You will need to call engin on 1300-305-000 and request for your PSTN number to be entered into the Call Forwarding No Registration feature. When your service is down, then all calls will be forwarded to your PSTN landline and hence both your PSTN and VoIP telephones will ring for all incoming calls.</P>
+<BR><BR>
+</TD>
+</TR>
+</TABLE>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Engin Product, please click <A HREF=http://www.engin.com.au/public/tFAQ.asp#q145</A>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Installation Instructions relating to your Engin Product, please click <A HREF=http://www.engin.com.au/public/install.htm>
+ Here</A></B>  
+ </FONT>
+ <BR><BR>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

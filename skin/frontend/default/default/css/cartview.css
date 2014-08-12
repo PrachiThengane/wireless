@@ -1,0 +1,10 @@
+#cartview { float: left; position: relative;z-index:99;}
+#cartview #cartview-panel .block-cart .block-content{border-radius:0 0 4px 4px;box-shadow:0 10px 24px #555555;padding:10px;*border:1px solid #D0151B; *border-top:none;border:1px solid #D0151B\0/; border-top:none\0/;}
+#cartview #cartview-panel{border-top:3px solid #CC0001;}
+#cartview-link { overflow: hidden; text-align: right; }
+#cartview-panel { top: 40px; width: 250px; position: absolute; right: 0; text-align: left; z-index: 99999;}
+#cartview-panel .block-title { display: none }
+#cartview-panel .block-cart .amount{height: 32px;}
+#cartview-panel .block-cart .subtotal{margin:0;padding:0;}
+#cartview-panel .block-cart .block-content .actions button.button{font-family:arial;}
+#cartview-panel .block-cart .block-content ol li .product-details .product-name a{line-height:20px;}

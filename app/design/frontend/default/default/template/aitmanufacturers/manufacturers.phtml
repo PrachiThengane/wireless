@@ -1,0 +1,46 @@
+<?php
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/design/frontend/default/default/template/aitmanufacturers/manufacturers.phtml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+?>
+<?php
+/**
+* @copyright  Copyright (c) 2009 AITOC, Inc. 
+*/
+?>
+<?php $items = $this->getItems() ?>
+<div class="page-head">
+<h1><?php echo $this->__('All Brands')?></h1>
+</div>
+<div class="content">
+<?php $showListIcons = Mage::getStoreConfig('catalog/aitmanufacturers/manufacturers_show_list_image', Mage::app()->getStore()->getId()); ?>
+<?php if ($cols = count($items)): ?>
+<?php $width = floor(100/$cols) ?>
+<?php foreach($items as $letters): ?>
+<div style="float: left; width: <?php echo $width ?>%;" >
+<?php foreach ($letters as $letter => $manufacturers): ?>
+<div class="singlebrand">
+    <div class="title"><?php echo $letter ?></div>
+    <div class="content">
+        <ul class="bare-list">
+        <?php foreach ($manufacturers as $manufacturer): ?>
+        	<?php if ($manufacturer['item']->getManufacturer()): ?>
+            <li>
+            	<?php if($showListIcons && $manufacturer['item']->getListImage() && $manufacturer['item']->getShowBriefImage()){ ?><a href="<?php echo $manufacturer['item']->getUrl() ?>" style="text-decoration:none;"><img src="<?php echo Mage::helper('aitmanufacturers/image')->getIconUrl($manufacturer['item']->getListImage()) ?>" alt="<?php echo $this->htmlEscape($manufacturer['item']->getManufacturer()) ?>" /></a> <? } ?>
+                <a href="<?php echo $manufacturer['item']->getUrl() ?>"><?php echo $this->htmlEscape($manufacturer['item']->getManufacturer()) ?> (<?php echo $manufacturer['number']?>)</a>
+            </li>
+            <?php endif ?>
+        <?php endforeach ?>
+        </ul>
+    </div>
+</div>
+<?php endforeach ?>
+</div>
+<?php endforeach ?>
+<?php endif ?>
+</div>

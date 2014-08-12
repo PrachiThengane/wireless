@@ -1,0 +1,112 @@
+#custommenu {
+    position:relative;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 0;
+    float:left;
+    z-index: 999;
+	height:36px;
+width:18%	
+}
+div.menu {
+    float: left;
+	clear:both;
+	line-height:32px;
+	width:100%;
+	position:relative; 
+	z-index:10001
+}
+div.menu.act {
+    background-color:#ADD8E6;
+}
+
+div.wp-custom-menu-popup {
+	background-color: #FFFFFF;
+    border: 1px solid #63A1DE;
+    box-shadow: 0 0 2px #CADFF4;
+    display: none;
+    left: 100%  !important;
+    position: absolute;
+    text-align: left;
+    top: 0 !important;
+    z-index: 3000;
+	width:660px;
+	min-height:440px;
+}
+div.menu, div.wp-custom-menu-popup {
+    padding: 0;
+}
+div.menu a:hover{color:#FC6701;}
+div.menu a, div.wp-custom-menu-popup a {
+    text-decoration: none;
+    display:block;
+	color:#434343;
+	font-weight:bold
+}
+div.wp-custom-menu-popup a.actParent {
+    color: #4D4D4D;
+}
+div.wp-custom-menu-popup a.act {
+    color: #A52A2A;
+}
+div.column {
+    width:200px; /* column width */
+    padding:0;
+	line-height:18px;
+	margin-left:15px;
+}
+div.itemSubMenu {
+    margin-left:20px;
+}
+.clearBoth {
+    clear:both;
+}
+
+.menu-list {	   background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C4C1BC;
+    clear: both;
+    position: absolute;
+    top: 34px;
+    width: 100%;}
+.cms-home .menu-list {
+    display: block !important;
+
+}
+.parentMenu{width:100%;}
+.parentMenu a{margin-left:15px;}
+#allCat a{color:#fff;}
+#allCatSon > .menu{width:100%; /*height:34px; */line-height:24px;}
+
+#allCatSon div.menu.active {
+    background-color:#fff;
+	border:1px solid #63A1DE;
+	border-right:none;
+	padding-right:1px 
+}
+.block1{padding:10px;min-height:330px;float:left;}
+.block2{position:absolute; bottom:0;clear:both;}
+.block2 p{margin:0}
+.fliterblock{   float: left;
+    font-family: verdana;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px;
+    width: 170px;}
+.brandblock{    float: left;
+    padding: 10px;
+    width: 170px;}
+.brandblock .itemMenuName span.cqyt{line-height:40px;}	
+	
+.col-tit{color:#fc6701; font-size:20px;margin-bottom:15px;}
+.itemMenuName{clear:both;}
+.itemMenuName span{width:100%;float:left;background:url(../images/divider.gif) repeat-x 0 center}
+.itemMenuName span.cname{width:auto; float:left;background:#fff;}
+.itemMenuName span.cqyt{width:auto; float:right;background:#fff}
+.itemMenu a{font-family:verdana; font-size:12px;}
+.sub-head{   color: #999999;
+    font-size: 11px;
+    line-height: 12px;
+    padding-left: 15px;
+	position:relative;
+	top:-8px;
+	}

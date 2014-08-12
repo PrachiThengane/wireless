@@ -1,0 +1,58 @@
+.onsale-product-container {
+	cursor: pointer;
+	position: relative;
+	margin-top: 20px;
+	z-index: 5;
+}
+.onsale-product-container-inside {
+	cursor: pointer;
+	position: absolute;
+	z-index: 5;
+	width: 100px !important;
+	height: 100px !important;
+	bottom: initial !important;
+	left: 20px !important;
+	top: 28px !important;
+	background-image: none !important;
+	background: #00AAFF;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+div.onsale-product-label {
+	position: absolute;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	top: initial !important;
+	left: initial !important;
+	line-height: 100px;
+}
+
+div.onsale-onsale-product-label-text {
+	font-family: inherit;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	color: #FFFFFF;
+}
+
+div.new-onsale-product-label-text {
+	font-family: inherit;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	color: #FFFFFF;
+}
+
+div.custom-onsale-product-label-text {
+	font-family: inherit;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	color: #FFFFFF;
+}

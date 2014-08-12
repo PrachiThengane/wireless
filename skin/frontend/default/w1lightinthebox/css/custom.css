@@ -1,0 +1,396 @@
+/* ======================================================================================= */
+
+/* Attribute Stickers */
+
+.refurb-sticker, .cash-sticker, .free-sticker, .demo-sticker, .hot-sticker {
+	position: absolute;
+	width: 174px;
+	text-align: center;
+	z-index: 6;
+	margin-left: 40px;
+	margin-top: 392px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-radius: 400px;
+	-webkit-border-radius: 400px;
+	-moz-border-radius: 400px;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+
+.refurb-sticker {
+	background: #0000CC;
+	padding: 25px 0;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.refurb-sticker span {
+	font-size: 27px;
+	line-height: 28px;
+}
+
+.cash-sticker {
+	background: #0099FF;
+	font-size: 35px;
+	line-height: 35px;
+	padding: 32px 0;
+}
+
+.cash-sticker .cbprice {
+	font-size: 42px;
+	line-height: 40px;
+}
+.cash-sticker .asterix {
+	vertical-align: super;
+	font-size: 20px;
+	line-height: 21px;
+}
+
+.free-sticker {
+	background: #00DD00;
+	font-size: 29px;
+	line-height: 32px;
+	padding: 49px 0;
+}
+
+.free-sticker span {
+	font-size: 46px;
+	line-height: 44px;
+}
+
+.demo-sticker {
+	background: #8800FF;
+	font-size: 50px;
+	line-height: 45px;
+	padding: 42px 0;
+}
+
+.demo-sticker span {
+	font-size: 44px;
+	line-height: 32px;
+}
+
+.hot-sticker {
+	background: #FF0000;
+	font-size: 46px;
+	line-height: 45px;
+	padding: 38.5px 0;
+}
+
+.hot-sticker span {
+	font-size: 48px;
+	line-height: 52px;
+}
+
+.cash-sticker-sml-list, .cash-sticker-sml-grid,
+.free-sticker-sml-list, .free-sticker-sml-grid,
+.demo-sticker-sml-list, .demo-sticker-sml-grid,
+.hot-sticker-sml-list, .hot-sticker-sml-grid {
+	position: absolute;
+	width: 65px;
+	text-align: center;
+	z-index: 6;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-radius: 400px;
+	-webkit-border-radius: 400px;
+	-moz-border-radius: 400px;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+
+.cash-sticker-sml-list, .cash-sticker-sml-grid {
+	background: #0099FF;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 11.5px 0;
+}
+
+.cash-sticker-sml-list .cbprice,
+.cash-sticker-sml-grid .cbprice {
+	font-size: 16px;
+	line-height: 14px;
+}
+.cash-sticker-sml-list .asterix,
+.cash-sticker-sml-grid .asterix {
+	vertical-align: super;
+	font-size: 9px;
+	line-height: 8px;
+}
+
+.cash-sticker-sml-list {
+	margin-left: 8px;
+	margin-top: 140px;
+}
+.cash-sticker-sml-grid {
+	margin-left: 10px;
+	margin-top: 88px;
+}
+
+.free-sticker-sml-list, .free-sticker-sml-grid {
+	background: #00DD00;
+	font-size: 12px;
+	line-height: 12px;
+	padding: 18px 0;
+}
+.free-sticker-sml-list span, .free-sticker-sml-grid span {
+	font-size: 16px;
+	line-height: 17px;
+}
+.free-sticker-sml-list {
+	margin-left: 8px;
+	margin-top: 140px;
+}
+.free-sticker-sml-grid {
+	margin-left: 10px;
+	margin-top: 88px;
+}
+
+.demo-sticker-sml-list, .demo-sticker-sml-grid {
+	background: #8800FF;
+	font-size: 19px;
+	line-height: 14px;
+	padding: 16.5px 0;
+}
+.demo-sticker-sml-list span, .demo-sticker-sml-grid span {
+	font-size: 18px;
+	line-height: 18px;
+}
+.demo-sticker-sml-list {
+	margin-left: 8px;
+	margin-top: 140px;
+}
+.demo-sticker-sml-grid {
+	margin-left: 10px;
+	margin-top: 88px;
+}
+
+.hot-sticker-sml-list, .hot-sticker-sml-grid {
+	background: #FF0000;
+	font-size: 16px;
+	line-height: 15px;
+	padding: 16px 0;
+}
+.hot-sticker-sml-list span, .hot-sticker-sml-grid span {
+	font-size: 17px;
+	line-height: 18px;
+}
+.hot-sticker-sml-list {
+	margin-left: 8px;
+	margin-top: 140px;
+}
+.hot-sticker-sml-grid {
+	margin-left: 10px;
+	margin-top: 88px;
+}
+
+/* Category Backgrounds Sprite */
+
+.laptop-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 0 transparent;
+	width: 400px;
+	height: 275px;
+}
+.desktop-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -560px transparent;
+	width: 500px;
+	height: 275px;
+}
+.tablet-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -300px transparent;
+	width: 470px;
+	height: 250px;
+}
+.phone-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -840px transparent;
+	width: 365px;
+	height: 272px;
+}
+.network-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -1130px transparent;
+	width: 400px;
+	height: 232px;
+}
+.audio-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -1375px transparent;
+	width: 430px;
+	height: 265px;
+}
+.toys-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -1675px transparent;
+	width: 515px;
+	height: 395px;
+}
+.toys-catback2 {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -2340px transparent;
+	width: 170px;
+	height: 110px;
+}
+.accessories-catback {
+	background: url("/skin/frontend/default/w1lightinthebox/images/catback/catback-sprite.png") no-repeat scroll 0 -2090px transparent;
+	width: 260px;
+	height: 200px;
+}
+
+/* Brand Bar CSS */
+
+.brandbar-shell {
+	width: 1190px;
+	height: 90px;
+	margin: 20px 0 30px 0;
+}
+
+.brandbar-inner {
+	width: 1170px;
+	position: relative;
+	height: 90px;
+	margin: 0 10px;
+}
+
+.brand-img-asus, .brand-img-toshiba, .brand-img-msi, .brand-img-samsung, .brand-img-htc, .brand-img-nokia,
+.brand-img-sony, .brand-img-huawei, .brand-img-tplink, .brand-img-netgear, .brand-img-dlink, .brand-img-logitech,
+.brand-img-creative, .brand-img-sennheiser, .brand-img-belkin, .brand-img-stm, .brand-img-microsoft, .brand-img-apple, .brand-img-moox{
+	width: 110px;
+	height: 25px;
+	float: left;
+	margin: 10px 10px;
+}
+
+.brand-img-asus:hover, .brand-img-toshiba:hover, .brand-img-msi:hover, .brand-img-samsung:hover, .brand-img-htc:hover, .brand-img-nokia:hover,
+.brand-img-sony:hover, .brand-img-huawei:hover, .brand-img-tplink:hover, .brand-img-netgear:hover, .brand-img-dlink:hover, .brand-img-logitech:hover,
+.brand-img-creative:hover, .brand-img-sennheiser:hover, .brand-img-belkin:hover, .brand-img-stm:hover, .brand-img-microsoft:hover, .brand-img-apple:hover, .brand-img-moox:hover {
+	opacity: 0.8 !important;
+	filter: alpha(opacity=80) !important;
+}
+
+.brand-img-asus {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 0 transparent;}
+.brand-img-toshiba {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -25px transparent;}
+.brand-img-msi {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -50px transparent;}
+.brand-img-samsung {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -75px transparent;}
+.brand-img-htc {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -100px transparent;}
+.brand-img-nokia {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -125px transparent;}
+.brand-img-sony {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -150px transparent;}
+.brand-img-huawei {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -175px transparent;}
+.brand-img-tplink {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -200px transparent;}
+.brand-img-netgear {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -225px transparent;}
+.brand-img-dlink {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -250px transparent;}
+.brand-img-logitech {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -275px transparent;}
+.brand-img-creative {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -300px transparent;}
+.brand-img-sennheiser {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -325px transparent;}
+.brand-img-belkin {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -350px transparent;}
+.brand-img-stm {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -375px transparent;}
+.brand-img-microsoft {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -400px transparent;}
+.brand-img-apple {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -425px transparent;}
+.brand-img-moox {background: url("/skin/frontend/default/w1lightinthebox/images/brands/brand-sprite.png") no-repeat scroll 0 -450px transparent;}
+
+/* Footer Links */
+
+.footerlinks-shell {
+	width:1190px;
+	height: auto;
+	margin-bottom: 30px;
+}
+
+.footerlinks-row {
+	width: 1145px;
+	position: relative;
+	margin: 0 auto;
+	height: 170px;
+}
+
+.footerlinks-cell {
+	width: 13%;
+	height: auto;
+	float: left;
+	margin: 0 40px;
+	text-align: left;
+}
+
+.footerbase-shell {
+	width:1190px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.footerbase-row {
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	height: 50px;
+}
+
+.footerbase-addcell {
+	float: left;
+	margin: 6px 60px 10px;
+	text-align: left;
+}
+
+.footerbase-linkcell {
+	height: 30px;
+	float: right;
+	margin: 0 60px;
+	text-align: right;
+}
+
+.fb-link-footer {
+	background: url("/skin/frontend/default/w1lightinthebox/images/sprite-site-wide.png") no-repeat scroll 0 -650px transparent;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	position: relative;
+	margin: 5px;
+	bottom: 2px;
+	/* position: absolute;
+	right: 47px;
+	bottom: 42px; */
+}
+
+.tw-link-footer {
+	background: url("/skin/frontend/default/w1lightinthebox/images/sprite-site-wide.png") no-repeat scroll -20px -650px transparent;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	position: relative;
+	margin: 5px;
+	bottom: 2px;
+	/* position: absolute;
+	right: 45px;
+	bottom: 64px; */
+}
+
+.rss-link-footer {
+	background: url("/skin/frontend/default/w1lightinthebox/images/sprite-site-wide.png") no-repeat scroll -40px -650px transparent;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	position: relative;
+	margin: 5px;
+	bottom: 2px;
+	/* position: absolute;
+	right: 28px;
+	bottom: 20px; */
+}
+
+/* Sub Banners CSS */
+
+.subbanner-1 {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 0;
+}
+.subbanner-2 {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 0;
+}
+
+.subbanner-last {
+	float: left;
+	margin-bottom: 10px;
+	border: 0;
+}
+
+/* ======================================================================================= */

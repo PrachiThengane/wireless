@@ -1,0 +1,111 @@
+<HTML>
+<BODY>
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Mice/Trackballs</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Mice/Trackball is faulty? Who do i contact?</B>
+<BR><BR>
+<I>You can contact Logitech direct for support:</I>
+</FONT>
+
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+Sales & Marketing: (02) 9972 3711
+<BR>
+Technical Help: (02) 8850 1192
+               (Mon - Fri, 9am - 5pm)
+			   <BR><BR>
+Logitech Australia Computer
+Peripherals Pty Ltd.
+<BR>
+3-6 The Strand
+<BR>
+Dee Why NSW 2099, 
+<BR>
+Australia
+<BR><BR>
+<IMG SRC=Map/Map.jpg BORDER=1 ALT=MAP>
+
+<BR><BR>
+ Before contacting Logitech, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT>
+ </TD>
+ </TR>
+ </TABLE>
+ <BR><BR><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Mice/Trackballs.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+
+<B>Question</B>
+  	<BR><BR>
+
+<I>My mouse just stopped working, what happened?</I>
+<BR><BR>
+
+  	<B>Answer</B>
+  	</FONT>
+<BR>  	
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+
+<P>It is possible that the mouse or trackball could have failed.  A failed unit can be described as a product that works for a period of time then suddenly stops working.  Verify that you have not made any changes to the system that might coincide with the failure of the product.  For example, if you moved the connection of the device to another port to add another device to the system or if you added new software or made other system changes. Also, verify the device has not become disconnected from the system by checking to see the device is correctly connected.</P>
+
+<P>Next, check to see if you are experiencing a detection issue.  Click <A HREF=http://logitech-en-amr.custhelp.com/cgi-bin/logitech_en_amr.cfg/php/enduser/std_adp.php?p_faqid=970> here</A> for information on diagnosing and resolving detection issues.</P>
+
+<P>If none of this applies and the pointing device has just stopped working, try the device in another port.  If you were using it on the PS/2 port, try moving it to the USB port if you mouse supports it. If you have another USB port, try that other port.  If you were connected through a hub, try connecting directly to the system ports to verify the hub has not failed. If the device doesn't work on a second port, try it on a second system, if possible.  If it fails on a second system, then the device probably is defective.  You may also want to try a second mouse in the same port that the failed mouse was using.  If the second mouse works in the same port, then you know the Logitech mouse is defective.  If this is the case, please contact Logitech Customer Support to inquire about a warranty replacement.  If the second mouse does not function in the same port, verify the system port has not failed.  Contact the system manufacture for more information on the status of the system port.</P>
+
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+
+<B>Question</B>
+<BR><BR>  	
+
+<I>The button on my mouse no longer functions, what can I do?</I>
+<BR><BR>
+  	<B>Answer</B>
+</FONT>
+<BR>  	
+<P>The button of your mouse or trackball may be failing if the buttons on your device exhibits any of the following symptoms.</P>
+<UL>
+<LI>Button is difficult to press or makes a strange noise when pressed. 
+<LI>Button no longer gives a soft click sound when pressed.
+<LI>The system does not respond when the button is pressed or responds intermittently.
+<LI>Button must be pressed very hard to get a response.
+</UL>
+
+<P>To verify if the mouse button has failed, please try this mouse on a second system if possible, or try a second mouse on the same system to see if the issue changes. If it fails on another system, please contact our Customer Support for a possible RMA replacement.</P>
+
+<P>If it works on another system, try removing our software by going to the Windows control panel and launching the "Add/Remove" icon.  From the list of installed programs find either SetPoint or MouseWare (whichever is installed on your system) and click the "Change/Remove" button.  Follow the on-screen instructions and restart the system.  Verify the issue is now gone. Restart the system and test the mouse to see if the button is still failing.  If so, contact our Customer Support for a possible RMA replacement.</P>
+
+</FONT>
+</TD>
+</TR>
+</TABLE><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Mice/Trackballs, please click <A HREF=http://logitech-en-amr.custhelp.com/cgi-bin/logitech_en_amr.cfg/php/enduser/std_alp.php?p_sid=5AAonV2i&p_lva=&p_li=&p_new_search=1&p_srch=1&p_sort_by=&p_gridsort=&p_row_cnt=123&p_prods=844%2C846%2C0&p_cats=&p_pv=2.846%3B3.u0&p_cv=&p_search_text=&p_search_type=answers.search_nl&p_nav=foot&p_page_head=3&p_page_foot=1</A>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Warranty Terms and Conditions relating to your Mice/Trackballs, please click <A HREF=http://www.logitech.com/index.cfm?page=support/products/document&CRID=325&contentid=5328&countryid=1&languageid=1</A>
+ Here</A></B>  
+ </FONT>
+ <BR><BR>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

@@ -1,0 +1,147 @@
+
+<?php
+	$__TH = Mage::helper('tax');
+	$__simplePricesTax = ($__TH->displayPriceIncludingTax() || $__TH->displayBothPrices());
+	
+	$_items = $this->getItems();
+	$__btCount = count($_items->getItems());
+	if (($__btCount) or (count($this->_optionalProducts) > 0)):
+?>
+<div class="product-collateral" style="PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-BOTTOM: 0px; BACKGROUND-IMAGE: none;">
+	<div class="collateral-box box-collateral">
+	<div class="head">
+    <?php if (Mage::helper('boughttogether')->checkVersion('1.4.0.0')): ?>
+		<h2><?php echo $this->__('Add Accessories to this purchase') ?></h2>
+    <?php else: ?>
+        <h4 style="PADDING-LEFT: 20px;"><?php echo $this->__('Frequently bought together') ?></h4>
+    <?php endif; ?>
+	</div>
+	<div class="content" id="__bt_Content">
+		
+    <br />
+		<ol>
+			<?php $_item = $this->_thisProduct; ?>
+			<li <?php if(!$_item->isSaleable()): ?> class="super-products"<?php endif; ?> style="PADDING: 2px 0px 2px 0px;display:none;">
+			<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(80) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="80" height="80" />
+				<?php if($_item->isSaleable()): ?>
+					<span class="checkbox-container" style="display:none;">
+						<input type="checkbox" checked class="related-checkbox" id="related-checkbox<?php echo $_item->getId() ?>" name="related_products[]" value="<?php echo $_item->getId() ?>" onclick="return bt_itemClick('<?php echo $_item->getId() ?>');" <?php if ($_item->isComposite()) echo 'style="display:none;"';?> />
+					</span>
+				<?php else: ?>
+					<span class="checkbox-container">&nbsp;</span>
+				<?php endif; ?>
+				&nbsp;&nbsp;
+				<b><?php echo $this->__('This item'); ?></b>:&nbsp;
+				<a id="__bt_product_<?php print $_item->getId() ?>_Name" href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+			</li>
+			<?php foreach($_items as $_item): ?>
+				<li <?php if(!$_item->isSaleable()): ?> class="super-products"<?php endif; ?> style="PADDING: 2px 0px 2px 0px;">
+				<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(80) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="80" height="80" />	
+					
+					
+				<div class="bt-product-checkbox-accessories">
+				    <a id="__bt_product_<?php print $_item->getId() ?>_Name" href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+				  <div class="checkbox-accessories">
+					<?php if($_item->isSaleable()): ?>
+						<span class="checkbox-container">
+							<span class="check-action checked"></span>
+							<input type="checkbox" checked class="related-checkbox" id="related-checkbox<?php echo $_item->getId() ?>" name="related_products[]" value="<?php echo $_item->getId() ?>" onclick="return bt_itemClick('<?php echo $_item->getId() ?>');" style="display:none;"/>
+						</span>
+					<?php else: ?>
+						<span class="">&nbsp;</span>
+					<?php endif; ?>
+					&nbsp;&nbsp;
+					<div class="product-accessories-price"><?php echo $this->getPriceHtml($_item) ?></div>
+				  </div>
+				</div>
+				</li>
+				
+			<?php endforeach ?>
+		</ol>
+		
+		
+		
+	</div>
+	<table>
+			<tr>
+				<td style="display:none;">
+					<table cellspacing="0" cellpadding="0" style="CURSOR: default;">
+						<tr>
+							<?php $_item = $this->_thisProduct; $__btPrice = Mage::app()->getStore()->convertPrice($__TH->getPrice($_item, $_item->getFinalPrice(), $__simplePricesTax)); ?>
+							<td id="__bt_product_<?php print $_item->getId() ?>_TD">
+								<div class="product-images" style="WIDTH: 130px;">
+									<a href="<?php echo $_item->getProductUrl() ?>">
+										<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(130) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="130" height="130" />									</a>								</div>							</td>
+							<?php $_key = 0; if ($__btCount > 0): ?>
+									<td style="font-size:24px; VERTICAL-ALIGN: middle; text-align:center;" width="25px">+</td>
+							<?php endif; ?>
+							<?php foreach ($_items as $_item): $__btPrice += Mage::app()->getStore()->convertPrice($__TH->getPrice($_item, $_item->getFinalPrice(), $__simplePricesTax)); ?>
+								<td id="__bt_product_<?php print $_item->getId() ?>_TD">
+									<div class="product-images" style="WIDTH: 130px;">
+										<a href="<?php echo $_item->getProductUrl() ?>" target="_blank">
+											<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(130) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="130" height="130" />										</a>									</div>								</td>
+								<?php $_key++; if ($_key < $__btCount): ?>
+									<td style="font-size:24px; VERTICAL-ALIGN: middle; text-align:center;" width="25px">+</td>
+								<?php endif; ?>
+							<?php endforeach ?>
+						</tr>
+					</table>				</td>
+				<td id="__bt_totalPriceTD" style="VERTICAL-ALIGN: middle;">
+
+							<strong><?php echo $this->__('Price for all selected ') ?>:</strong>
+							<span id="__bt_totalPrice" style="padding-left:5px; color:#CC0000; font-weight:bold"><?php print Mage::app()->getStore()->formatPrice($__btPrice); ?></span>
+						
+				
+					<div class="add-to-cart"><button class="form-button button btn-cart" type="button" onclick="bt_addToCart();"><span><?php echo $this->__('Add selected to cart') ?></span></button></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+<!--
+    var bt_IDs = [<?php print $this->_thisProduct->getId(); ?><?php foreach($_items as $_item) print ', ' . $_item->getId(); ?>];
+    var bt_Prices = [<?php print Mage::app()->getStore()->convertPrice($__TH->getPrice($this->_thisProduct, $this->_thisProduct->getFinalPrice(), $__simplePricesTax)); ?><?php foreach($_items as $_item) print ', ' . Mage::app()->getStore()->convertPrice($__TH->getPrice($_item, $_item->getFinalPrice(), $__simplePricesTax)); ?>];
+    var __bt_AnimSpeed = 15 / (1 + 4 * ($_.ie ? 1 : 0));
+
+    if (typeof(opConfig) != 'undefined'){
+        opConfig.oldReloadPrice = opConfig.reloadPrice;
+        opConfig.reloadPrice = function(){
+            opConfig.oldReloadPrice();
+            if (typeof(bt_Prices) != 'undefined'){
+                bt_Prices[0] = optionsPrice.productPrice + price;
+                __bt_calculatePrice();
+            }
+        }
+    }
+//-->
+</script>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('#__bt_Content span.check-action').click(function(){
+			if($(this).hasClass('check')){
+				$(this).parent('.checkbox-container').children('input').attr("checked", true);
+				var id = $(this).parent('.checkbox-container').children('input').attr('id');
+				id = id.split("related-checkbox");
+				bt_itemClick(id[1]);
+				$(this).removeClass('check');
+				$(this).addClass('checked');
+			}else if($(this).hasClass('checked')){
+				$(this).parent('.checkbox-container').children('input').attr("checked", false);
+				var id = $(this).parent('.checkbox-container').children('input').attr('id');
+				id = id.split("related-checkbox");
+				bt_itemClick(id[1]);
+				$(this).removeClass('checked');
+				$(this).addClass('check');
+			}		
+		});
+	
+	});
+</script>
+
+<?php
+	endif;
+?>
+<?php
+    //Mage::app()->getStore()->convertPrice($__TH->getPrice($this->_thisProduct, $this->_thisProduct->getFinalPrice(), $__simplePricesTax));
+?>

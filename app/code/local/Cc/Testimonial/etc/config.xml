@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ /***************************************
+ *         MAGENTO EDITION USAGE NOTICE *
+ *****************************************/
+ /* This package designed for Magento COMMUNITY edition
+ * This extension is only for developers as a technology exchange
+ * Based on EasyTestimonial_v1.5.8 by mage-world.com
+ * Fixed the bug that when compilation has been enabled, the testimonial tab in the backend will be blank page.
+ *****************************************************
+ * @category   Cc
+ * @package    Cc_Testimonial
+ * @Author     Chimy
+ */
+-->
+<config>
+    <modules>
+        <Cc_Testimonial>
+            <version>0.1.3</version>
+        </Cc_Testimonial>
+    </modules>
+    <frontend>
+        <routers>
+            <testimonial>
+                <use>standard</use>
+                <args>
+                    <module>Cc_Testimonial</module>
+                    <frontName>testimonial</frontName>
+                </args>
+            </testimonial>
+        </routers>
+        <layout>
+            <updates>
+                <testimonial>
+                    <file>testimonial.xml</file>
+                </testimonial>
+            </updates>
+        </layout>
+	<translate>
+	    <modules>
+		<Cc_Testimonial>
+		    <files>
+			<default>Cc_Testimonial.csv</default>
+		    </files>
+		</Cc_Testimonial>
+	    </modules>
+	</translate>	
+    </frontend>
+    <admin>
+        <routers>
+	    <testimonial>
+		    <use>admin</use>
+		    <args>
+			    <module>Cc_Testimonial</module>
+			    <frontName>testimonial_admin</frontName>
+		    </args>
+	    </testimonial>
+        </routers>
+    </admin>
+    <adminhtml>
+		<translate>
+		    <modules>
+			<Cc_Testimonial>
+			    <files>
+				<default>Cc_Testimonial.csv</default>
+			    </files>
+			</Cc_Testimonial>
+		    </modules>
+		</translate>	
+		<menu>
+		    <testimonial module="testimonial">
+			<title>Testimonials</title>
+			<sort_order>71</sort_order>               
+			<children>
+			    <items module="testimonial">
+				<title>Manage Testimonials</title>
+				<sort_order>0</sort_order>
+				<action>testimonial_admin/adminhtml_testimonial</action>
+			    </items>		    
+			</children>
+		    </testimonial>
+		</menu>
+		<acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+						<Cc_Testimonial>
+							<title>Testimonial Module</title>
+							<sort_order>10</sort_order>
+						</Cc_Testimonial>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <cc_testimonial>
+                                            <title>Hello Magento Testimonial</title>
+                                        </cc_testimonial>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>		
+		<layout>
+			<updates>
+				<testimonial>
+					<file>testimonial.xml</file>
+				</testimonial>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <testimonial>
+                <class>Cc_Testimonial_Model</class>
+                <resourceModel>testimonial_mysql4</resourceModel>
+            </testimonial>
+            <testimonial_mysql4>
+                <class>Cc_Testimonial_Model_Mysql4</class>
+                <entities>
+                    <testimonial>
+                        <table>testimonial</table>
+                    </testimonial>
+                    <testimonial_store>
+                        <table>testimonial_store</table>
+                    </testimonial_store>                    
+                </entities>
+            </testimonial_mysql4>
+        </models>
+        <resources>
+            <testimonial_setup>
+                <setup>
+                    <module>Cc_Testimonial</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </testimonial_setup>
+            <testimonial_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </testimonial_write>
+            <testimonial_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </testimonial_read>
+        </resources>
+        <blocks>
+            <testimonial>
+                <class>Cc_Testimonial_Block</class>
+            </testimonial>
+        </blocks>
+        <helpers>
+            <testimonial>
+                <class>Cc_Testimonial_Helper</class>
+            </testimonial>
+        </helpers>
+    </global>
+    <default>
+		<cc_testimonial>
+			<general>
+				<enable>0</enable>
+				<maxword>30</maxword>
+				<delay>4000</delay>
+				<width>200</width>
+				<height>200</height>
+				<slider>fadeZoom</slider>
+				<total>5</total>
+			</general>
+		</cc_testimonial>
+    </default>    
+</config>

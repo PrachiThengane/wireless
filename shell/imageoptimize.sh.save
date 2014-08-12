@@ -1,0 +1,23 @@
+#!/bin/bash
+#Losslessly optimize product images and skin images
+#JPEG and PNG only
+#Created on 30-05-2014
+#Author: Chris Williams
+#Version 1.0
+
+#START
+
+MDAIMGDIR="/home/magento/media/catalog/"
+SKNIMGDIR="/home/magento/skin/frontend/default/w1lightinthebox/images/"
+
+find $SKNIMGDIR -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+find $MDAIMGDIR -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+echo "Start Optimize of JPEG Images in Media Directory"
+find $MDAIMGDIR -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+
+find $SKNIMGDIR -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+
+find $MDAIMGDIR -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+find $MDAIMGDIR -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+
+#END

@@ -1,0 +1,85 @@
+<HTML>
+<BODY>
+<TABLE WIDTH=100% CELLPADDING=5 BORDER=1>
+<TD WIDTH=60%>
+<FONT FACE=ARIAL SIZE=5>
+<I><B>iriver</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my iriver is faulty? Who do i contact?</B>
+<BR><BR>
+<I>You can contact iriver direct via the following details:</I>
+</FONT>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+
+<P>Email:<A HREF=http://www.iriver.com/html/etc/contact01.asp> Contact Iriver</A></P>
+
+Before contacting iriver, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Iriver.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Sound quality is not satisfactory.</I></B></FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<P> You may feel that the sound quality is not satisfactory under the following conditions.</P>
+<UL>
+<LI>1. Objective reason:
+</UL>
+<UL>
+<LI>If the MP3 file is created from low-level of audio features. Even the same MP3 file can have a different sound quality depending on the recording method.
+<LI>MP3 file use the loss compression method. It is normal that MP3 has inferior quality than the general audio file. Higher bit rate of MP3 file or WMA file give better output sounds than the lower bit rate of them. But high bit rate files are using much more power than the low bit rate one.
+</UL>
+<UL>
+<LI>2. Subjective reason:
+</UL>
+<UL>
+<LI>Each individual has a different criterion for the sound quality. Some people like strong bass while others don't. Measurement of the sound quality can be described by the S/N mechanically. The maximum S/N for CD recording is 90dB. iriver supports 90dB S/N, which ensures the sound output that is almost corresponds to the recording quality.</P>
+</UL>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B><I>Song title is not displayed but the audio track number is displayed.</I></B></FONT>
+<P>iriver can display the song title information on the LCD only when the file contains it. The MP3 file can contain the wrong tag contents, or the normal audio CD can be displayed in such a way in iMP model since no song information is available. To correct this problem, edit the tag information in the MP3 file, or burn the audio CD after setting the CD-text function in the iMP model.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B><I>What is a tag? How does it to be displayed?</I></B></FONT>
+<P>A tag is the format that saves the title, artist and album information in the MP3 file and displays it on the MP3 player. iriver supports up to 60 characters (including space character) regardless two bytes or one byte languages. If you set Tag display off, the file name will be displayed.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B><I>If I insert an adaptor while running the player with a battery, the player is turned off.</I></B></FONT> 
+<P>iriver is designed to shut the power off if the adaptor is inserted for the purpose of protecting the battery lifespan. On the contrary, if you disconnect the adaptor while running the player with an adaptor, the player will also be turned off. Sometimes, the player may not be turned off due to the circuit charging status. We recommend you to turn the power off using the Stop key when connecting or disconnecting the adaptor, or press the Play key after connecting or disconnecting the adaptor. If you set the Resume On, playback back will start from the stopped position.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B><I>Radio reception is too poor.</I></B></FONT> 
+<P>Radio reception sensitivity varies according to the area, and certain level of interference is expected on the move. Especially, radio reception can fail in the weak frequency sensitivity area. The car stereo or the general component system uses the fixed antenna. Therefore, it can catch the radio frequency more sensitively than the portable device like iriver that uses the earphone (remote controller) as an antenna. If you think the player provides inferior radio reception sensitivity than other portable radio products, please contact the shop where you get the player.</P>
+<BR><BR>
+</FONT></TD>
+</TR>
+</TABLE>
+
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your iriver, please click <A HREF=http://www.iriver.com/html/support/faq/sufq_list.asp>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For tutorials and troubleshooting tips relating to your iriver, please click <A HREF=http://www.iriver.com/html/ask/ask01.asp>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For complete warranty terms and conditions relating to your iriver, please click <A HREF=http://www.iriver.com/html/support/warranty/suwa_index.asp>
+ Here</A></B></FONT>
+ <BR><BR>
+
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

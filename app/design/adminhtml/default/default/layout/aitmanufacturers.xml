@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <aitmanufacturers_admin_adminhtml_aitmanufacturers_index>
+        <reference name="content">
+            <block type="aitmanufacturers/adminhtml_aitmanufacturers" name="aitmanufacturers" template="aitmanufacturers/manufacturers.phtml">
+	            <block type="aitmanufacturers/adminhtml_store_switcher" name="store_switcher" as="store_switcher">
+	            	<action method="setUseConfirm"><params>0</params></action>
+	            </block>
+            </block>
+        </reference>
+    </aitmanufacturers_admin_adminhtml_aitmanufacturers_index>
+    <aitmanufacturers_admin_adminhtml_aitmanufacturers_edit>
+    	<update handle="editor"/>
+    </aitmanufacturers_admin_adminhtml_aitmanufacturers_edit>
+</layout>
+<!--
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/design/adminhtml/default/default/layout/aitmanufacturers.xml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+-->

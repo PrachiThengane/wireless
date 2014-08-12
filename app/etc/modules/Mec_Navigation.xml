@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mec_Navigation>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mec_Navigation>
+	</modules>
+</config>

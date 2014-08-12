@@ -1,0 +1,41 @@
+﻿/* -------------- 12/04/2010 Subset of W1O.css - Tuong ----------------------- */
+body
+{
+	background-color:White;
+	font-family:Calibra, Arial, Helvetica, Sans-Serif;
+	font-size:12px;
+	font-weight:normal;
+	letter-spacing:normal;
+	text-transform:none;
+	word-spacing:normal;
+}
+
+A:link	{	
+	text-decoration:	none;
+	}	
+		
+A:visited	{	
+	text-decoration:	none;
+	}	
+		
+A:active	{	
+	text-decoration:	none;
+	}	
+		
+A:hover	{	
+	text-decoration:	underline;
+	}
+
+.promo_body {
+	font-size:12px;
+}
+
+.promo_code {
+	font-weight:bold;
+	font-size:14px;
+	color:#F00;
+}
+
+.promo_unsubscribe {
+	font-size:10px;
+}

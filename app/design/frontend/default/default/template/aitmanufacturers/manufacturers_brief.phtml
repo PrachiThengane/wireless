@@ -1,0 +1,45 @@
+<?php
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/design/frontend/default/default/template/aitmanufacturers/manufacturers_brief.phtml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+?>
+<?php
+/**
+* @copyright  Copyright (c) 2009 AITOC, Inc. 
+*/
+?>
+<?php $manufacturers = $this->getItems() ?>
+<?php $i=1; ?>
+<?php $showBriefIcons = Mage::getStoreConfig('catalog/aitmanufacturers/manufacturers_show_brief_image', Mage::app()->getStore()->getId()); ?>
+<?php if (count($manufacturers)): ?>
+<div class="block block-poll">
+    
+    <div class="block-title">
+        <strong style="background-image:none;"><span><?php echo $this->__('Brands') ?></span></strong>
+    </div>
+    
+    <div class="block-content">
+    
+        <ol>
+        <?php foreach ($manufacturers as $manufacturer): ?>
+            <li class="item <?php echo ($i%2)?'odd':'even'; ?>">
+                <p class="product-name">
+                	<?php if($showBriefIcons && $manufacturer->getListImage() && $manufacturer->getShowBriefImage()){ ?><a href="<?php echo $manufacturer->getUrl() ?>" style="text-decoration:none;"><img src="<?php echo Mage::helper('aitmanufacturers/image')->getIconUrl($manufacturer->getListImage()) ?>" alt="<?php echo $this->htmlEscape($manufacturer->getManufacturer()) ?>" style="vertical-align:middle;" /></a> <? } ?>
+                	<a href="<?php echo $manufacturer->getUrl() ?>"><?php echo $this->htmlEscape($manufacturer->getManufacturer()) ?></a></p>
+            </li>
+            <?php $i++; ?>
+        <?php endforeach ?>
+        </ol>    
+    
+        <?php if ($this->getTotal() > count($manufacturers)): ?>
+            <div class="actions"><a href="<?php echo Mage::helper('aitmanufacturers')->getManufacturersUrl() ?>" title="<?php echo $this->__('Full list of Brands')?>"  style="float:none;"><?php echo $this->__('View All')?></a></div>
+        <?php endif ?>
+    
+    </div>
+</div>
+<?php endif ?>

@@ -1,0 +1,93 @@
+.productquestions-container{
+    list-style-type:none;
+    background-color:#fff;
+    margin:0;
+    text-align:left;clear: both;
+}
+.productquestions-container h2 {
+    font: 16px Georgia;
+    margin: 8px 0 7px;
+    text-transform: none;
+}
+.productquestions-container .pager {
+    background:url("../images/aw_productquestions/bkg_toolbar.gif") repeat-x scroll 0 100% #FFFFFF;
+    border-top:1px solid #E2E2E2;
+    font-size:11px;
+    padding:4px 8px;
+    text-align:left;
+    height:19px;
+}
+.productquestions-container .pager .amount {
+    float:left;
+    margin:0;
+}
+.productquestions-container .pager select {
+    font-size:11px;
+}
+.productquestions-container .pager .limiter {
+    float:right;
+}
+.productquestions-container .pager .limiter img {
+    margin-left:5px;
+    vertical-align:middle;
+}
+.productquestions-container li.record {
+    margin-top:10px;
+}
+.productquestions-container li.record ul{
+    padding:10px;
+	font:11px/1.62 verdana;
+}
+.productquestions-container li.record ul li{
+    padding:5px;
+}
+.productquestions-container li.record ul li.reply{
+    background-color:#FAF7EE;
+    margin-left: 30px;
+}
+.productquestions-container li.record ul li.helpfulness{
+    background-color:#F1ECDB;
+    text-align: right;
+    margin-bottom: 4px;
+}
+.productquestions-container p {
+
+}
+.productquestions-container .form-field {
+    margin: 0 0 8px;
+}
+.productquestions-container label {
+    color:#666666;
+    font-weight:bold;
+}
+.productquestions-container .pager label {
+    font-weight:normal;
+    color:inherit;
+}
+.productquestions-container label.required em {
+    color:#EB340A;
+    font-style:normal;
+    margin-left:3px;
+}
+.productquestions-container input {
+}
+.productquestions-container .button-set {
+    border-top:1px solid #E4E4E4;
+    clear:both;
+    margin:8px 0;
+    padding:4px 0;
+    text-align:right;
+}
+.pager:after {
+    display:block;
+    content:".";
+    clear:both;
+    font-size:0;
+    line-height:0;
+    height:0;
+    overflow:hidden;
+    zoom:1;
+}
+#productquestions-form  .form-field input,
+#productquestions-form  .form-field textarea{width:316px;}
+#productquestions-form  .form-field select{width:320px;}

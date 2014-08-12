@@ -1,0 +1,76 @@
+<HTML>
+<BODY>
+
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Traxxas</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Traxxas Product is faulty? Who do i contact?</B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><I>You can contact Traxxas direct via the following details:</I>
+</FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<BR><BR>
+Call: 0011 972-265-8000
+<BR><BR>
+Customer Support e-mail: <A HREF=support@Traxxas.com>support@Traxxas.com</A>
+<BR><BR>
+Before contacting Traxxas, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<BR><BR><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Traxxas Product.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>When I turn the steering wheel on my transmitter, I hear a clicking sound and the wheels on my car don't turn freely. What could be wrong?</I></B>
+</FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<P>Sounds like you may have a stripped servo gear. You will want to open up your servo by unscrewing the 4 screws on the bottom of the servo case. You will then be able to pop off the top of the servo and check out the gears inside. If you determine that you have a stripped gear, you can replace the gear set with Traxxas part #2010, servo gear set.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>What is "nitro" and what percentage of "nitro" should I run in my engine?</I></B>
+</FONT>
+<P>Nitromethane is the ingredient in the fuel that ignites inside the engine. A higher "nitro" content generally equates to better performance. Engines are designed to run best within a range of nitro percentages. How the engine is ported, the size of the combustion chamber and other factors determine how much nitro can be efficiently used in the engine. The TRX 2.5R Racing Engine responds exceptionally well to 33% nitro, returning cooler temps, more power, and a smoother throttle response. For those who want to run higher nitro, 33% is the optimum nitro percentage for Traxxas engines. Increasing the nitro beyond 33% can introduce the need for engine modifications (ports, head shimming, etc.) to avoid starting and tuning difficulties. There are limits to how much nitro an engine can effectively use to make more power. The Pro.15 responds well to 20% nitro Top Fuel. 33% nitro is perfectly safe for the Pro.15 but extra care should be taken to richen the fuel mixture, monitor the tuning, and watch for overheating in hot climates.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>How can I get more rear traction from my model?</I></B>
+</FONT>
+<P>To soften your rear suspension for more traction, you can use a softer (lower spring rate) spring. Installing a softer spring requires thinner viscosity shock oil. You will also want to make sure you are using at least a three-hole piston. The more holes in your piston, the less pack your shock will have. Setting up your shocks for optimum performance for your running conditions is all about experimentation. There is no set formula or rule to determine correct settings for your vehicle. When making changes to your set-up, you should keep a log of the changes you make and make only one change at a time, testing after each change to check the vehicle's performance.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>My car starts to go as soon as I plug in my battery pack. What should I do?</I></B>
+</FONT>
+<P>Make sure that you always have your transmitter turned on before you plug in your battery pack. If you send power to the receiver before you send it a signal, the receiver will pick up stray signals and cause your model to act erratically. If you have your transmitter turned on when you plug in your battery pack and the car still takes off immediately, you will need to re-center your throttle servo. Basically, all you do is unscrew the mechanical speed control from your throttle servo. With your transmitter on, trim settings at zero, and batteries plugged in, adjust the speed control to a neutral position and screw the speed control back onto the servo making sure not to bump the speed control out of its neutral position.</P> 
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Traxxas product, please click <A HREF=http://www.traxxas.com/support/index.php?action=artikel&cat=126&id=431>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For full support features, including troubleshooting tips, diagrams and owners manuals for your Traxxas product, please click <A HREF=http://www.traxxas.com/support/index.php>
+ Here</a></B>  
+ </FONT>
+
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

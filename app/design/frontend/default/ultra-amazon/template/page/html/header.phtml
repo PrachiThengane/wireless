@@ -1,0 +1,81 @@
+<div class="header-container">
+    <div class="header">
+		<div class="nav-cross-shop">
+        <?php if ($this->getIsHomePage()):?>
+        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+		<div class="right-links">        
+          <ul class="links">
+			<li><a title="Your MEC Mart" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>customer/account/" class="first">Your MEC Mart</a></li>
+			<li><a title="Today`s Deals" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>multipledeals/index/list/" >Today`s Deals</a></li>
+			<li><a title="Hot Searches" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>catalogsearch/term/popular/">Hot Searches</a></li>
+			<li ><a title="Advanced Search" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>catalogsearch/advanced/" class="last">Advanced Search</a></li>
+		  </ul>
+		  
+		  <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+		  
+		</div>
+		</div>
+        <div class="quick-access">
+            <div class="nav-bar-outer">
+
+<div class="nav-container">
+	<div class="menucontent">
+		<div class="leftnavi" id="header-menuha">
+				
+			<div class="index_left_one">
+				<span class="menubutton-wrapper">
+					<span class="menubutton" id="closeall">Shop by <br><strong>Department</strong></span>
+				</span>
+				<div style="display:none;"  id="header-menuha-son">
+					<?php echo $this->getChildHtml('topMenu2') ?>
+				</div>
+			</div>
+
+		</div>		
+		<?php //echo $this->getChildHtml('topMenu') ?>
+	</div>	
+</div>
+
+
+            </div>
+			
+
+			<div class="right-links">
+			<?php echo $this->getChildHtml('mec.advancedsearch') ?>
+				<div class="links">
+				  <?php echo $this->getChildHtml('topLinks') ?>
+				  
+				  <div class="menu-wishlist-link" id="menuWishlistWrapper">
+							<div id="wishlist-li">
+								<?php echo $this->getChildHtml('menuwishlistLinks') ?>
+							</div>
+							<div id="wishlist-content" style="display:none;">
+								<?php echo $this->getChildHtml('wishlisttop') ?>
+							</div>
+						</div>
+						<?php echo $this->getChildHtml('loginLinks') ?>
+						
+						<div class="menu-cart-link" id="menuCartWrapper">
+							<div id="cart-li">
+								<?php echo $this->getChildHtml('menucartLinks') ?>
+							</div>
+							<div id="cart-content" style="display:none;">
+								<?php echo $this->getChildHtml('carty_sidebar') ?>
+							</div>
+						</div>
+				  
+				  
+				</div>  
+			</div>  
+        </div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    </div>
+</div>
+
+
+<?php echo $this->getChildHtml('home_page_header_block'); ?>
+
+

@@ -1,0 +1,62 @@
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1731718-1']);
+  _gaq.push(['_setDomainName', 'wireless1.com.au']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<div class="header-container">
+    <div class="header">
+		<div class="nav-cross-shop">
+        <?php if ($this->getIsHomePage()):?>
+        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img width="345px" height="50px" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>"/></a></h2>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img class="logoimg" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+		<div class="right-links">        
+		  
+		 
+			<div class="quick-access">
+				<div class="links">
+						<?php echo $this->getChildHtml('mec.advancedsearch') ?>
+						
+						<?php //echo $this->getChildHtml('topSearch') ?>
+						<?php //echo $this->getChildHtml('topLinks') ?>
+						<?php echo $this->getChildHtml('header-terms') ?>
+				</div>
+										
+				<div class="menu-cart-link" id="menuCartWrapper">
+					<div id="cart-li">
+						<?php echo $this->getChildHtml('menucartLinks') ?>
+					</div>
+					<div id="cart-content" style="display:none;">
+						<?php echo $this->getChildHtml('carty_sidebar') ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="nav-bar-outer">
+				
+		<?php echo $this->getChildHtml('topMenu') ?>
+
+		</div>
+					
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    </div>
+</div>
+<?php //echo $this->getChildHtml('topMenu') ?>
+<!--<div class="home_page_header_block">
+<?php echo $this->getChildHtml('home_page_header_block'); ?>
+</div>
+-->
+

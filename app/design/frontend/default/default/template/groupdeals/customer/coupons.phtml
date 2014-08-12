@@ -1,0 +1,70 @@
+<?php        	
+	$itemsCollection = $this->getItemsCollection();
+?>
+<div class="my-account">
+	<div class="page-title">
+		<h1><?php echo $this->__('My Coupons') ?></h1>
+	</div>
+	<?php if(count($itemsCollection)>0): ?>
+
+	<table class="data-table" id="my-coupons-table" >
+		<thead>
+			<tr>
+				<th><?php echo $this->__('Order #') ?></th>
+				<th><?php echo $this->__('Deal Name') ?></th>
+				<th><?php echo $this->__('Coupon Code') ?></th>
+				<th><?php echo $this->__('Value') ?></th>
+				<!-- <th><?php echo $this->__('Redeem Status') ?></th> -->
+				<th><?php echo $this->__('Coupon Action') ?></th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php 
+			foreach ($itemsCollection as $item) {
+				  $couponsCollection = Mage::getModel('groupdeals/coupons')->getCollection()->addFieldToFilter('order_item_id', $item->getId())->addFieldToFilter('status', 'complete');
+				  $html = '';
+				  if (count($couponsCollection)>0) {
+					  foreach ($couponsCollection as $coupon) {
+						$product = Mage::getModel('catalog/product')->load($item->getProductId());
+						$order = Mage::getModel('sales/order')->load($item->getOrderId());
+						
+						$html .= '<tr>
+									<td>'.$order->getIncrementId().'</td>
+									<td>'.$product->getName().'</td>
+									<td>'.$coupon->getCouponCode().'</td>	
+									<td>'.$this->getValue($item).'</td>			
+									<!-- <td>'.$order->getStatus().'</td> -->
+									<td><a href="'.$this->getUrl('groupdeals/coupons/view', array('coupon_id'=>$coupon->getId())).'">'.$this->__('View').'</a><span class="separator">|</span><a href="'.$this->getUrl('groupdeals/coupons/print', array('coupon_id'=>$coupon->getId())).'" class="link-print" onclick="this.target=\'_blank\';">'.$this->__('Print').'</a></td>            
+								 </tr>';
+					  }
+				  } else {
+					  $product = Mage::getModel('catalog/product')->load($item->getProductId());
+					  $order = Mage::getModel('sales/order')->load($item->getOrderId());
+					  
+					  $html .= '<tr>
+								<td>'.$order->getIncrementId().'</td>
+								<td>'.$product->getName().'</td>
+								<td>Coupon not sent</td>			
+								<td>'.$this->getValue($item).'</td>		
+								<!-- <td>'.$order->getStatus().'</td> -->
+								<td><a href="'.$this->getUrl('sales/order/view', array('order_id'=>$order->getId())).'">'.$this->__('View Order').'</a></td>            
+							 </tr>';
+				  }
+				  
+				  echo $html;
+			 } 
+		?>
+		</tbody>
+	</table>
+	<script type="text/javascript">decorateTable('my-coupons-table')</script>
+
+		
+	<?php else: ?>
+		<p><?php echo $this->__('You didn\'t purchase any coupons.') ?></p>
+	<?php endif ?>
+
+		
+	<div class="buttons-set button-set">
+		<p class="back-link left"><a href="<?php echo $this->getUrl('customer/account') ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+	</div>
+</div>

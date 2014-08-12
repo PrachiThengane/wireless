@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mec_OneStepCheckout>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mec_OneStepCheckout>
+    </modules>
+</config>

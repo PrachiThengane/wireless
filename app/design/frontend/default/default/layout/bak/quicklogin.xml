@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+	
+    	<reference name="top.links">
+            <!--<action method="setTemplate" ifconfig="hm_quicklogin/general/enable"><template>quicklogin/links.phtml</template></action>-->
+			 
+			<block type="core/template" name="quick_login" template="quicklogin/links.phtml" before="cartview_toplink"></block>
+			
+			<action method="addLinkBlock" ifconfig="hm_quicklogin/general/enable"><blockName>quick_login</blockName></action>
+		
+        </reference>
+    </default> 
+</layout> 

@@ -1,0 +1,42 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_AdvancedReviews
+ * @copyright  Copyright (c) 2009-2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<?php if ( $this->canShow() ): ?>
+	<?php if (Mage::helper('advancedreviews')->checkVersion('1.4.0.0')): ?>
+	<li>
+		<label for="recommend_field"><?php echo $this->__('Would you recommend this product to a friend?') ?></label>
+		<div class="input-box">
+            <select name="recommend"  id="recommend_field" class="input-text" style="width: 360px;">
+                <option></option>
+                <?php foreach ( $this->getOptions() as $option ): ?>
+                <option value="<?php echo $option['value'] ?>"><?php echo $this->__($option['label']) ?></option>
+                <?php endforeach ?>
+            </select>
+		</div>
+	</li>
+	<?php else: ?>
+    <div>
+            <label for="recommend_field"><?php echo $this->__('Would you recommend this product to a friend?') ?></label><br />
+            <select name="recommend"  id="recommend_field" style="width: 456px;" >
+                <option></option>
+                <?php foreach ( $this->getOptions() as $option ): ?>
+                <option value="<?php echo $option['value'] ?>"><?php echo $this->__($option['label']) ?></option>
+                <?php endforeach ?>
+            </select>
+    </div>
+	<?php endif; ?>
+<?php endif ?>

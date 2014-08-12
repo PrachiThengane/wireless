@@ -1,0 +1,110 @@
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/quicklogin/style.css')?>" media="screen"/>
+<script type="text/javascript">
+function toggleMemberMenu(flag){
+    var menuContainer = document.getElementById("mMenu");
+    //var titleBg = document.getElementById("member-title-bg");
+    //var bgStart = document.getElementById("member-title-bg-st");
+
+    if(menuContainer.style.display == "none") {
+        menuContainer.style.display = "block";
+        //titleBg.className = "member-title-bg" + flag + "-hov";
+        //bgStart.className = "member-title-bg-st-hov";
+    }else{
+        menuContainer.style.display = "none";
+        //titleBg.className = "member-title-bg";
+        //bgStart.className = "";
+    }
+}
+</script>
+<?php 
+	$allows = Mage::getStoreConfig("hm_quicklogin/general/allow_fields"); 
+	//var_dump(strstr($allows,'accountinformation'));
+?>
+<?php $_links = $this->getLinks(); ?>
+<?php if(count($_links)>0): ?>
+<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+    <?php foreach($_links as $_link): ?>
+    	<?php if($_link->getUrl() == $this->getUrl('customer/account/login')){?>
+				<?php if(!Mage::helper('customer')->isLoggedIn() ):?>
+				<li ><a href="javascript: void(0);" onClick="toggleMemberMenu('2'); return false;"><?php echo $this->__('Login') ?></a></li>
+
+				<div id="mMenu" class="login-menu" style="display: none;">
+					<form id="mini_login_form" action="<?php echo Mage::helper('customer')->getLoginPostUrl() ?>" method="post">
+					    <div>
+					            <p style=" margin-top: 5px;">
+					            	<div><?php echo $this->__('Email')?>: </div>
+					            	<input id="email" type="text" class="input-text required-entry" name="login[username]" value="<?php echo Mage::helper('catalogSearch')->getEscapedQueryText() ?>" title="<?php echo $this->__('Email Address') ?>" />
+					            </p>
+					            <p>
+					            	<div><?php echo $this->__('Password')?>: </div>
+									<input id="pass" type="password" class="input-text required-entry validate-password" name="login[password]" value="<?php echo Mage::helper('catalogSearch')->getEscapedQueryText() ?>" />
+								</p>
+					            
+								<div class="click_close">
+									<p style="display:inline;">
+										<input class="pad_ip" type="image" alt="<?php echo $this->__('Login') ?>"/>
+										<span class="pad_cancel"> 
+											<a href="javascript: void(0);" onClick="toggleMemberMenu('2');return false;"><?php echo $this->__('Cancel') ?></a>
+										</span>
+										<div class="clear_both"><span></span></div>
+									</p>	
+									<p>
+									<a href="<?php echo $this->getUrl('customer/account/forgotpassword/') ?>" title="Logout">Forgot Password?</a>
+									</p>
+								</div>
+
+					           <script type="text/javascript">
+					            var searchForm = new Varien.searchForm('mini_login_form', 'email', '<?php echo Mage::helper('catalogSearch')->__('Email Address') ?>');
+					              new Varien.searchForm('mini_login_form', 'pass', '<?php echo Mage::helper('catalogSearch')->__('Password') ?>');
+					          </script>
+					     </div>
+					</form> 
+														
+				</div>
+				
+			<?php endif; ?>
+    		
+    	<?php }else if(($_link->getUrl() == $this->getUrl('customer/account/')) && Mage::helper('customer')->isLoggedIn()){?>
+    		
+    		<li onMouseOver="toggleMemberMenu();" onMouseOut="toggleMemberMenu();" class="log_1"><a href="<?php echo Mage::helper('customer')->getAccountUrl()?>"><?php echo Mage::helper('customer')->__('My Account') ?></a>
+				<ul  id="mMenu" class="member-menu" style="display: none;  width: 160px;">
+					<?php if(strstr($allows,'accountinformation')!=''):?>
+						<li><a href="<?php echo Mage::helper('customer')->getEditUrl()?>"><?php echo Mage::helper('customer')->__('Account Information') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'addressbook')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('customer/address/')?>"><?php echo Mage::helper('customer')->__('Address Book') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'myorder')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('sales/order/history/')?>"><?php echo Mage::helper('customer')->__('My Orders') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'myproductreview')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('review/customer/')?>"><?php echo Mage::helper('customer')->__('My Product Reviews') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mytag')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('tag/customer/')?>"><?php echo Mage::helper('customer')->__('My Tags') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'newletters')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('newsletter/manage/')?>"><?php echo Mage::helper('customer')->__('Newsletter Subscriptions') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mywishlist')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('wishlist/')?>"><?php echo Mage::helper('customer')->__('My Wishlist') ?> (<?php echo Mage::helper('wishlist')->getItemCount()?>)</a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mycompare')!=''):?>
+						<li onclick="popWin('<?php echo Mage::helper('catalog/product_compare')->getListUrl() ?>','compare','width=800,height=600,resizable=yes,scrollbars=yes')"><a href="javascript: voi(0);" onclick="return false;" ><?php echo Mage::helper('catalog')->__('My Compare') ?> (<?php echo Mage::helper('catalog/product_compare')->getItemCount() ?>)</a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mydownload')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('downloadable/customer/products/')?>"><?php echo Mage::helper('customer')->__('My Downloadable Products') ?></a> </li>
+					<?php endif;?>
+					<li class="log_out"><a href="<?php echo Mage::helper('customer')->getLogoutUrl()?>"><strong style="color: #EE382A;"><?php echo Mage::helper('customer')->__('Logout') ?></strong>  </a> </li>
+				</ul>
+			</li>
+    		
+    		
+    		<?php }else{?>
+    		
+    			<li<?php if($_link->getIsFirst()||$_link->getIsLast()): ?> class="<?php if($_link->getIsFirst()): ?>first<?php endif; ?><?php if($_link->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $_link->getLiParams() ?>><?php echo $_link->getBeforeText() ?><a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?></li>
+    	
+    		<?php }?>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

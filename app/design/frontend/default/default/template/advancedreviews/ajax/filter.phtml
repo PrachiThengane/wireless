@@ -1,0 +1,27 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_AdvancedReviews
+ * @copyright  Copyright (c) 2009-2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<input type="hidden" id="proscons">
+<input type="hidden" id="pros-state-id" name="pros-state" value="<?php echo $this->isProsOpen() ?>" />
+<input type="hidden" id="cons-state-id" name="cons-state" value="<?php echo $this->isConsOpen() ?>" />
+
+<div id="loading-mask" style="display:none;">
+    <p class="loader" id="loading_mask_loader"><img src="<?php echo $this->getSkinUrl('images/ajax-loader-tr.gif',array('_area'=>'adminhtml')) ?>" alt="<?php echo Mage::helper('adminhtml')->__('Loading...') ?>" /><br /><?php echo Mage::helper('adminhtml')->__('Please wait...') ?></p>
+</div>
+<div id="advancereviews-filters">
+    <?php echo $this->getChildHtml('advancedreviews_ajax-proscons'); ?>
+</div>

@@ -1,0 +1,80 @@
+<HTML>
+<BODY>
+
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Navman</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Navman is faulty? Who do i contact?</B>
+<BR><BR>
+<I>You can contact Navman direct via the following details:</I>
+</FONT>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<P>Customer Care and Support:</P>
+<P>Tel : +61 2 9879 9000</P>
+<P>Address:</P>
+Suite 2, 408 Victoria Road
+<BR>
+PO Box 479
+<BR>
+Gladesville NSW 2111
+<BR><BR>
+<IMG SRC=Map/Map.jpg border=1 ALT=MAP>
+<BR><BR> 
+Before contacting Navman, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<BR><BR><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Navman.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>I cannot get a GPS fix - what could be wrong?</I></B></FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<OL>
+<LI>Make sure the GPS has a clear view of the sky (try to be away from trees, houses, buildings, anything that could obscure your view from the sky), including when mounting the GPS receiver on the supplied windshield mounting bracket to the windscreen of your car.
+<LI>Make sure you stay stationnary.
+<LI>Power the unit from the cigarette lighter socket to ensure no low battery issues.
+<LI>If you are in a car, make sure that your car does not have an athermic (heat reflecting) windshield, it cuts out all electromagnetic signals such as the GPS signals; you will then need to purchase an External Antenna from our Online Store.
+<lI>It may take up to 5-10 minutes for the GPS to get a "first fix" - this is the time when it calibrates itself and locates the satellites. The information it discovers in this time is remembered, and from that point on it should take about 2-3 minutes on average to get a fix (after it is switched on). You will find that if you go to another country such as the USA your GPS will take upto 15 minutes to recalibrate itself and redo a first fix.
+</OL>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I> How do I know if my windshield is athermic?</I></B></FONT>
+<P>An easy test is to take the GPS receiver out of your car, go in the GPS status menu to check the GPS signal strength; when the signal is strong enough (3-5 green satellites), take the GPS receiver inside the car and close the windows. If the signal strength drops (No green satellites, only a couple of yellow ones), then your windshield is athermic and you need to purchase an external aerial.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I> Where will and where will it not work?</I></B></FONT>
+<P>As long as the NAVMAN GPS receiver has a clear view of the sky and is held with the antenna orientated towards the sky (vertically), it will work anywhere on Earth, accurately reporting your current Latitude, Longitude, heading and speed. However, in order for the GPS data to be correctly displayed on a map, you will need to have the relevant map loaded in to your handheld. For details of the maps supplied with the NAVMAN SmartPath software, please see the software detail pages. Please note, some car manufacturers are using athermic heat reflecting windshields which also reflect the GPS signal, blocking it from entering the car. Here are a few examples, be aware that manufactures can change the windscreen type during the life of a vehicle. BMW 3 SERIES BMW 5 SERIES BMW 7 SERIES BMW X5 CITROEN PICASSO CITROEN C5 CITROEN XSARA CITROEN XANTIA FORD GALAXY FORD MONDEO FIAT MULTIPLA MERCEDES W220-S CLASS MERCEDES VANEO MERCEDES E-CLASS 2004 PEUGEOT 206 PEUGEOT 306 PEUGEOT 307 PEUGEOT 607 RENAULT TRAFFIC RENAULT LAGUNA RENAULT CLIO RENAULT MASTER RENAULT KANGOO RENAULT SCENIC RENAULT ESPACE RENAULT MEGANE RENAULT SAFRANE SAAB 9-5 2004 VAUXHALL/OPEL/HOLDEN ASTRA VAUXHALL/OPEL/HOLDEN ZAFIRA VAUXHALL/OPEL/HOLDEN VECTRA The solution to this problem is to use an external antenna if you have a connector for such an antenna on your GPS, or a re-radiating antenna which will re-transmit the GPS signal inside the car and which does not require an additional connector on the GPS.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>My software sometimes freezes, or stops completely. What could be wrong?</I></B></FONT>
+<P>There are occassions when SmartST will need to write information to the SD card. Please ensure that the SD card lock is not set to the "Locked" position. This lock can be found along one of the sides of the SD card. Another problem is that some cheap cards have very slow transfer rates, which will effect the information transfer speeds. If you have one of these cards, please arrange for a refund/exchange with your retailer. If possible, try get as quick an SD card as possible.</P>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Navman, please click <A HREF=http://ems00801.egain.net/system/web/view/selfservice/controller.jsp?CONFIGURATION=1022&PARTITION_ID=1&CMD=STARTPAGE&LANGUAGE=en&COUNTRY=au>
+ Here</A></B></FONT>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

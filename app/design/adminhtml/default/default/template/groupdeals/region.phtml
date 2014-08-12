@@ -1,0 +1,23 @@
+<?php if (isset($_GET['country'])): ?>
+	<?php if ($_GET['country']!=''): ?>
+		<?php $regionCollection = Mage::getModel('directory/region_api')->items($_GET['country']); ?>
+		<?php if (count($regionCollection)>0): ?>
+			<select name="region" id="region" class="">
+				<option value=""></option>
+				<?php
+					foreach($regionCollection as $region) {
+						$regionModel = Mage::getModel('directory/region')->load($region['region_id']);
+						$region_name = $regionModel->getName();
+				?>
+						<option value="<?php echo $region_name ?>" ><?php echo $region_name ?></option>
+				<?php
+					}
+				?>
+			</select>
+		<?php else: ?>
+			<input type="text" class="input-text required-entry" value="" name="region" id="region">
+		<?php endif; ?>
+	<?php else: ?>
+		<input type="text" class="input-text required-entry" value="" name="region" id="region">
+	<?php endif; ?>
+<?php endif; ?>

@@ -1,0 +1,57 @@
+
+/* Product View */
+.main-countdown { padding:45px 50px 0px 50px; background:url(../images/deal_bg.png) no-repeat; width:232px; height:88px; margin-bottom:5px; z-index:-1; text-align:center; }
+.main-countdown .countdown-container { width:228px; height:66px; }
+.main-countdown .countdown-container .js-countdown { font-size:40px } 
+.main-countdown .countdown-container .js-countdown-days { font-size:27px; margin-top:10px; } 
+
+/* Sidebar */
+.block-deals .block-content #block-deals .item .product-image { width:60px; margin-right:7px; }
+.block-deals .block-content #block-deals .item .product-details .product-name { line-height:120%; }
+.block-deals .block-content #block-deals .item .product-details .product-name a { font-size:11px; }
+.block-deals .block-content #block-deals .item .product-details .deal-qty b { color:#a71d1d; }
+.block-deals .block-content .actions { font-size:11px; }
+.block-deals .block-content .actions .separator { float:left;padding:0px 5px 0px 5px; }
+.block-deals .block-content .price-box { margin:0px; }
+.block-deals .block-content .price-box .old-price { display:none; }
+.block-deals .block-content .price-box .special-price .price-label { display:none; }
+.block-deals .block-content .price-box .special-price .price { font-size:12px; color:#333333 !important; }
+
+/* Page View */
+.page-countdown { padding:6px 0px 0px 476px; background:url(../images/page_bg.png) no-repeat; width:205px; height:44px; margin-bottom:5px; z-index:-1; }
+.page-countdown a { text-decoration:none; }
+.page-countdown .countdown-container { width:228px; height:66px; }
+.page-countdown .countdown-container .js-countdown { font-size:28px; padding-left:31px; } 
+.page-countdown .countdown-container .js-countdown-days { font-size:22px; margin-top:2px; } 
+
+/* Sidebar Countdown */
+.block-countdown { border:0px; margin-bottom:14px;border:1px solid #DDDDDD;height:440px;background:#FFFFFF; }
+.block-countdown .block-title { /*-background:url(../images/sidebar_hd.png) no-repeat;*/ -width:212px; border-bottom:2px solid #FF8000;}
+.block-countdown .block-title span { -visibility:hidden;font-size:14px;color:#006795; }
+.block-countdown .block-content { -background:url(../images/sidebar_ct.png) repeat-y; -width:200px; padding:0px 10px 0px 10px; text-align:center; height:212px;}
+.block-countdown .block-content a { text-decoration:none; }
+.block-countdown .block-content .right-container  .product_name { font-weight:bold; font-size:12px; color:#666666;/*position:absolute*/;left:16px;bottom:142px;text-align:left; }
+.block-countdown .block-content .product_image { margin: 6px 16px 6px 16px; }
+.block-countdown .block-content .product_image_big { float:left; margin-left:17px; margin-right:7px; margin-bottom:7px; }
+.block-countdown .block-content .container { text-align:left;padding:4px 0px 4px 0px; }
+.block-countdown .block-content .right-container { text-align:left; padding:0px; margin-top: 10px; }
+.block-countdown .block-content .right-container h3 { color:#FB6834; font-size:16px; }
+.block-countdown .block-content .right-container h5.old_price { text-decoration:line-through; font-size:13px;}
+.block-countdown .block-content .right-container p { color:#a71d1d; font-family:Arial; font-size:13px;left:15px;/*position:absolute*/;bottom:36px; }
+.block-countdown .block-content .right-container p b { color:#000000; }
+.block-countdown .block-content .countdown {
+    left: 14px;
+    padding: 8px 0 0;
+    /*position: absolute;*/
+    text-align: left;
+    bottom: 48px; }
+.block-countdown .block-content .js-countdown { font-size:25px; vertical-align: top; } 
+.block-countdown .block-content .js-countdown-days { font-size:20px; } 
+.block-countdown .block-footer { -background:url(../images/sidebar_ft.png) no-repeat; width:197px; height:8px; }
+
+.products-list .countdown-container { width:138px; height:40px; }
+.products-list .countdown-container .js-countdown { font-size:30px; line-height:100%; }
+.products-list .countdown-container .js-countdown-days { margin-top:2px; font-size:17px; line-height:100%; }
+.products-grid .countdown-container { width:138px; height:40px; }
+.products-grid .countdown-container .js-countdown { font-size:30px; line-height:100%; }
+.products-grid .countdown-container .js-countdown-days { margin-top:2px; font-size:26px; line-height:100%; }

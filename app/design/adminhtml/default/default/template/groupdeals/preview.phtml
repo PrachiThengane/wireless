@@ -1,0 +1,21 @@
+<style type="text/css">
+button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
+button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
+button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
+button.button span { display:block; height:19px; border:1px solid #de5400; background:#f18200; padding:0 8px; font:bold 12px/19px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
+button.button span span { border:0; padding:0; }
+</style>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body style="width:443px; font-size:12px; font-family:Arial;">
+<?php
+	$storeId = $this->getRequest()->getParam('store', 0);
+	$productId = $this->getRequest()->getParam('id');
+?>
+<?php if ($this->getRequest()->getParam('coupon_id', 0)==0): ?>
+<button class="button" onclick="window.location='<?php echo $this->getUrl('groupdeals/adminhtml_groupdeals/pdfpreview').'id/'.$productId.'/store/'.$storeId.'/'; ?>'"><span><span>PDF Preview</span></span></button><br/><br/>
+<?php endif; ?>
+<?php
+	echo $this->getCouponHtml();
+?>
+</body>
+</html>

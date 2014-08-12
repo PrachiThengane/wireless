@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+	<translate>
+	    <modules>
+  			<Cc_Testimonial>
+  			    <files>
+  				<default>Cc_Testimonial.csv</default>
+  			    </files>
+  			</Cc_Testimonial>
+	    </modules>
+		</translate>	
+		<menu>
+		    <testimonial module="testimonial">
+			<title>Testimonials</title>
+			<sort_order>71</sort_order>               
+			<children>
+			    <items module="testimonial">
+				<title>Manage Testimonials</title>
+				<sort_order>0</sort_order>
+				<action>testimonial_admin/adminhtml_testimonial</action>
+			    </items>		    
+			</children>
+		    </testimonial>
+		</menu>
+		<acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+				<Cc_Testimonial>
+					<title>Testimonial Module</title>
+					<sort_order>10</sort_order>
+				</Cc_Testimonial>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <cc_testimonial>
+                                        <title>Hello Magento Testimonial</title>
+                                    </cc_testimonial>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>		
+		<layout>
+			<updates>
+				<testimonial>
+					<file>testimonial.xml</file>
+				</testimonial>
+			</updates>
+		</layout>
+</config>

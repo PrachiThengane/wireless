@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/mec/advanced-catalogsearch.css</stylesheet></action>
+		</reference>
+		<!--
+		<reference name="header">
+			<action method="setTemplate"><template>mec-catalogsearch/header.phtml</template></action>
+		</reference>
+		-->
+		<reference name="header">
+            <block type="core/template" name="mec.advancedsearch" as="mec.advancedsearch" template="mec-catalogsearch/form.mini.phtml"/>
+        </reference>
+	</default>	
+</layout> 

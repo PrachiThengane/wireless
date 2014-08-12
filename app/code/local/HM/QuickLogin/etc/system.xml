@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mageworld translate="label" module="quicklogin">
+            <label>Mage World</label>
+            <sort_order>100</sort_order>
+        </mageworld>
+    </tabs>
+    <sections>
+        <hm_quicklogin>
+            <label>Quick Login</label>
+            <tab>mec</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000001</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="quicklogin">
+                    <label>General Settings</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                             <show_in_store>1</show_in_store>
+                        </enable>   
+                        <allow_fields translate="label">
+                            <label>Select Fields To Display</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>quicklogin/source_fields</source_model>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </allow_fields>                      
+                    </fields>
+                </general>
+            </groups>
+        </hm_quicklogin>
+    </sections>
+</config>

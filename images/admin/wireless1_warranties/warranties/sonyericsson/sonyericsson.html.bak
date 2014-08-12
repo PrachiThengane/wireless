@@ -1,0 +1,92 @@
+<HTML>
+<BODY>
+
+<FONT FACE=ARIAL SIZE=5>
+<I><B>SonyEricsson</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my SonyEricsson Phone or Accessory is faulty? Who do i contact?</B>
+<BR><BR>
+</FONT>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+Please follow the link to contact your nearest <a href=http://www.sonyericsson.com/spg.jsp?cc=au&lc=en&ver=4000&template=ps5&zone=> SonyEricsson Service Centre</a> for Faulty and Warranty issues.
+<BR><BR>
+Before contacting SonyEricsson, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<BR><BR><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><U>Frequently Asked Questions relating to your SonyEricsson Phone and Accessories.</U></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>How do I send MMS messages with my phone?</I></B>
+</FONT>
+
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<P>To be able to send and receive MMS messages, you need to have MMS settings in your phone. These settings may already be in your phone when you buy it, or you can use the Phone setup on this site to receive the settings in an SMS message.</P>
+<P>For further instructions about this, and how to compose and send MMS messages, please see the Getting Started guides, available under Getting started on this site.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>How do I install the USB cable?</I></B>
+</FONT>
+<P>To install the USB cable:</P>
+<OL>
+<LI>Insert the CD that came with your phone into your computer's CD-ROM drive.
+<LI>Turn on your phone, and connect the USB cable to a USB port on your computer and to the phone. The "Found new hardware" wizard will start.
+<LI>Select Install the software automatically and click on Next.
+<LI>The wizard should find the USB software driver automatically. Click on Finish
+<LI>Repeat steps 2 and 3 until all five drivers have been installed.
+</OL>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Is it possible to charge the phone using the USB cable?</I></B>
+</FONT>
+<P>Yes, but the charging time will be increased. If you're using a USB hub, make sure that the hub has its own power supply.</P>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>I cannot see the files I have copied to the Memory Stick Duo™.</I></B>
+</FONT>
+<P>Make sure you disconnect the USB cable after the transfer of your files is completed. You will not be able to see the new files on the Memory Stick Duo™ in the phone's File Manager as long as the USB cable is still connected to the computer.
+Before detaching the phone and the USB cable, double-click on the "Safely remove hardware" icon in the System tray.</P>
+
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>The pictures I take are blurry. Why?</I></B>
+</FONT>
+<P>There are several reasons why pictures might be blurry:</P>
+<OL>
+<LI>The subject or the camera moved while taking the picture.
+<LI>The lens might be dirty. Clean the lens and close the lens cover when the camera is not in use.
+<LI>Auto-focus was not used correctly. Press the camera shutter button halfway down - when you hear a beep and there is a green square in the viewfinder, the camera is ready to take the picture. Press the shutter button all the way down to take the picture.
+<LI>The subject was too close. If you want to take a picture at close range, please switch to Macro. Remember to switch off Macro again, otherwise the next picture you take will be blurred if your subject is at a "normal" distance.
+</OL>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your SonyEricsson Phone or Accessory, please click <A HREF=http://www.sonyericsson.com/spg.jsp?cc=au&lc=en&ver=4000&template=ps1_1_4_1&zone=ps&lm=ps1_1&pid=10242</A>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Warranty Terms and Conditions relating to your SonyEricsson Phone or Accessory, please click <A HREF=http://www.sonyericsson.com/spg.jsp?cc=au&lc=en&ver=4000&template=ps1_1_2_6&zone=&lm=ps1_1&pid=10242</A>
+ Here</A></B>  
+ </FONT>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ */
+-->
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <aitmanufacturers translate="title" module="aitmanufacturers">
+                    <title>Manage Brands Pages</title>
+                    <sort_order>3</sort_order>               
+                    <action>brandsadmin/adminhtml_aitmanufacturers</action>
+                </aitmanufacturers>
+            </children>
+        </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children> 
+                            <aitmanufacturers translate="title">
+                                <title>Manage Brands Pages</title>
+                                <sort_order>1</sort_order>
+                            </aitmanufacturers>
+                        </children> 
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+<!--
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/code/local/Aitoc/Aitmanufacturers/etc/adminhtml.xml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+-->

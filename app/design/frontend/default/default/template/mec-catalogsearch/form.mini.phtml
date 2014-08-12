@@ -1,0 +1,57 @@
+<?php
+    $categories = $this->helper('mec_catalogsearch')->getCategories();
+    $home = $this->helper('mec_catalogsearch')->isHome();
+    $catValue = NULL;
+    if($_GET){
+        if($_GET['cat']){
+            $catValue = $_GET['cat'];
+        }
+    }
+?>
+<script type="text/javascript" defer="defer">
+function checkForOther(elem){var recipients=document.getElementsByName('cat')[0];recipients.value=elem.value}
+</script>
+
+<form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+    <div class="form-search">
+        <label for="search"><?php echo $this->__('Search:') ?></label> 
+       
+
+        <input type="hidden" name="cat" value="<?php echo $catValue; ?>"/>
+		<div class="search-inner">
+		<div class="search-inner-inner">
+			<?php if(Mage::getStoreConfig('mec_catalogsearch/advancedcatalogsearch/category')){ ?>
+			<span id="nav-search-in" class="nav-sprite nav-facade-active">
+				<!--<span id="nav-search-in-content" data-value="search-alias=aps"> All </span>
+					<span class="nav-down-arrow nav-sprite"></span>-->
+						<select id='catOptions' class='categories-options' onchange="checkForOther(this)">
+							<option value='all' <?php if($home){echo "selected='selected'";} ?>>All</option>
+							<?php
+								foreach($categories as $key => $value){
+										$current = $this->helper('mec_catalogsearch')->isSelected($key);
+										if($current){
+											echo "<option value='".$key."' selected='selected'>".$value."</option>";
+										}else{
+											echo "<option value='".$key."'>".$value."</option>";
+										}
+									}
+							?>
+						</select>
+			</span>
+			<?php } ?>
+			
+		
+        <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>"
+class="input-text" />
+        <button type="submit" title="<?php echo $this->__('Go') ?>" class="button"><span><span><?php echo $this->__('Go') ?></span></span></button>
+        </div>
+        </div>
+		<div id="search_autocomplete" class="search-autocomplete"></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search entire store here...') ?>');
+            searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
+        //]]>
+        </script>
+    </div>
+</form>

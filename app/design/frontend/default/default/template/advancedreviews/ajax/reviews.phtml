@@ -1,0 +1,53 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_AdvancedReviews
+ * @copyright  Copyright (c) 2009-2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<?php if($this->getCollection()):?>
+<?php foreach ($this->getCollection() as $_review):?>
+    <dt>
+        <a href="<?php echo $this->getReviewUrl($_review->getId()) ?>"><?php echo $this->htmlEscape($_review->getTitle()) ?></a> <?php echo $this->__('Review by <span>%s</span>', $this->htmlEscape($_review->getNickname())) ?>
+        <?php echo (!$this->getRequest()->getParam('customerId'))?$this->getChild('advancedreviews_allmylink')->setReview($_review)->toHtml():''?>
+    </dt>
+    <dd>
+        <?php $_votes = $this->getRatingVotes($_review->getId());?>
+        <?php if (count($_votes)): ?>
+        <table class="ratings-table">
+            <col width="1" />
+            <col />
+            <tbody>
+                <?php foreach ($_votes as $_vote): ?>
+                <tr>
+                    <th><?php echo $_vote->getRatingCode() ?></th>
+                    <td>
+                        <div class="rating-box">
+                            <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                        </div>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php endif; ?>
+        <?php echo nl2br($this->htmlEscape($_review->getDetail())) ?>
+        <small class="date"><?php echo $this->__('(Posted on %s)', $this->formatDate($_review->getCreatedAt(), 'long')) ?></small><br />
+                    <?php
+            echo $this->getChild('advancedreviews_proscons_indicator')->setReviewId( $_review->getId() )->toHtml();
+            echo $this->getChild('advancedreviews_recommend_indicator')->setReviewId( $_review->getId() )->toHtml();
+            echo $this->getChild('advancedreviews_footer')->setReviewId( $_review->getId() )->toHtml();
+        ?>
+    </dd>
+<?php endforeach; ?>
+<?php endif;?>

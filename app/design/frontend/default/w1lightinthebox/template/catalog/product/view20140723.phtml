@@ -1,0 +1,449 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Buy Now'); ?>
+<?php $now = Mage::getModel('core/date')->timestamp(time()); ?>
+<?php $prds = Mage::getModel('core/date')->timestamp($_product->getProductReleaseDate());?>
+<?php $exper_time = Mage::getModel('core/date')->timestamp($_product->getExpiredate()); ?>
+<script src="http://js.testfreaks.com/badge/wireless1.com.au/head.js"></script>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+
+<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
+	<div class="cash-sticker"><?php echo $this->__("$%s CASHBACK*", Mage::helper('core')->currency($_product->getCashback(), false, false)); ?></div>
+<?php elseif ($_product->getWeight() == '0.0000'): ?>
+	<div class="free-sticker">FREE SHIPPING</div>
+<?php elseif ($_product->getAttributeText('demo_unit') == 'True'): ?>
+	<div class="demo-sticker">DEMO UNIT</div>
+<?php elseif ($_product->getAttributeText('condition') == 'Refurbished'): ?>
+	<div class="refurb-sticker">
+		<?php echo $_product->getAttributeText('manufacturer'); ?>&nbsp;Certified Resealed<br />
+		<span class="refurb-sticker-sub">12 months full warranty*</span>
+	</div>
+<?php endif; ?>
+
+<div class="product-view">
+	<div class="testfreaks-badge">
+		<div id="tfw-badge"></div>
+	</div>
+    <div class="product-essential">
+    <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <div class="no-display">
+            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
+        </div>
+
+        <div class="product-shop">
+			
+			<div class="product-shop-left">
+			<div class="product-shop-left-inner">
+			
+			<div class="product-name">
+                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+				
+            </div>
+			
+			<!--here-->
+			<?php //var_dump($_product->getProductIconList()); ?>
+
+			
+			<?php if ($_product->getProductIconView() != null && $_product->getProductIconView() != 'no_selection'):?>
+                      
+						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'product_icon_view'); ?>"/>
+				
+                      <?php //var_dump($_product->getProductIconView()); ?>
+                        
+					<?php endif;?>
+			
+			
+			<!--here end-->
+			<!-- add for brand -->
+			<?php if (Mage::helper('aitmanufacturers')->getManufacturerLink($_product) != null): ?>
+            		<h4 class="brand"><?php echo Mage::helper('aitmanufacturers')->getManufacturerLink($_product);?></h4>
+			<?php else: ?>
+			<?php endif; ?>
+            <!-- end -->
+			<?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
+			</div>
+			<div class="product-shop-left-bottom-inner">
+			
+			
+			<?php echo $this->getChildHtml('new_alert_urls') ?>
+
+            
+            <?php echo $this->getTierPriceHtml() ?>
+            <?php echo $this->getChildHtml('product_type_data') ?>
+            
+            <?php //echo $this->getChildHtml('extrahint') ?>
+
+        
+        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+        <?php endif;?>
+			
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+            <?php endif;?>
+			
+            <?php echo $this->getChildHtml('other');?>
+
+							<div class="product-shop-right">
+<?php //echo var_dump($_product->getRelatedProducts()) ?>
+					<div class="add-to-box">
+						<?php if($_product->isSaleable()): ?>
+							<?php echo $this->getChildHtml('righttocart') ?>
+						<?php else: ?>
+						<span class="stockout-notice">This product is out of stock.</span>
+						<?php endif; ?>
+						
+					</div>
+				
+				</div>
+				
+				<?php if($now < $prds && $_product->getProductReleaseDate() != null):?>
+					<span class="pre-order-eta"><?php echo $this->__('Limited Stock Arriving')?>&nbsp;<?php echo date('d/m/Y',strtotime($_product->getProductReleaseDate()))?></span>
+				<?php endif ?>
+				<?php $_Price = 0; ?>
+				<?php if($_product->getSpecialPrice() != ""): ?>
+					<?php $_Price = $_product->getSpecialPrice(); ?>
+				<?php else: ?>
+					<?php $_Price = $_product->getPrice(); ?>
+				<?php endif; ?>
+				
+				<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
+					<?php //echo $this->__('%s Cashback until %s', Mage::helper('core')->currency($_product->getCashback(), true, false), date('d-m-Y',strtotime($_product->getExpiredate()))); ?>
+					<br />
+					<span class="cashback-notice"><?php echo $this->__("*Buy before %s to get $%s Cashback from %s", date('d/m/Y',strtotime($_product->getExpiredate())), Mage::helper('core')->currency($_product->getCashback(), false, false), $_product->getAttributeText('manufacturer')); ?></span><br />
+					<span class="cashback-notice"><?php echo $this->__("Price after redemption is %s", Mage::helper('core')->currency($_Price - $_product->getCashback(), true, false)); ?></span>
+				<?php endif; ?>
+				
+		
+
+			
+			</div>
+			</div>
+
+			<?php if($_product->isSaleable()): ?>
+				<?php if($now < $prds && $_product->getProductReleaseDate() != null):?>
+					<button type="button" title="<?php echo $this->__('Pre-Order Now'); ?>" class="button-pre button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $this->__('Pre-Order Now'); ?></span></span></button>
+				<?php else: ?>
+					<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<div class="related-list">
+			<?php if($_product->getTypeId() != 'bundle'){ ?>
+				<?php echo $this->getChildHtml('related2') ?>
+			<?php }else{ ?>
+				
+			<?php } ?>
+		
+			</div>
+			
+        </div>
+
+        <div class="product-img-box">
+			<?php echo $this->getChildHtml('addto') ?>
+            <?php echo $this->getChildHtml('media') ?>
+			
+			<?php if ($_product->getManufacturerWarranty()):?>
+			
+			<div class="warranty">
+				<?php echo $_product->getManufacturerWarranty()?>
+			</div>
+			<?php endif;?>
+		
+        </div>
+
+
+		<div class="clearer"></div>
+		
+		
+    </form>
+	
+    <script type="text/javascript">
+var productAddToCartForm=new VarienForm('product_addtocart_form');productAddToCartForm.submit=function(button,url){if(this.validator.validate()){var form=this.form;var oldUrl=form.action;if(url){form.action=url}var e=null;try{this.form.submit()}catch(e){}this.form.action=oldUrl;if(e){throw e}if(button&&button!='undefined'){button.disabled=true}}}.bind(productAddToCartForm);productAddToCartForm.submitLight=function(button,url){if(this.validator){var nv=Validation.methods;delete Validation.methods['required-entry'];delete Validation.methods['validate-one-required'];delete Validation.methods['validate-one-required-by-name'];if(this.validator.validate()){if(url){this.form.action=url}this.form.submit()}Object.extend(Validation.methods,nv)}}.bind(productAddToCartForm);
+    </script>
+    </div>
+	
+	<div id="example-one">
+        			
+        	<ul class="nav">
+                	<li class="nav-one"><a href="#details" class="current"><?php echo $this->__('Product Description')?></a></li>
+               		<li class="nav-two"><a href="#specification" ><?php echo $this->__('Specifications')?></a></li>
+		<?php if ($_product->getPackageContents() != null):?>
+               		<li class="nav-three"><a href="#contents" ><?php echo $this->__('Package Contents')?></a></li>
+		<?php else: ?>
+		<?php endif; ?>
+		<?php if ($_product->getShipping() != null):?>
+			<li class="nav-four"><a href="#shipping"><?php echo $this->__('Shipping')?></a></li>
+		<?php else: ?>
+		<?php endif; ?>
+                <!-- <li class="nav-five"><a href="#tag"><?php echo $this->__('Product Tags')?></a></li> -->
+		<?php if ($_product->getDownloadNologin() != null || $_product->getDownloadLogin() != null):?>
+	                <li class="nav-six last"><a href="#download"><?php echo $this->__('Support Downloads')?></a></li>
+		<?php else: ?>
+		<?php endif; ?>
+            </ul>
+        	
+        	<div class="list-wrap tab-content" >
+        	
+        		<div id="details" >
+					<?php if ($_product->getShortDescription()):?>
+					<div class="short-description">
+						<h2><?php echo $this->__('Quick Overview') ?></h2>
+						<div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+					</div>
+					<?php endif;?>
+					
+					<?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+						<div class="box-collateral <?php echo "box-{$alias}"?>">
+							<?php if ($title = $this->getChildData($alias, 'title')):?>
+							<h2><?php echo $this->escapeHtml($title); ?></h2>
+							<?php endif;?>
+							<?php echo $html; ?>
+						</div>
+					<?php endforeach;?>
+					
+					
+        		</div>
+        		 
+        		 <div id="specification" class="hide ">
+					        <?php // echo $this->getChildHtml('product_additional_data') ?>
+
+							
+												
+					<?php if ($_product->getSpecification()):?>
+						<?php echo $_product->getSpecification() ?>
+					<?php endif;?>
+					
+					<?php foreach ($this->getChildGroup('detailed_info2', 'getChildHtml') as $alias => $html):?>
+						<div class="box-collateral <?php echo "box-{$alias}"?>">
+							<?php if ($title = $this->getChildData($alias, 'title')):?>
+							<h2><?php echo $this->escapeHtml($title); ?></h2>
+							<?php endif;?>
+							<?php echo $html; ?>
+						</div>
+					<?php endforeach;?>
+					
+					
+							
+        		 </div>
+        		 
+        		 <div id="contents" class="hide ">
+
+					<?php if ($_product->getPackageContents()):?>
+						<?php echo $_product->getPackageContents() ?>
+					<?php endif;?>
+
+        		 </div>
+
+        		 <div id="shipping" class="hide ">
+					        <?php //echo $this->getChildHtml('related') ?>
+
+					<?php if ($_product->getShipping()):?>
+						<?php echo $_product->getShipping() ?>
+					<?php endif;?>
+        		 </div>
+        		 
+        		 <div id="tag" class="hide ">
+				
+					<?php //echo $this->getChildHtml('upsell_products') ?>
+					<?php echo $this->getChildHtml('product_additional_data') ?>
+        		 </div>        		 
+        		 <div id="download" class="hide ">
+					<?php ///echo $this->__('download place holder')?>
+					
+					
+					<?php if ($_product->getDownloadNologin()):?>
+						<div class="download_nologin">
+							download_nologin
+							<?php echo $_product->getDownloadNologin()?>
+						</div>
+						
+						<?php if ($_product->getDownloadLogin()):?>
+							<?php echo $this->__('There are something important you can download when you logged in. ')?>
+							<a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>customer/account/login/">login here</a>
+						<?php endif?>
+					<?php endif?>
+					
+					
+					
+					
+					<?php if($this->helper('customer')->isLoggedIn()):?>
+					
+					
+						<?php if ($_product->getDownloadLogin()):?>
+						<div class="download_login">
+						 you are login, download_login
+							<?php echo $_product->getDownloadLogin()?>
+						</div>	
+						<?php endif?>
+					<?php endif?>
+					<br/>
+					
+					
+					
+					
+        		 </div>
+        		 
+        	 </div> <!-- END List Wrap -->
+         
+         </div> <!-- END Organic Tabs (Example One) -->
+
+		<?php if ($_product->getSku()):?>
+			<div class="sku"><span><?php echo $this->__('SKU ') ?></span><?php echo $_product->getSku() ?></div>
+        <?php endif;?>
+        
+</div>
+
+<div id="product-quick-view">
+	<div id="qv-inner">
+		<div class="qv-content">
+
+				<div class="left-image">
+					 <?php
+							$_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(70).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+							echo $_helper->productAttribute($_product, $_img, 'image');
+					?>
+				</div>
+				<div class="right-content">
+				
+					<div class="right-content-left">
+						<div class="product-name">
+							<h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+						</div>
+						<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+						 <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+					</div>
+					<div class="right-content-right">
+							<div class="add-to-box">
+								<?php if($_product->isSaleable()): ?>
+									<?php echo $this->getChildHtml('toptocart') ?>
+								<?php endif; ?>
+								<?php echo $this->getChildHtml('addto') ?>
+							</div>
+					</div>
+
+				</div>
+		</div>
+	</div>
+</div>
+
+<div style="width:100%;position:fixed; top:0; left:0;display:block; height:1px;">
+		<div style="width:1190px;display:block; margin:0 auto;height:1px;position: relative;">
+
+</div>
+</div>
+
+<script type="text/javascript">
+jQuery.noConflict();jQuery(document).ready(function(){jQuery('#rightqty').change(function(){var qty=jQuery('#rightqty').val();jQuery('#topqty').val(qty)});jQuery('#topqty').change(function(){var qty1=jQuery('#topqty').val();jQuery('#rightqty').val(qty1)});jQuery("#qv-inner").hide();if((navigator.userAgent.indexOf('MSIE')>=0)&&(navigator.userAgent.indexOf('Opera')<0)){jQuery(window).scroll(function(){if(jQuery(window).scrollTop()>300){jQuery("#qv-inner").show();jQuery("#qv-inner").addClass("go-to-top");jQuery("#qv-inner").css("go-to-top",jQuery(window).scrollTop())}else{jQuery("#qv-inner").hide()}})}else{jQuery(document).scroll(function(){if(jQuery(document).scrollTop()>300){jQuery("#qv-inner").show();jQuery("#qv-inner").addClass("go-to-top");jQuery("#qv-inner").css("go-to-top",jQuery(document).scrollTop())}else{jQuery("#qv-inner").hide()}})}});
+
+	(function($) {
+
+    $.organicTabs = function(el, options) {
+    
+        var base = this;
+        base.$el = $(el);
+        base.$nav = base.$el.find(".nav");
+                
+        base.init = function() {
+        
+            base.options = $.extend({},$.organicTabs.defaultOptions, options);
+            
+            // Accessible hiding fix
+            $(".hide").css({
+                "position": "relative",
+                "top": 0,
+                "left": 0,
+                "display": "none"
+            }); 
+            
+            base.$nav.delegate("li > a", "click", function() {
+            
+                // Figure out current list via CSS class
+                var curList = base.$el.find("a.current").attr("href").substring(1),
+                
+                // List moving to
+                    $newList = $(this),
+                    
+                // Figure out ID of new list
+                    listID = $newList.attr("href").substring(1),
+                
+                // Set outer wrapper height to (static) height of current inner list
+                    $allListWrap = base.$el.find(".list-wrap"),
+                    curListHeight = $allListWrap.height();
+                $allListWrap.height(curListHeight);
+                                        
+                if ((listID != curList) && ( base.$el.find(":animated").length == 0)) {
+                                            
+                    // Fade out current list
+                    base.$el.find("#"+curList).fadeOut(base.options.speed, function() {
+                        
+                        // Fade in new list on callback
+                        base.$el.find("#"+listID).fadeIn(base.options.speed);
+                        
+                        // Adjust outer wrapper to fit new list snuggly
+                        var newHeight = base.$el.find("#"+listID).height();
+                        $allListWrap.animate({
+                            height: newHeight
+                        });
+                        
+                        // Remove highlighting - Add to just-clicked tab
+                        base.$el.find(".nav li a").removeClass("current");
+                        $newList.addClass("current");
+                            
+                    });
+                    
+                }   
+                
+                // Don't behave like a regular link
+                // Stop propegation and bubbling
+                return false;
+            });
+            
+        };
+        base.init();
+    };
+    
+    $.organicTabs.defaultOptions = {
+        "speed": 300
+    };
+    
+    $.fn.organicTabs = function(options) {
+        return this.each(function() {
+            (new $.organicTabs(this, options));
+        });
+    };
+    
+})(jQuery);
+
+
+(function($) {
+    $(function() {
+		if( $.trim( $('.related-list').html() ).length){	
+		$('.product-shop-right .add-to-box button').hide();
+		}
+
+        $("#example-one").organicTabs();
+        
+        $("#example-two").organicTabs({
+            "speed": 200
+        });
+
+    });
+	
+})(jQuery);
+
+</script>
+
+
+
+<?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('feedback')->toHtml(); ?>
+
+
+
+
+
+

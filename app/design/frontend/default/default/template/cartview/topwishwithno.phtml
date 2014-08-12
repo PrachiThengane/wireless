@@ -1,0 +1,28 @@
+
+<li id="wishlistview">
+
+<?php
+if(Mage::getSingleton('customer/session')->getCustomer()){
+	$wishlist = Mage::getModel('wishlist/wishlist')->loadByCustomer(Mage::getSingleton('customer/session')->getCustomer());
+	$_itemCollection = $wishlist->getItemCollection();
+}else{
+	$_itemCollection = NULL;
+}
+$count = count($_itemCollection);
+
+if ($count > 1) {
+	$text = $this->__('My Wishlist (%d items)', $count);
+} else if ($count == 1) {
+	$text = $this->__('My Wishlist (%d item)', $count);
+} else {
+	$text = $this->__('My Wishlist');
+}
+?>
+
+  <div id="wishlistview-link">
+	<?php printf('<a href="%s">%s</a>', $this->getUrl('wishlist'), $text); ?>
+  </div>
+  <div id="wishlistview-panel" style="display:none;">
+    <?php echo $this->getChildHtml('topwish'); ?>
+  </div>
+</li>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ /***************************************
+ *         MAGENTO EDITION USAGE NOTICE *
+ *****************************************/
+ /* This package designed for Magento COMMUNITY edition
+ * This extension is only for developers as a technology exchange
+ * Based on EasyTestimonial_v1.5.8 by mage-world.com
+ * Fixed the bug that when compilation has been enabled, the testimonial tab in the backend will be blank page.
+ *****************************************************
+ * @category   Cc
+ * @package    Cc_Testimonial
+ * @Author     Chimy
+ */
+-->
+<layout version="0.1.0">
+    <default>
+	  <reference name="head">
+	    	<action method="addJs"><script>cc_js/jquery.js</script></action>
+			<action method="addJs"><script>cc_js/jquery_noconflict.js</script></action>
+      </reference> 
+	  <!-- <reference name="right">
+            <block type="testimonial/testimonial" name="right.testimonial.testimonial" before="-">
+                    <action method="setTemplate">
+                            <template>testimonial/testimonial_advance.phtml</template> 
+                    </action>
+            </block>
+        </reference>  --> 
+		<reference name="left">
+            <block type="testimonial/testimonial" name="left.testimonial.testimonial" before="-">
+                    <action method="setTemplate">
+                            <template>testimonial/testimonial_advance.phtml</template> 
+                    </action>
+            </block>
+        </reference>       
+    </default>
+    <testimonial_index_index>
+        <reference name="content">
+            <block type="testimonial/list" name="list" template="testimonial/list.phtml" />
+        </reference>       
+    </testimonial_index_index>
+    <testimonial_view_details>
+        <reference name="content">
+            <block type="testimonial/view" name="view" template="testimonial/view.phtml" />
+        </reference>
+    </testimonial_view_details>
+    <testimonial_submit_index>
+        <reference name="content">
+            <block type="testimonial/submit" name="submit" template="testimonial/submit.phtml" />
+        </reference>
+    </testimonial_submit_index>
+</layout> 

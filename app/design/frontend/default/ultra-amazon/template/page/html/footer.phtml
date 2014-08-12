@@ -1,0 +1,16 @@
+<div class="footer-container">
+    <div class="footer">
+		<div class="inner-footer">
+			<h2 class="title"><?php echo $this->__('Your Recent History') ?></h2>
+			<?php echo $this->getChildHtml() ?>
+		</div>
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
+        <address><?php echo $this->getCopyright() ?></address>
+		<div class="webim">
+		<!-- webim button --><a href="/webim/client.php?locale=en&amp;style=simplicity" target="_blank" onclick="if(navigator.userAgent.toLowerCase().indexOf('opera') != -1 &amp;&amp; window.event.preventDefault) window.event.preventDefault();this.newWindow = window.open('/webim/client.php?locale=en&amp;style=simplicity&amp;url='+escape(document.location.href)+'&amp;referrer='+escape(document.referrer), 'webim', 'toolbar=0,scrollbars=0,location=0,status=1,menubar=0,width=640,height=480,resizable=1');this.newWindow.focus();this.newWindow.opener=window;return false;"><img src="/webim/button.php?i=mblue&amp;lang=en" border="0" width="177" height="61" alt=""/></a><!-- / webim button -->
+		</div>
+    </div>
+</div>
+<script type="text/javascript">
+function toggleMemberMenu(flag){var menuContainer=document.getElementById("mMenu");var LoginDiv=document.getElementById("login-div");var LoginA=document.getElementById("login-a");if(menuContainer.style.display=="none"){menuContainer.style.display="block";addClass(LoginA,'active')}else{menuContainer.style.display="none";removeClass(LoginA,'active')}}function hasClass(element,className){var reg=new RegExp('(\\s|^)'+className+'(\\s|$)');return element.className.match(reg)}function addClass(element,className){if(!this.hasClass(element,className)){element.className+=" "+className}}function removeClass(element,className){if(hasClass(element,className)){var reg=new RegExp('(\\s|^)'+className+'(\\s|$)');element.className=element.className.replace(reg,' ')}}
+</script>

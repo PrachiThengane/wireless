@@ -1,0 +1,118 @@
+<HTML>
+<BODY>
+
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Cameras</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Camera is faulty? Who do i contact?</B>
+<BR><BR>
+<I>You can contact Logitech direct for support:</I>
+</FONT>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<P>Sales & Marketing: (02) 9972 3711</P>
+
+Logitech Australia Computer
+Peripherals Pty Ltd.
+<BR>
+3-6 The Strand
+<BR>
+Dee Why NSW 2099, 
+<BR>
+Australia
+<BR><BR>
+<IMG SRC=Map/Map.jpg BORDER=1 ALT=MAP>
+<BR><BR>
+Before contacting Logitech, your questions may be answered by following the Frequently Asked Questions and Answers.
+<br>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR><BR>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Camera.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B>Question</B>
+<BR><BR>
+<I>How do I install a Logitech USB camera?</I>
+<BR><BR>
+<B>Answer</B>
+<BR><BR>
+</FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+NOTE: DO NOT CONNECT THE CAMERA TO THE COMPUTER BEFORE INSTALLING THE SOFTWARE.
+
+To install the software first, insert the Logitech camera software CD into your computer's CD-ROM drive. The Setup screen should appear. If it does not, please do the following:
+<OL>
+<LI>Click "Start," and then "Run."
+<LI>Type "D:\Setup.exe" and press the Enter key, where D: is the drive designation of your CD-ROM.
+<LI>Follow the on-screen instructions. 
+</OL>
+<P>After the computer reboots, the driver installation for the camera will start. Do not connect the camera until the setup prompts you to connect the camera cable to your computer.</P>
+
+<P>While the driver installation progresses, remove the camera and camera base from the packaging and mount the camera on the camera base.</P>
+
+When prompted, plug the camera into the USB port
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+
+<B>Question</B>
+<BR><BR>
+<I>Troubleshooting USB issues when using a Logitech camera?</I>
+<BR><BR>
+<B>Answer</B>
+</FONT>
+<BR><BR>
+<P>This document is intended to address USB issues, a term we use to describe any problem with the camera attributed to the type of USB chipset on the system. Such issues can be, but are not limited to, the following:</P>
+<UL>
+<LI>Camera displays a green, black or yellow image in the QuickCam® Software
+<LI>Camera is not detected after rebooting or going to sleep, but once re-plugged, it works.
+<LI>Camera works on another computer, but not the one you intend to use the camera on. 
+</UL>
+
+<P>Before beginning diagnostics, please make sure you are using the latest release of DirectX. You can download the latest release here.</P>
+
+<P>Logitech QuickCam PC Video Cameras are designed to work on either Universal Host Controller Interface (UHCI) or Open Host Controller Interface (OHCI) implementations of the Universal Serial Bus standard. Intel® and VIA® host controllers mainly use the UHCI implementation, while most other manufacturers use the OHCI implementation. You can determine what type of chipset you are using by checking what is listed in Device Manager.</P>
+<OL>
+<LI>Click the "Start" button.
+<LI>Click on "Settings", then "Control Panel".
+<LI>In the Control Panel, double click on the "System" icon. Windows® 2000 users, click on the Hardware Tab.
+<LI>Click on the "Device Manager" tab.
+<LI>Click on the plus (+) sign next to "Universal serial bus controller". If this entry does not exist, please contact the system manufacturer for help in troubleshooting the USB port(s).
+<LI>Verify the type of Host Controller that is listed. 
+</OL>
+</FONT>
+<BR><BR>
+</TD>
+</TR>
+</TABLE>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Camera, please click <A HREF=http://logitech-en-amr.custhelp.com/cgi-bin/logitech_en_amr.cfg/php/enduser/std_alp.php?p_sid=fycUb4Ph&p_lva=&p_li=&p_page=1&p_cv=&p_pv=2.5%3B3.u0&p_prods=844%2C5%2C0&p_cats=&p_hidden_prods=&prod_lvl1=844&prod_lvl2=5&prod_lvl3=0&p_search_text=&p_new_search</A>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Warranty Terms and Conditions relating to your Camera, please click <A HREF=http://www.logitech.com/index.cfm?page=support/products/document&CRID=325&contentid=5328&countryid=1&languageid=1</A>
+ Here</A></B>  
+ </FONT>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

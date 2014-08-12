@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+	<catalog_category_layered>				
+		<reference name="left">			
+			<block type="mec_navigation/navigation_left"></block>
+		</reference>			
+	</catalog_category_layered>
+	<catalog_category_default>
+		<reference name="left">			
+			<remove name="catalog.leftnav" />
+		</reference>
+	</catalog_category_default>
+	<catalogsearch_result_index>		
+		<reference name="left">			
+			<block type="mec_navigation/navigation_left"></block>
+		</reference>					
+	</catalogsearch_result_index>
+	<default>
+		<reference name="catalog.topnav">
+			<action method="setTemplate"><template>mec/navigation/catalog/navigation/top.phtml</template></action>			
+		</reference>							
+		<reference name="right">
+			<block type="mec_navigation/navigation_right"></block>
+		</reference>
+		<reference name="left">
+			<block type="mec_navigation/navigation_left"></block>
+		</reference>				
+	</default>	
+</layout>

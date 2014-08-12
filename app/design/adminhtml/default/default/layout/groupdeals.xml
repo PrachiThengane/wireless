@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    
+    <groupdeals_adminhtml_groupdeals_index>
+        <reference name="content">			
+			<block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+				<action method="setUseConfirm"><params>0</params></action>
+			</block>
+            <block type="groupdeals/adminhtml_groupdeals" name="groupdeals" />
+        </reference>
+    </groupdeals_adminhtml_groupdeals_index>
+	
+    <groupdeals_adminhtml_groupdeals_new>
+   		<reference name="head">
+           	<action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
+            <action method="addJs"><script>lib/flex.js</script></action>
+            <action method="addJs"><script>lib/FABridge.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/browser.js</script></action>
+            <action method="addJs"><script>prototype/window.js</script></action>
+			<action method="addCss"><stylesheet>groupdeals.css</stylesheet></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/magento.css</name></action>  
+    	</reference>	
+        <reference name="js">
+            <block type="adminhtml/catalog_product_edit_js" template="catalog/product/js.phtml" name="catalog_product_js"></block>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>	
+        <reference name="groupdeals_tabs">
+            <action method="addTab"><name>configurable</name><block>adminhtml/catalog_product_edit_tab_super_config</block></action>
+        </reference>
+    </groupdeals_adminhtml_groupdeals_new>
+	
+    <groupdeals_adminhtml_groupdeals_edit>
+   		<reference name="head">
+           	<action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
+            <action method="addJs"><script>lib/flex.js</script></action>
+            <action method="addJs"><script>lib/FABridge.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/browser.js</script></action>
+            <action method="addJs"><script>prototype/window.js</script></action>
+            <action method="addCss"><stylesheet>groupdeals.css</stylesheet></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/magento.css</name></action>  
+    	</reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+        </reference>	
+        <reference name="js">
+            <block type="adminhtml/catalog_product_edit_js" template="catalog/product/js.phtml" name="catalog_product_js"></block>
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>	
+    </groupdeals_adminhtml_groupdeals_edit>
+    
+    <groupdeals_adminhtml_groupdeals_superconfig>
+        <block type="adminhtml/catalog_product_edit_tab_super_config_grid" name="admin.product.edit.tab.super.config.grid" output="toHtml" />
+    </groupdeals_adminhtml_groupdeals_superconfig>
+		
+    <groupdeals_adminhtml_merchants_index>
+        <reference name="content">
+            <block type="groupdeals/adminhtml_merchants" name="groupdeals_merchants" />
+        </reference>
+    </groupdeals_adminhtml_merchants_index>
+	
+    <groupdeals_adminhtml_merchants_edit>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+        </reference>
+   		<reference name="head">
+            <action method="addCss"><stylesheet>groupdeals.css</stylesheet></action>
+    	</reference>
+    </groupdeals_adminhtml_merchants_edit>
+	
+    <groupdeals_adminhtml_subscribers_index>
+        <reference name="content">
+            <block type="groupdeals/adminhtml_subscribers" name="groupdeals_subscribers" />
+        </reference>
+    </groupdeals_adminhtml_subscribers_index>
+	
+</layout>

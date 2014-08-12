@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Boughttogether
+ * @copyright  Copyright (c) 2003-2010 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+-->
+<config>
+	<modules>
+		<AW_Boughttogether>
+			<version>1.1.10</version><platform>ee</platform>
+		</AW_Boughttogether>
+	</modules>
+	<global>
+		<blocks>
+			<boughttogether>
+				<class>AW_Boughttogether_Block</class>
+			</boughttogether>
+		</blocks>
+		<helpers>
+			<boughttogether>
+				<class>AW_Boughttogether_Helper</class>
+			</boughttogether>
+		</helpers>
+		<resources>
+			<boughttogether_setup>
+				<setup>
+					<module>AW_Boughttogether</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</boughttogether_setup>
+			<boughttogether_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</boughttogether_write>
+			<boughttogether_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</boughttogether_read>
+		</resources>
+		<models>
+			<boughttogether>
+				<class>AW_Boughttogether_Model</class>
+			</boughttogether>
+			<checkout>
+			    <rewrite>
+				<cart>AW_Boughttogether_Model_Cart</cart>
+			    </rewrite>
+			</checkout>
+		</models>
+	</global>
+	<frontend>
+		<routers>
+			<boughttogether>
+				<use>standard</use>
+				<args>
+					<module>AW_Boughttogether</module>
+					<frontName>boughttogether</frontName>
+				</args>
+			</boughttogether>
+		</routers>
+		<layout>
+			<updates>
+				<boughttogether>
+					<file>boughttogether.xml</file>
+				</boughttogether>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+			<AW_Boughttogether>
+				<files>
+					<default>AW_Boughttogether.csv</default>
+				</files>
+			</AW_Boughttogether>
+			</modules>
+		</translate>
+        <events>
+            <core_layout_block_create_after>
+                <observers>
+                    <boughttogether>
+                        <type>singleton</type>
+                        <class>AW_Boughttogether_Model_Observer</class>
+                        <method>unsetRelatedProductsBlock</method>
+                    </boughttogether>
+                </observers>
+            </core_layout_block_create_after>
+        </events>
+	</frontend>
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<boughttogether>
+											<title>aheadWorks - Frequently Bought Together</title>
+										</boughttogether>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<translate>
+			<modules>
+				<AW_Boughttogether>
+					<files>
+						<default>AW_Boughttogether.csv</default>
+					</files>
+				</AW_Boughttogether>
+			</modules>
+		</translate>
+	</adminhtml>
+	<default>
+	    <boughttogether>
+		<general>
+		    <animation>0</animation>
+		    <limit>0</limit>
+		</general>
+	    </boughttogether>
+	</default>
+</config>

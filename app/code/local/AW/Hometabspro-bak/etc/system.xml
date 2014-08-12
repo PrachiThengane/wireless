@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<hometabspro translate="label" module="hometabspro">
+			<label>Home Tabs Pro</label>
+			<tab>mec</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>500</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label" module="hometabspro">
+					<label>General Settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>10</sort_order>
+					<fields>
+						<display_at_home translate="label">
+							<label>Display at home page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>														
+						</display_at_home>	
+						<position translate="label"> 
+							<label>Position at home page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_position</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</position>
+						<show_out_from_stock translate="label">
+							<label>Show out of stock products</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_out_from_stock>
+						<loader_text translate="label"> 
+							<label>Loader text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</loader_text>							
+						<loader_image translate="label">
+							<label>Loader image</label>
+							<frontend_type>image</frontend_type>
+							<backend_model>hometabspro/system_config_backend_image</backend_model>
+							<upload_dir config="system/filesystem/media" scope_info="1">hometabspro</upload_dir>
+							<base_url type="media" scope_info="1">hometabspro</base_url>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</loader_image>												
+					</fields>
+				</general>	
+				<top_sellers translate="label">
+					<label>Top Sellers tab settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>20</sort_order>		
+					<fields>
+						<enabled translate="label"> 
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</enabled>
+						<order translate="label"> 
+							<label>Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</order>						
+						<title translate="label"> 
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</title>							
+						<products_count translate="label"> 
+							<label>Products</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</products_count>						
+						<mode translate="label"> 
+							<label>Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_gridstyle</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</mode>																							
+					</fields>				
+				</top_sellers>
+				<top_rated translate="label">
+					<label>Top Rated tab settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>30</sort_order>		
+					<fields>
+						<enabled translate="label"> 
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</enabled>
+						<order translate="label"> 
+							<label>Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</order>						
+						<title translate="label"> 
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</title>							
+						<products_count translate="label"> 
+							<label>Products</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</products_count>	
+						<mode translate="label"> 
+							<label>Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_gridstyle</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</mode>	
+					</fields>					
+				</top_rated>
+				<most_reviewed translate="label">
+					<label>Most Reviewed tab settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>40</sort_order>		
+					<fields>
+						<enabled translate="label"> 
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</enabled>
+						<order translate="label"> 
+							<label>Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</order>						
+						<title translate="label"> 
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</title>							
+						<products_count translate="label"> 
+							<label>Products</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</products_count>	
+						<mode translate="label"> 
+							<label>Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_gridstyle</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</mode>																			
+					</fields>					
+				</most_reviewed>	
+				<just_added translate="label">
+					<label>Just Added tab settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>50</sort_order>		
+					<fields>
+						<enabled translate="label"> 
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</enabled>
+						<order translate="label"> 
+							<label>Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</order>						
+						<title translate="label"> 
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</title>							
+						<products_count translate="label"> 
+							<label>Products</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</products_count>	
+						<mode translate="label"> 
+							<label>Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_gridstyle</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</mode>																			
+					</fields>					
+				</just_added>					
+				<wishlist_top translate="label">
+					<label>Wish List Top tab settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>60</sort_order>		
+					<fields>
+						<enabled translate="label"> 
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</enabled>
+						<order translate="label"> 
+							<label>Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</order>						
+						<title translate="label"> 
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</title>							
+						<products_count translate="label"> 
+							<label>Products</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</products_count>	
+						<mode translate="label"> 
+							<label>Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_gridstyle</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>													
+						</mode>																			
+					</fields>					
+				</wishlist_top>
+				<favourite_tab translate="label">
+					<label>Custom tab settings</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>70</sort_order>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<order translate="label">
+							<label>Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<categories translate="label">
+							<label>Categories</label>
+                            <frontend_model>hometabspro/system_config_form_element_tree</frontend_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</categories>
+						<sorting translate="label">
+							<label>Sort by</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_sorting</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sorting>
+						<direction translate="label">
+							<label>Direction</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_direction</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</direction>
+						<products_count translate="label">
+							<label>Products</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</products_count>
+						<mode translate="label">
+							<label>Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>hometabspro/system_config_source_gridstyle</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</mode>
+					</fields>
+				</favourite_tab>
+			</groups>
+		</hometabspro>
+	</sections>
+</config>	
+ 

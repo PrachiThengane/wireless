@@ -1,0 +1,65 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+	$display_upcoming = Mage::getStoreConfig('groupdeals/configuration/display_upcoming');
+	$sidedeals_number = Mage::getStoreConfig('groupdeals/configuration/sidedeals_number');
+	$groupdealsModel = Mage::getModel('groupdeals/groupdeals');	
+?>
+<?php if (count($this->getItems())!=0 && $sidedeals_number!=0 && $display_upcoming): ?>
+<div class="block block-related groupdeals-block-related">
+	<?php
+		$_title = $this->__('Upcoming deals');
+	?>
+    <div class="block-title">
+        <strong><span><?php echo $_title; ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ol class="mini-products-list" id="block-related">
+        <?php $i = 0; foreach($this->getItems() as $_item): $i++; ?>
+			<?php $item_url = $_item->getProductUrl().'?city='.urlencode($this->getCity()); ?>
+            <li class="item">
+					<div class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(50) ?>" width="50" height="50" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></div>
+                    <div class="product-details">
+                        <p class="product-name"><?php echo $this->htmlEscape($_item->getName()) ?></p>
+                    </div>
+					<div class="info">
+						<div class="special-price">
+							<span class="price-label"><?php echo $this->__('Price:') ?></span>
+							<span class="price" id="product-price-<?php echo $_item->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_item, $_item->getSpecialPrice()); ?></span>
+						</div>	
+					</div>
+            </li>
+			<?php if ($sidedeals_number<=$i) break; ?>
+        <?php endforeach; ?>
+        </ol>
+		<div class="actions">
+			<div class="left" style="margin-right:7px;font-weight:bold"><?php echo $this->__('View: ') ?></div><a href="<?php echo $this->getUrl('groupdeals/product/upcoming').'city/'.urlencode($this->getCity()); ?>"><?php echo $this->__('All Upcoming Deals') ?></a>
+		</div>
+        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+    </div>
+</div>
+<?php endif; ?>

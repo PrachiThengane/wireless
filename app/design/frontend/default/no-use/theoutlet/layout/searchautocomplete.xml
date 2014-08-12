@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/searchautocomplete.css</stylesheet></action>
+            <action method="addJs"><script>aw_searchautocomplete/yui/2.6.0/build/yuiloader-dom-event/yuiloader-dom-event.js</script></action>
+            <action method="addJs"><script>aw_searchautocomplete/yui/2.6.0/build/datasource/datasource-min.js</script></action>
+            <action method="addJs"><script>aw_searchautocomplete/yui/2.6.0/build/autocomplete/autocomplete-min.js</script></action>
+            <action method="addJs"><script>aw_searchautocomplete/main.js</script></action>
+        </reference>
+        <reference name="top.search">
+            <action method="setTemplate">
+                <template>searchautocomplete/view.phtml</template>
+            </action>
+        </reference>
+    </default>
+</layout>

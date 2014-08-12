@@ -1,0 +1,87 @@
+.member-title-bg2-hov {
+background:transparent url(../../images/quicklogin/member-title-bg2-hov.gif) no-repeat scroll right top;
+width: 70px;
+}
+.member-title-bg a, .member-title-bg a:hover, .member-title-bg-hov a, .member-title-bg2-hov a {
+color:#555555;
+display:block;
+font-size:11px;
+font-weight:bold;
+padding:0 21px 1px 10px;
+z-index:10002;
+}
+.log_left li{float:right;margin-left:5px;padding-left:7px;background:url(../../images/links_separator.gif) no-repeat 0% 60%;color:#DDDDDD;}
+.log_left li a{color:#DDDDDD;}
+.log_left li.clear_bor{	background: none;}
+.log_left li.log_1{background: none;}
+.log_left a{color:#4F8100 }
+.login-menu {
+background:#fff none repeat scroll 0 0;
+padding:15px;
+text-align:right;
+width:200px;
+
+}
+.member-menu, .login-menu {
+background:#fff none repeat scroll 0 0;
+border:1px solid #bbb;
+margin-top:16px;
+padding:5px 2px 5px 10px;
+position:absolute;
+z-index:10001;
+right: 0px;
+text-align: left;color:#5B9400;margin-right:10px;color:#4F8100;
+}
+.member-menu {margin-right:60px;}
+.member-title-bg {
+background:transparent url(../../images/quicklogin/member-title-bg.gif) no-repeat scroll right top; /* url(images/member-title-bg.gif) */
+width: 70px;
+}
+.member-title-bg-st-hov {
+background:transparent url(../../images/quicklogin/member-title-start.gif) no-repeat scroll left top;
+}
+.quick-access li.clear_bor{
+	background: none;
+}
+.member-menu {
+	margin-top:-1px;
+	border:1px solid #bbb;
+	padding:6px 10px 5px;
+	width:140px;
+	z-index:99999;
+	line-height: 25px;color:#4F8100;
+}
+.member-menu li {
+	background-image:none;
+	border-bottom:1px solid #bbb;
+	float:none;
+	padding:0;margin-left:0px;
+}
+.member-menu li.log_out{border-bottom:none;}
+.member-menu li a{
+	text-decoration: none;color:#4F8100;
+}
+.member-menu li a:hover{
+	color: #EE382A;
+}
+.login-menu a{color:#4F8100 !important;}
+.login-menu #email{margin-left:26px;}
+.login-menu p {margin-bottom:0.6em;}
+input.pad_ip{margin-right:6px;float:left;display:block;}
+.pad_cancel{float:left;display:block;margin-top:5px;color:#4F8100;}
+
+.top_come{display:none;}
+
+.clear_both{overflow:hidden;clear:both;height:1px;}
+.click_close{margin-bottom:0.6em;}
+.click_close{padding-left:56px;}
+.click_close a{color:#4F8100;}
+
+.header-container {
+	position:relative;
+}
+
+
+
+
+

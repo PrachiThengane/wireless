@@ -1,0 +1,32 @@
+
+<li id="wishlistview">
+
+<?php
+if(Mage::getSingleton('customer/session')->getCustomer()){
+	$wishlist = Mage::getModel('wishlist/wishlist')->loadByCustomer(Mage::getSingleton('customer/session')->getCustomer());
+	$_itemCollection = $wishlist->getItemCollection();
+}else{
+	$_itemCollection = NULL;
+}
+$count = count($_itemCollection);
+
+
+$text = $this->__('<span id="wishlistview-span">Wish<br/><B>List</B></span>');
+
+?>
+
+  <div id="wishlistview-link">
+	<?php printf('<a href="%s" id="wishlistview-a">%s</a>', $this->getUrl('wishlist'), $text); ?>
+  </div>
+<div id="wishlistview-panel" style="display:none;">
+	<?php if(!Mage::helper('customer')->isLoggedIn()){ ?>
+<div class="block block-wishlist">
+<div class="block-content">
+		<?php echo 'Please Login!'; ?>
+	  </div>
+	  </div>
+<?php }else{ ?>
+		<?php echo $this->getChildHtml('topwish'); ?>
+<?php } ?>
+  </div>
+</li>

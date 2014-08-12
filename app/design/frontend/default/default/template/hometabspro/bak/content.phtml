@@ -1,0 +1,150 @@
+<?php
+	/**
+	 * aheadWorks Co.
+	 *
+	 * NOTICE OF LICENSE
+	 *
+	 * This source file is subject to the EULA
+	 * that is bundled with this package in the file LICENSE.txt.
+	 * It is also available through the world-wide-web at this URL:
+	 * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 *
+	 * @category   AW
+	 * @package    AW_Hometabspro
+	 * @copyright  Copyright (c) 2010 aheadWorks Co. (http://www.aheadworks.com)
+	 * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 */
+?>
+ <?php echo $this->getLoaderHtml(); ?>
+<?php 
+    $_productCollection=$this->getCollection();
+
+    $this->addColumnCountLayoutDepend('empty', 6);
+    $this->addColumnCountLayoutDepend('one_column', 5);
+    $this->addColumnCountLayoutDepend('two_columns_left', 4);
+    $this->addColumnCountLayoutDepend('two_columns_right', 4);
+    $this->addColumnCountLayoutDepend('three_columns', 3);
+?>
+<?php if($this->getMode()=='list'): ?>
+<?php $_iterator = 0; ?>
+<div class="listing-type-list catalog-listing" id="hometabspro">
+<?php foreach ($_productCollection as $_product): ?>
+    <div class="listing-item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+        <?php // Product Image ?>
+        <div class="product-image">
+            <a href="<?php echo $this->checkUrl($_product->getProductUrl()) ?>" title="<?php echo $this->htmlEscape($_product->getSmallImageLabel()) ?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135, 135); ?>" width="135" height="135" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
+            </a>
+        </div>
+
+        <?php // Product description ?>
+        <div class="product-shop">
+            <h5><a href="<?php echo $this->checkUrl($_product->getProductUrl()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName())?></a></h5>
+            <?php echo $this->getReviewsSummaryHtml($_product) ?>
+            <?php 
+                if($_product->isGrouped()){
+                    $price = Mage::helper('hometabspro')->getGroupedItemPrice($_product->getId());
+                    echo '<div class="price-box"><p class="minimal-price"><span class="price-label">Starting at:</span> <span class="price">$'.$price.'</span></p></div>';
+                }
+            ?>
+            <?php echo $this->getPriceHtml($_product, true) ?>
+            <?php if($_product->isSaleable()): ?>
+            <button class="form-button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><?php echo $this->__('Add to Cart') ?></span></button>
+            <?php else: ?>
+            <div class="out-of-stock"><?php echo $this->__('Out of stock') ?></div>
+            <?php endif; ?>
+            <div class="clear"></div>
+            <div class="description">
+                <?php echo nl2br($_product->getShortDescription()) ?>
+                <a href="<?php echo $this->checkUrl($_product->getProductUrl()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><small><?php echo $this->__('Learn More') ?></small></a>
+            </div>
+            <p class="add-to">
+                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-cart"><?php echo $this->__('Add to Wishlist') ?></a>
+                <?php endif; ?>
+                <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                <?php
+                    $values = explode('/',$_compareUrl);
+                    $link = $values[count($values)-2];
+                    $link = Mage::helper('core')->urlDecode($link);
+                    if($link == $this->getBaseUrl())
+                        $link = $link.'hometabspro/ajax/request/item/'.Mage::getSingleton('core/session')->getActiveTab().'/skey/ssbqyjsw/';
+                    $link = $link.'compare/true/';
+                    $link = Mage::helper('core')->urlEncode($link);
+                    $values[count($values)-2] = $link;
+                    $_compareUrl = implode('/',$values);
+                ?>
+                <span class="pipe">|</span>
+                <a href="<?php echo $_compareUrl ?>"><?php echo $this->__('Add to Compare') ?></a>
+                <?php endif; ?>
+            </p>			
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>
+<?php else: ?>
+<?php // Grid Mode ?>
+<div class="listing-type-grid catalog-listing" id="hometabspro">
+<?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = $this->getColumnCount() ? $this->getColumnCount() : 3; ?>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <?php if($i++%$_columnCount==0): ?>
+        <ol class="grid-row" id="htp-grid-row">
+        <?php endif; ?>
+            <li class="item<?php if ( ($i)%$_columnCount == 0): ?> last<?php endif; ?><?php if ( ($i - 1)%$_columnCount == 0): ?> first<?php endif; ?>">
+                <p class="product-image">
+                    <a href="<?php echo $this->checkUrl($_product->getProductUrl()) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135, 135); ?>" width="135" height="135" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
+                    </a>
+                </p>
+                <h5><a href="<?php echo $this->checkUrl($_product->getProductUrl()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h5>
+                <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                <?php
+                if($_product->isGrouped()){
+                    $price = Mage::helper('hometabspro')->getGroupedItemPrice($_product->getId());
+                    echo '<div class="price-box"><p class="minimal-price"><span class="price-label">Starting at:</span> <span class="price">$'.$price.'</span></p></div>';
+                }
+                ?>
+                <?php echo $this->getPriceHtml($_product, true) ?>
+                <?php if($_product->isSaleable()): ?>
+                    <button type="button" class="form-button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><?php echo $this->__('Add to Cart') ?></span></button>
+                <?php else: ?>
+                <div class="out-of-stock"><?php echo $this->__('Out of stock') ?></div>
+                <?php endif; ?>
+                <p class="add-to">
+                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                    <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-cart"><?php echo $this->__('Add to Wishlist') ?></a>
+                    <?php endif; ?>
+                    <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?><br/>
+                    <?php
+                    $values = explode('/',$_compareUrl);
+                    $link = $values[count($values)-2];
+                    $link = Mage::helper('core')->urlDecode($link);
+                    if($link == $this->getBaseUrl())
+                        $link = $link.'hometabspro/ajax/request/item/'.Mage::getSingleton('core/session')->getActiveTab().'/skey/ssbqyjsw/';
+                    $link = $link.'compare/true/';
+                    $link = Mage::helper('core')->urlEncode($link);
+                    $values[count($values)-2] = $link;
+                    $_compareUrl = implode('/',$values);
+                    ?>
+                    <a href="<?php echo $_compareUrl ?>"><?php echo $this->__('Add to Compare') ?></a>
+                    <?php endif; ?>
+                </p>
+            </li>
+        <?php if($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        </ol>
+        <?php endif; ?>
+    <?php endforeach ?>
+    <script type="text/javascript">decorateGeneric($$('.grid-row'), ['last', 'odd', 'even']);</script>
+</div>
+<?php endif; ?>
+<script type="text/javascript">
+    var activeTab = '<?php echo Mage::getSingleton('core/session')->getActiveTab();?>';
+    if(activeTab){
+        var currentTab = $$('li.active');
+        for(var i=0;i<currentTab.length;i++){
+            $(currentTab[i].id).removeClassName('active');
+        }
+        $(activeTab).addClassName('active');
+    }
+</script>

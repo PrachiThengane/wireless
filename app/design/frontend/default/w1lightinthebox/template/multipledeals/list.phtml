@@ -1,0 +1,106 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $display_past_deals = Mage::getStoreConfig('multipledeals/configuration/past_deals'); 
+?>
+<?php $now = Mage::getModel('core/date')->timestamp(time()); ?>
+<div class="page-title category-title">
+    <h1><?php echo $this->__('Active Deals') ?></h1><?php if ($display_past_deals): ?>(<a href="<?php echo $this->getUrl('multipledeals/index/recent'); ?>"><?php echo $this->__('view past deals.') ?></a>)<?php endif; ?>
+</div>
+
+<?php if(!count($_productCollection)): ?>
+<p class="note-msg"><?php echo Mage::getStoreConfig('multipledeals/configuration/no_deal_message') ?></p>
+<?php else: ?>
+<div class="category-products">   
+
+    <?php // Grid Mode ?>
+
+    <?php $_collectionSize = count($_productCollection) ?>
+    <?php $_columnCount = 4; ?>
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+	<?php $prds = Mage::getModel('core/date')->timestamp($_product->getProductReleaseDate());?>
+	<?php $exper_time = Mage::getModel('core/date')->timestamp($_product->getExpiredate()); ?>
+	<?php if ($i++%$_columnCount==0): ?>
+	<ul class="products-grid">
+	<?php endif; ?>
+	<?php $product_url = $this->getProductUrl($_product); ?>
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+
+		<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
+			<div class="cash-sticker-sml-grid"><span class="cbprice"><?php echo $this->__("$%s", Mage::helper('core')->currency($_product->getCashback(), false, false)); ?></span><br />CASH<br />BACK<span class="asterix">*</span></div>
+		<?php elseif ($_product->getWeight() == '0.0000'): ?>
+			<div class="free-sticker-sml-grid"><span>FREE</span> SHIPPING</div>
+		<?php elseif ($_product->getAttributeText('demo_unit') == 'True'): ?>
+			<div class="demo-sticker-sml-grid"><span>DEMO</span> UNIT</div>
+		<?php elseif ($_product->getSpecialPrice() != null && time() > strtotime($_product->getSpecialFromDate()) && time() < strtotime($_product->getSpecialToDate())):?>
+	        	<div class="hot-sticker-sml-grid"><span>HOT</span> DEAL</div>
+		<?php endif; ?>
+
+                <a href="<?php echo $product_url; ?>" title="<?php echo $this->getImageLabel($_product, 'small_image') ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(160); ?>" width="160" height="160" alt="<?php echo $this->getImageLabel($_product, 'small_image') ?>" /></a> 
+                <h2 class="product-name"><a href="<?php echo $product_url; ?>" title="<?php echo $_product->getName() ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+				<?php if ($_product->getTypeId()=='simple' || $_product->getTypeId()=='virtual' || $_product->getTypeId()=='downloadable' || $_product->getTypeId()=='configurable'): ?>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                <?php endif; ?>
+								
+				<b><?php //echo $this->helper('multipledeals')->__('Time left to buy:'); ?></b>  
+                <div class="multipledeals"><?php echo $this->helper('multipledeals')->getProductCountdown($_product); ?></div>
+				<p>
+				<?php if ($_product->getTypeId()=='simple' || $_product->getTypeId()=='virtual' || $_product->getTypeId()=='downloadable'): ?>
+					<span class="deal-qty"><b>Only <?php echo $this->getDealQty($_product); ?> item(s)</b> left!</span>
+				<?php else: ?>
+					<span class="deal-qty">Quantity varies depending on the subitems</span>
+				<?php endif; ?>
+				</p> 
+                <div class="actions">
+                    <?php if($_product->isSaleable()): ?>
+			<?php if($now < $prds && $_product->getProductReleaseDate() != null): ?>		        
+			    <button type="button" title="<?php echo $this->__('Pre-Order') ?>" class="button-pre-sml button btn-cart" onclick="setLocation('<?php echo $this->getProductUrl($_product) ?>')"><span><span><?php echo $this->__('Pre-Order') ?></span></span></button>
+			<?php else: ?>
+    			    <button type="button" title="<?php echo $this->__('Buy Now') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getProductUrl($_product) ?>')"><span><span><?php echo $this->__('Buy Now') ?></span></span></button>
+			<?php endif; ?>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                </div>
+            </li>
+        <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        </ul>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+
+</div>
+<?php endif; ?>

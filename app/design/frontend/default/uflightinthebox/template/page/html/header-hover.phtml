@@ -1,0 +1,58 @@
+<div class="header-container">
+    <div class="header">
+		<div class="nav-cross-shop">
+        <?php if ($this->getIsHomePage()):?>
+        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+		<div class="right-links">        
+          <ul class="links">
+			<li><a title="Today`s Deals" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>multipledeals/index/list/" class="first">Today`s Deals</a></li>
+			<li><a title="Gift Cards" href="#">Gift Cards</a></li>
+			<li ><a title="Help" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>blog" class="last" target="_blank">Blog</a></li>
+		  </ul>
+		</div>
+		</div>
+        <div class="quick-access">
+            <div class="nav-bar-outer">
+
+<div class="nav-container">
+	<div class="menucontent">
+		<div class="leftnavi">
+
+				<div class="index_left_one">
+						<a id="header-menuha">
+						<span>
+						<?php echo $this->__('Shop by </br><strong>Department</strong>') ?>
+						</span>
+						</a>
+					<div style="display:none;"  id="header-menuha-son">
+					<?php echo $this->getChildHtml('topMenu2') ?>
+					</div>
+				</div>
+
+		</div>		
+		<?php //echo $this->getChildHtml('topMenu') ?>
+	</div>	
+</div>
+
+
+            </div>
+			
+
+
+			<?php echo $this->getChildHtml('mec.advancedsearch') ?>
+			<?php //echo $this->getChildHtml('cartview_toplink') ?>
+			  <?php echo $this->getChildHtml('topLinks') ?>
+			<?php //echo $this->getChildHtml('topSearch') ?>
+        </div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    </div>
+</div>
+<?php //echo $this->getChildHtml('topMenu') ?>
+<!--<div class="home_page_header_block">
+<?php echo $this->getChildHtml('home_page_header_block'); ?>
+</div>
+-->
+

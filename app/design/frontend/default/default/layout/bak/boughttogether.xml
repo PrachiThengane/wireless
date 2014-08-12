@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<catalog_product_view>		
+		<reference name="head">
+			<action method="addJs"><script>aw_boughttogether/pico-1.2.js</script></action>
+			<action method="addJs"><script>aw_boughttogether/main-0.1.4.js</script></action>
+			<block type="boughttogether/init" name="aw.boughttogether.init" template="boughttogether/init.phtml"/>
+		</reference>
+		<reference name="product.info">
+            <block type="boughttogether/list" name="aw_boughttogether_list"  as="boughtTogether" template="boughttogether/list.phtml"/>
+		</reference>
+	</catalog_product_view>
+</layout>

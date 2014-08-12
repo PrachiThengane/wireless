@@ -1,0 +1,93 @@
+<?php $allows = Mage::getStoreConfig("hm_quicklogin/general/allow_fields");  ?>
+<?php if(!Mage::helper('customer')->isLoggedIn() ):?>
+				<div class="login-wrapper" onMouseOver="toggleMemberMenu();" onMouseOut="toggleMemberMenu();">
+					<div id="login-div">
+						<a id="login-a" href="#">
+						<?php echo $this->__('Login') ?>
+						</a>
+						<?php echo $this->__('or')?>
+						<a id="register-a" href="#">
+						<?php echo $this->__('Register') ?>
+						</a>
+						<?php //echo $this->__('or')?>
+						<a href="<?php echo Mage::helper('customer')->getAccountUrl()?>"  id="account-a">
+							<?php echo $this->__('My Account')?>
+						</a>
+					</div>
+					<div id="mMenu" class="login-menu" style="display: none;">
+						<form id="mini_login_form" action="<?php echo Mage::helper('customer')->getLoginPostUrl() ?>" method="post">
+							<div>
+									
+										<div class="label"><?php echo $this->__('Email')?>: </div>
+										<input id="email" type="text" class="input-text required-entry" name="login[username]" value="<?php echo Mage::helper('catalogSearch')->getEscapedQueryText() ?>" title="<?php echo $this->__('Email Address') ?>" />
+						  
+				
+										<div class="label"><?php echo $this->__('Password')?>: </div>
+										<input id="pass" type="password" class="input-text required-entry validate-password" name="login[password]" value="<?php echo Mage::helper('catalogSearch')->getEscapedQueryText() ?>" />
+						
+									
+									<div class="click_close">
+											<input class="pad_ip" type="image" alt="<?php echo $this->__('Login') ?>" src="<?php echo $this->getSkinUrl('images/sign-in.png') ?>" />
+											
+											
+											<a href="<?php echo $this->getUrl('customer/account/forgotpassword/') ?>" title="Forgeot Password?">Forgot Password?</a>
+									<br/>
+									<div class="new-customer clear">
+									<span>New customer?</span> <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>customer/account/create/">Start here</a>.
+									</div>							
+									</div>
+
+								   <script type="text/javascript">
+								   var searchForm=new Varien.searchForm('mini_login_form','email','<?php echo Mage::helper('catalogSearch')->__('Email Address') ?>');new Varien.searchForm('mini_login_form','pass','<?php echo Mage::helper('catalogSearch')->__('Password') ?>');					          </script>
+							 </div>
+						</form> 
+															
+					</div>
+				</div>
+<?php endif; ?>
+<?php if( Mage::helper('customer')->isLoggedIn()){ ?>
+		<div onMouseOver="toggleMemberMenu();" onMouseOut="toggleMemberMenu();" class="log_1">
+		<div id="login-div">
+		
+		<a href="<?php echo Mage::helper('customer')->getAccountUrl()?>"  id="login-a">
+		<span class="halo"><?php echo $this->__('Hello!') ?></span><span class="org"></span>
+		<span class="yr-account"><?php echo Mage::helper('customer')->__('My Account') ?></span>
+		
+		</a></div>
+		<div id="mMenu"  class="member-menu" style="display: none;" >
+				<ul>
+					<?php if(strstr($allows,'accountinformation')!=''):?>
+						<li><a href="<?php echo Mage::helper('customer')->getEditUrl()?>"><?php echo Mage::helper('customer')->__('Account Information') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'addressbook')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('customer/address/')?>"><?php echo Mage::helper('customer')->__('Address Book') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'myorder')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('sales/order/history/')?>"><?php echo Mage::helper('customer')->__('My Orders') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'myproductreview')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('review/customer/')?>"><?php echo Mage::helper('customer')->__('My Product Reviews') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mytag')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('tag/customer/')?>"><?php echo Mage::helper('customer')->__('My Tags') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'newletters')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('newsletter/manage/')?>"><?php echo Mage::helper('customer')->__('Newsletter Subscriptions') ?></a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mywishlist')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('wishlist/')?>"><?php echo Mage::helper('customer')->__('My Wishlist') ?> (<?php echo Mage::helper('wishlist')->getItemCount()?>)</a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mycompare')!=''):?>
+						<li onclick="popWin('<?php echo Mage::helper('catalog/product_compare')->getListUrl() ?>','compare','width=800,height=600,resizable=yes,scrollbars=yes')"><a href="javascript: voi(0);" onclick="return false;" ><?php echo Mage::helper('catalog')->__('My Compare') ?> (<?php echo Mage::helper('catalog/product_compare')->getItemCount() ?>)</a> </li>
+					<?php endif;?>
+					<?php if(strstr($allows,'mydownload')!=''):?>
+						<li><a href="<?php echo Mage::getUrl('downloadable/customer/products/')?>"><?php echo Mage::helper('customer')->__('My Downloadable Products') ?></a> </li>
+					<?php endif;?>
+					<hr>
+					<li class="log_out"><a href="<?php echo Mage::helper('customer')->getLogoutUrl()?>"><strong style="color: #EE382A;"><?php echo Mage::helper('customer')->__('Logout') ?></strong>  </a> </li>
+				</ul>
+			</div>	
+			</div>
+
+<?php } ?>
+    

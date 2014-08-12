@@ -1,0 +1,10 @@
+.points-notice-msg
+{
+    background: scroll 10px 10px lemonchiffon !important;
+    border: 1px solid #2273C0 !important;
+    color: #2273C0 !important;
+    padding: 10px;
+    font-size: 11px;
+	float:right;
+	
+}

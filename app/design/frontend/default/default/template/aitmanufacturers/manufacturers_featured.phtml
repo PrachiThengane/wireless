@@ -1,0 +1,27 @@
+<?php
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/design/frontend/default/default/template/aitmanufacturers/manufacturers_featured.phtml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+?>
+<?php
+/**
+* @copyright  Copyright (c) 2009 AITOC, Inc. 
+*/
+?>
+<?php $manufacturers = $this->getItems() ?>
+<?php if (count($manufacturers)): ?>
+<div class="page-head">
+<h3><?php echo $this->__('Featured Brands')?></h3>
+</div>
+<div>
+<?php foreach($manufacturers as $manufacturer): ?>
+<div style="float: left; margin: 0 7px 7px 0;"></span><a href="<?php echo $manufacturer->getUrl() ?>"><img src="<?php echo Mage::helper('aitmanufacturers/image')->getUrl($manufacturer->getImage()) ?>" title="<?php echo $this->htmlEscape($manufacturer->getManufacturer()) ?>" alt="<?php echo $this->htmlEscape($manufacturer->getManufacturer()) ?>" /></a></div>
+<?php endforeach ?>
+</div>
+<div style="clear: both;">&nbsp;</div>
+<?php endif ?>

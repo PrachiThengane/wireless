@@ -1,0 +1,47 @@
+<div class="block block-list footer-list">
+<h2><strong>Continue Shopping:</strong></h2>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery/jquery-1.4.2.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.jcarousel.pack.js') ?>"></script>
+<div class="fr sale-pro">
+				<ul id="mycarousel" class="jcarousel-skin-tango">
+<?php
+$_productC_featured = Mage::getModel('catalog/product')->getCollection()
+			//->addAttributeToFilter('home_sale',true)
+			->addCategoryFilter(Mage::getModel('catalog/category')->load(13),true)
+			->addAttributeToFilter('visibility',4)
+			->addAttributeToSelect('*')
+			->addAttributeToSort('entity_id', 'desc')
+			->setPageSize(5)
+			->setCurPage(1)							
+			->load();     
+Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($_productC_featured);
+Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($_productC_featured);					
+?>				
+<?php if($_productC_featured->count()): ?>					
+	<?php $i=0; foreach ($_productC_featured as $_product): ?>
+			<li>
+			<a class="ih" title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>"> 								
+				<span class="ih">
+				<img class="product-image" height="122" width="122" title="<?php echo $this->htmlEscape($_product->getName()) ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(122); ?>"/>									
+				</span>
+			</a>
+			<h3 class="product-name">
+				<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+				<?php echo $this->htmlEscape($_product->getName()) ?>
+				</a> 
+			</h3>
+			<?php //echo $this->getPriceHtml($_item) ?>
+			</li>
+	<?php endforeach ?>
+		<?php endif ?>
+				</ul>
+</div>	
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        visible: 4
+    });
+});
+</script>				
+</div>				

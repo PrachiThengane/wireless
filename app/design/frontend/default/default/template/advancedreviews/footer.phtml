@@ -1,0 +1,50 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_AdvancedReviews
+ * @copyright  Copyright (c) 2009-2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<div style="display:block;">
+    <table style="width:100%;">
+        <tr>
+            <td style="width:50%;">
+                <?php
+                    if ($this->canShowSocial())
+                    {
+                        echo $this->getChild('advancedreviews_socialshare')->setReviewId($this->getReviewId())->toHtml();
+                    }
+
+                ?>
+            </td>
+            <td  style="width:50%;" class="a-right">
+                <?php
+                    if ($this->canShowHelpfulness())
+                    {
+                        echo $this->getChild('advancedreviews_helpfulness')->setReviewId($this->getReviewId())->toHtml();
+                    }            
+                ?>
+            </td>
+        </tr>
+        <?php if ($this->canShowAbuse()): ?>
+            <tr>
+                <td style="width:50%;">
+                    &nbsp;
+                </td>
+                <td style="width:50%;" class="a-right">
+                    <?php echo $this->getChild('advancedreviews_reportabuse')->setReviewId($this->getReviewId())->toHtml(); ?>
+                </td>
+            </tr>
+        <?php endif ?>
+    </table>
+</div>

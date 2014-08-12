@@ -1,0 +1,22 @@
+<div class="HomeTab">
+				<div id="Home-tab">
+					<div class="tabs">	
+						<ul id="tabs_example_two" class="subsection_tabs">
+							
+							<li class="tab3"><a href="#c"><span>Cloud Player</span></a></li>
+							<li class="tab2"><a href="#b"><span>Cloud Drive</span></a></li>
+							<li class="tab1"><a href="#a"><span>MP3 Store</span></a></li>
+							<li class="tab4"><a href="#d"><span>Game &amp; Software Downloads</span></a></li>
+						</ul>
+						<div class="tab-in">
+						<div id="a"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab1-banner')->toHtml(); ?></div>
+						<div id="b"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab3-banner')->toHtml(); ?></div>
+						<div id="c"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab2-banner')->toHtml(); ?></div>
+						<div id="d"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-tab4-banner')->toHtml(); ?></div>
+						</div>
+					</div>		
+				</div>
+</div>
+<script type="text/javascript">
+document.observe('dom:loaded',function(){var tabs_example_two=new Control.Tabs('tabs_example_two',{});$('tabs_example_two_first')});
+</script>

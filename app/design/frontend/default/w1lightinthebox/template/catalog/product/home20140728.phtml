@@ -1,0 +1,59 @@
+<?php $now = Mage::getModel('core/date')->timestamp(time()); ?>
+<?php $_productCollection=$this->getLoadedProductCollection(); ?>
+<h2><?php echo $this->__('Featured Products') ?></h2>
+
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products to display.'); ?></p>
+<?php else: ?>
+<div class="category-products">
+
+    <?php // Grid Mode ?>
+
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = $this->getColumnCount(); ?>	
+	<ul class="products-grid">
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+	<?php $prds = Mage::getModel('core/date')->timestamp($_product->getProductReleaseDate());?>
+	<?php $i++;?>
+
+            <li class="item">
+				<div class="item-inner">
+					<div class="onsale-category-container-grid">
+					<?php echo Mage::helper('onsale')->getCategoryLabelHtml($_product); ?>
+					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(156,156); ?>" width="156" height="156" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
+									<?php $product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
+					<?php if ($product->getProductIconList() != null && $product->getProductIconList() != 'no_selection'):?>
+                      <div class="list-icon"><img src="<?php echo $this->helper('catalog/image')->init($product, 'product_icon_list')->resize(120,155); ?>"/></div>
+					<?php endif;?>
+					
+					</div>
+					<?php //var_dump(strlen($_product->getName())); ?>
+					<?php if(strlen($_product->getName()) <= 80):?>
+						<h3 class="product-name"><?php echo $this->htmlEscape($_product->getName()) ?></h3>
+					<?php else: ?>
+						<h3 class="product-name"><?php echo $this->htmlEscape(mb_substr($_product->getName(),0,80,'UTF-8')) ?></h3>
+					<?php endif; ?>
+					<a class="view-more" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->__('View More')?></a>
+					
+					<?php echo $this->getPriceHtml($_product, true) ?>
+				   <div class="actions">
+                    <?php if($_product->isSaleable()): ?>
+			<?php if($now < $prds && $_product->getProductReleaseDate() != null): ?>
+                            <button type="button" title="<?php echo $this->__('Pre-Order') ?>" class="button-pre-sml button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Pre-Order') ?></span></span></button>
+			<?php else: ?>
+                            <button type="button" title="<?php echo $this->__('Buy Now') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Buy Now') ?></span></span></button>
+			<?php endif; ?>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                    
+                </div>
+				
+				</div>
+            </li>
+<?php if($i==6) break;?><!--set the items amount by $i break -by reyes- -->
+        <?php endforeach ?>
+		        </ul>
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+</div>
+<?php endif; ?>

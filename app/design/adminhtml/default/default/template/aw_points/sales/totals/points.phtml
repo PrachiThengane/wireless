@@ -1,0 +1,10 @@
+<?php if ($this->getSource()->getBaseMoneyForPoints()): ?>
+    <tr>
+        <td class="label">
+            <?php echo Mage::helper('points')->__('%s', Mage::helper('points/config')->getPointUnitName()) ?>
+        </td>
+        <td>
+            <?php echo $this->displayPrices($this->getSource()->getBaseMoneyForPoints(), $this->getSource()->getMoneyForPoints()); ?>
+        </td>
+    </tr>
+<?php endif; ?>

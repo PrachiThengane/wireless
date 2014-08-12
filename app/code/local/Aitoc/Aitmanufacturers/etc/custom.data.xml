@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+    <template>
+        <frontend>
+            <file path="design--frontend--base--default--template--catalog--product--view"></file>
+        </frontend>
+    </template>
+</config>
+<!--
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/code/local/Aitoc/Aitmanufacturers/etc/custom.data.xml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+-->

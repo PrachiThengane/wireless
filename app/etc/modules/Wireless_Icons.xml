@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wireless_Icons>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Wireless_Icons>
+    </modules>
+</config>

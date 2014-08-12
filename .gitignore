@@ -1,0 +1,13 @@
+/var/
+/media/catalog/
+/media/tmp/
+/app/code/core/
+/app/design/frontend/base/
+/app/design/frontend/enterprise/
+/downloader/
+/feeds/
+/lib/Zend/
+/lib/Varien/
+/min/
+/skin/base/
+/skin/enterprise/

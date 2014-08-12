@@ -1,0 +1,154 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+	$viewBlock = new Devinc_Groupdeals_Block_Product_View;
+	$storeId = Mage::app()->getStore()->getId();
+	$groupdealsModel = Mage::getModel('groupdeals/groupdeals');
+?>
+
+<div id="messages_deals_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<?php if ($this->getCity()!=''): ?>
+<div class="page-title category-title">
+	<?php if ($this->getCity()=='Universal'): ?>
+		<h1><?php echo $this->__('Active Group Deals', $this->__($this->getCity())) ?></h1> (<a href="<?php echo $this->getUrl('groupdeals/product/recent').'city/'.urlencode($this->getCity()); ?>"><?php echo $this->__('Past Group Deals') ?></a>)
+	<?php else: ?>
+		<h1><?php echo $this->__('Active Group Deals', $this->getCity()) ?></h1> (<a href="<?php echo $this->getUrl('groupdeals/product/recent').'city/'.urlencode($this->getCity()); ?>"><?php echo $this->__('Past Group Deals') ?></a>)
+	<?php endif; ?>
+</div>
+<?php endif; ?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no deals currently active.') ?></p>
+<?php else: ?>
+<div class="category-products groupdeals-category-products">   
+    <?php // Grid Mode ?>
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_columnCount = 4; ?>
+	<ul class="products-grid">
+    <?php $i=-1; foreach ($_productCollection as $_product): $i++; ?>
+			<?php 	
+				$product_url = $this->getProductUrl($_product); 
+				$_groupdeals = Mage::getModel('groupdeals/groupdeals')->getCollection()->addFieldToFilter('product_id', $_product->getId())->getFirstItem();
+			?>
+            <li class="item<?php if($i==0): ?> main<?php elseif($i%2==0): ?> last<?php endif; ?>">
+				<?php if($i==0): ?>
+				<div class="onsale-category-container-grid"><?php echo Mage::helper('onsale')->getCategoryLabelHtml($_product); ?>
+					<a href="<?php echo $product_url; ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(160, 160); ?>" width="160" height="160" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a></div>
+				<?php else: ?>
+				<div class="onsale-category-container-grid"><?php echo Mage::helper('onsale')->getCategoryLabelHtml($_product); ?>
+					<a href="<?php echo $product_url; ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(160, 160); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a></div>
+				<?php endif; ?>
+				<div class="info">
+					<h2 class="product-name"><a href="<?php echo $product_url; ?>" title="<?php echo $this->htmlEscape($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+					<?php if($i==0): ?>
+						<?php $_merchant = Mage::getModel('groupdeals/merchants')->getCollection()->addFieldToFilter('merchants_id', $_groupdeals->getMerchantId())->getFirstItem(); ?>
+						<div class="description"><?php echo $this->getMerchantDescription($_merchant, $storeId, 170) ?></div>
+						<div class="box">										
+							<div class="box-item old-price">
+								<span class="box-label"><?php echo $this->__('Value:') ?></span>
+								<span class="price" id="old-price-<?php echo $_product->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_product, $_product->getPrice()); ?></span>
+							</div>
+							<div class="box-item special-price">
+								<span class="box-label"><?php echo $this->__('Price:') ?></span>
+								<span class="price" id="product-price-<?php echo $_product->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_product, $_product->getSpecialPrice()); ?></span>
+							</div>	
+						</div>
+						
+						<?php /* ?><div class="box timer">	
+                           <div class="left-time"><?php echo $this->__('Time left to buy:')?></div>				
+							<div class="box-item">
+								<?php echo $viewBlock->getCountdown($_product->getId()); ?>
+							</div>
+						</div><?php */ ?>
+						
+					<?php else: ?>
+						<div class="box">										
+							<div class="box-item old-price">
+								<span class="box-label"><?php echo $this->__('Value:') ?></span>
+								<span class="price" id="old-price-<?php echo $_product->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_product, $_product->getPrice()); ?></span>
+							</div>
+							<div class="box-item special-price">
+								<span class="box-label"><?php echo $this->__('Price:') ?></span>
+								<span class="price" id="product-price-<?php echo $_product->getId(); ?>"><?php echo $groupdealsModel->getFormatedPrice($_product, $_product->getSpecialPrice()); ?></span>
+							</div>	
+						</div>
+					<?php endif; ?>
+					<div class="actions">
+						<?php if($i==0): ?>
+							<?php /* ?><div class="target">
+								<?php $sales_number = $viewBlock->getSalesNumber($_groupdeals); ?> 
+								<?php $minimum_qty = $_groupdeals->getMinimumQty(); ?>			
+								<?php if ($minimum_qty>0): ?>
+									<div class="progress_bar">
+										<?php if ($_product->getGroupdealStatus()!=4 && $_product->isSaleable()): ?>
+											<?php if ($sales_number<$minimum_qty): ?>
+												<i><?php echo $this->__('%s more needed to get the deal', $minimum_qty-$sales_number); ?></i>
+											<?php else: ?>
+												<i><?php echo $this->__('Tipped at %s with %s bought', $this->getTippingTime($_groupdeals), $minimum_qty); ?></i>
+											<?php endif; ?>
+										<?php else: ?>		
+											<?php if ($sales_number>=$minimum_qty): ?>
+												<i><?php echo $this->__('Tipped at %s with %s bought', $this->getTippingTime($_groupdeals), $minimum_qty); ?></i>
+											<?php else: ?>
+												<i><?php echo $this->__('The deal\'s target wasn\'t met.') ?></i>
+											<?php endif; ?>
+										<?php endif; ?>
+									</div>
+								<?php elseif ($_product->getGroupdealStatus()!=4 && $_product->isSaleable()): ?>
+									<div class="progress_bar" style="padding-top:16px;">
+										<?php if ($sales_number>0): ?>
+											<h1><?php echo $this->__('%s bought', $sales_number); ?></h1>
+										<?php endif; ?>
+									</div>
+								<?php else: ?>
+									<div class="progress_bar" style="padding-top:16px;">
+										<h1><?php echo $this->__('%s bought', $sales_number); ?></h1>
+									</div>
+								<?php endif; ?>						
+							</div><?php */ ?>
+						<?php endif; ?>
+						<?php if($_product->isSaleable()): ?>
+							<button type="button" title="<?php echo $this->__('Buy Now') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Buy Now') ?></span></span></button>
+						<?php else: ?>
+							<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+						<?php endif; ?>
+					</div>
+				</div>
+            </li>
+        <?php endforeach ?>
+		</ul>
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+</div>
+<?php endif; ?>

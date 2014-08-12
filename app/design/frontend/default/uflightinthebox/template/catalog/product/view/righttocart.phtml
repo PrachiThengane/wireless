@@ -1,0 +1,51 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Buy Now'); ?>
+
+<?php if($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+        <?php if(!$_product->isGrouped()): ?>
+        <!--<label for="qty"><?php //echo $this->__('Qty:') ?></label>-->
+				<span id="subqty">-</span>
+        <input type="text" name="qty" id="rightqty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+
+		<span id="addqty">+ </span>
+        <?php endif; ?>
+		
+		<!-- <?php //if(count($_product->getRelatedProductCollection) ==0){ ?>
+			<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+		<?php //} ?> -->
+		
+		<?php //var_dump(number_format(Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty(), 0)); ?>
+		<?php
+		$Qty = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty();
+		if($Qty >= 10){?>
+			<span class="stock-item"><?php echo $this->__('More Than 10 Available.')?></span>
+		<?php }else if($Qty < 10 && $Qty >=5){ ?>
+			<span class="stock-item"><?php echo $this->__('Less Than 10 Left.')?></span>
+		<?php }else if($Qty < 5){?>
+			<span class="stock-item"><?php echo $this->__('Less Than 5 Left.')?></span>
+		<?php } ?>
+		
+		
+		
+        <?php echo $this->getChildHtml('', true, true) ?>
+		
+		
+    </div>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$('#addqty').click(function(){
+				$('#rightqty').val(parseInt($('#rightqty').val()) + 1);
+			});
+			
+			
+			$('#subqty').click(function(){
+				if($('#rightqty').val() > 1){
+					$('#rightqty').val(parseInt($('#rightqty').val()) - 1);
+				}
+			});
+			
+		});
+	</script>
+<?php endif; ?>

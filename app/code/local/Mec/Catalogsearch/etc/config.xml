@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Mec_Catalogsearch>
+			<version>0.1.0</version>
+		</Mec_Catalogsearch>
+	</modules>
+
+	<frontend>
+        <layout>
+             <updates>
+                  <mec_catalogsearch>
+                        <file>mec-catalogsearch.xml</file>
+                  </mec_catalogsearch>
+             </updates>
+        </layout>
+    </frontend>
+
+	
+	<adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <mec_catalogsearch>
+                                            <title>Mec Advanced Catalogsearch</title>
+                                        </mec_catalogsearch>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+	
+	<global>
+		<models>
+            <mec_catalogsearch>
+                <class>Mec_Catalogsearch_Model</class>
+            </mec_catalogsearch>  
+        </models>
+		<helpers>
+            <mec_catalogsearch>
+                <class>Mec_Catalogsearch_Helper</class>
+            </mec_catalogsearch>
+        </helpers>
+		<blocks>
+			<mec_catalogsearch><class>Mec_Catalogsearch_Block</class></mec_catalogsearch>
+			<catalogsearch>
+					<rewrite>
+						<term>Mec_Catalogsearch_Block_Term</term>
+					</rewrite>
+			</catalogsearch>
+		</blocks>
+
+		<resources>
+			<catalogsearch_setup>
+				<setup>
+					<module>Mec_Catalogsearch</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</catalogsearch_setup>
+			<catalogsearch_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</catalogsearch_write>
+			<catalogsearch_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</catalogsearch_read>
+		</resources>  
+	</global>
+</config> 

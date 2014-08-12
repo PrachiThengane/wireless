@@ -1,0 +1,33 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_AdvancedReviews
+ * @copyright  Copyright (c) 2009-2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<div style="display:block; float:right; text-align:left; margin-bottom:4px;">
+    <?php if ($this->canShowHelpfulnessLink()): ?>
+        <?php if (!Mage::helper('advancedreviews')->isHelpfulnessRegistered($this->getReviewId())): ?>
+            <div>
+                <?php echo $this->__('Do you find this review helpful?') ?>&nbsp;
+                <strong><a class="helpful-link" onclick="makeHelpful(this)" link="<?php echo $this->getAction('Yes') ?>" style="color: green;"><?php echo $this->__('Yes') ?></a></strong>
+                <strong><a class="helpful-link" onclick="makeHelpful(this)" link="<?php echo $this->getAction('No') ?>" style="color: red;"><?php echo $this->__('No') ?></a></strong>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if ($this->getAllCount()): ?>
+        <div style="text-align: right;">
+            (<strong><?php echo $this->getYesCount() ?></strong><?php echo $this->__(' of ') ?><strong><?php echo $this->getAllCount() ?></strong><?php echo $this->__(' people found this review helpful') ?>)
+        </div>
+    <?php endif ?>                    
+</div>

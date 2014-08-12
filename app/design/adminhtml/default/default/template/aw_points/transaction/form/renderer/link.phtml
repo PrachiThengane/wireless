@@ -1,0 +1,19 @@
+
+<?php if($this->getCustomerUrl()): ?>
+        <td class="label"><?php echo $this->getElement()->getLabel(); ?></td>
+        <td class="value">
+            <a id="<?php echo $this->getHtmlId(); ?>" href="<?php echo $this->getCustomerUrl() ?>" >
+                <?php echo $this->getElement()->getValue(); ?>
+            </a>
+        </td>
+    <?php else: ?>
+        <tr>
+              <td class="label"><?php echo $this->getElement()->getLabel(); ?></td>
+              <td class="value">
+                   <a id="<?php echo $this->getHtmlId(); ?>" href="<?php echo $this->getCustomerEmail() ?>" >
+                        <?php echo $this->getElement()->getValue(); ?>
+                    </a>
+              </td>
+        </tr>
+<?php endif;  ?>
+

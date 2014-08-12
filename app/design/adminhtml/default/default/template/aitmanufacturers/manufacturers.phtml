@@ -1,0 +1,38 @@
+<?php
+/**
+ * Product:     Shop By Brands for Magento v.1.4.0.x, v.1.4.1.x, v.1.4.2.0
+ * Package:     Aitoc_Aitmanufacturers_2.4.3_39187
+ * Purchase ID: kf05eKCj8mjpTtNHDZ2UdPiXqDg6OFamgAWqFEJGc2
+ * Generated:   2011-02-15 09:01:21
+ * File path:   app/design/adminhtml/default/default/template/aitmanufacturers/manufacturers.phtml
+ * Copyright:   (c) 2011 AITOC, Inc.
+ */
+?>
+<!--<div class="content-header">
+<table cellspacing="0">
+    <tr>
+        <td style="width:50%;"><h3 class="icon-head head-products"><?php echo Mage::helper('aitmanufacturers')->__('Brands Pages Manager') ?></h3></td>
+        <td class="a-right">
+            <?php echo $this->getAddNewButtonHtml() ?>
+        </td>
+    </tr>
+</table>
+</div>
+-->
+<div class="content-header">
+
+    <table cellspacing="0">
+        <tr>
+            <td style="width:50%;"><h3 class="icon-head head-adminhtml-aitmanufacturers"><?php echo Mage::helper('aitmanufacturers')->__('Brands Pages Manager') ?></h3></td>
+            <td class="form-buttons">
+            	<?php echo $this->getFillOutButtonHtml() ?>
+            	<?php echo $this->getAddNewButtonHtml() ?>
+        </tr>
+    </table>
+</div>
+<?php if( !$this->isSingleStoreMode() ): ?>
+<?php echo $this->getChildHtml('store_switcher');?>
+<?php endif;?>
+<div>
+    <?php echo $this->getGridHtml() ?>
+</div>

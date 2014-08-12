@@ -1,0 +1,74 @@
+<HTML>
+<BODY>
+
+<FONT FACE=ARIAL SIZE=5>
+<I><B>Unwired</B></I></FONT>
+<BR><BR>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>What happens if my Unwired Product is faulty? Who do i contact?</B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><I>You can contact Unwired direct via the following details:</I></FONT>
+
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<BR><BR>
+Customer Care:
+<BR>
+1300 761 881
+<P>Address:</P>
+Level 21, 1 Market St<BR>
+Sydney, NSW, 2000 
+<BR><BR>
+<IMG SRC=Map/Map.jpg border=1 ALT=MAP>
+<BR><BR>
+Before contacting Unwired, your questions may be answered by following the Frequently Asked Questions and Answers.
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<BR><BR><BR><BR>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK><B><I>Frequently Asked Questions relating to your Unwired Product.</I></B></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN>
+<B><I>Having access issues?</I></B></FONT>
+<FONT FACE=ARIAL SIZE=2 COLOR=NAVY BLUE>
+<P>Try these quick checks.</P>
+<LI>Ensure power is turned on by checking the power indicator light is green.
+<LI>If you are using the battery, remove the battery from the modem and then put it back in. If the battery light is off, it is fully charged. If the battery light is yellow it is charging, or if it is red it is less than 20% charged.
+<LI>Ensure that all cables are firmly in place from the computer to the modem.
+<LI>To ensure you are receiving maximum signal strength to your modem, change the position of the modem until the signal light is amber or green.
+<LI>If you are experiencing problems getting a signal, <A HREF=https://www.unwired.com.au/support/connectivity.php#signalconnectivity> click here</A>
+<LI>If you have a signal, but still can't connect to the internet,<A HREF=https://www.unwired.com.au/support/connectivity.php#networkingconnectivity> click here</A>
+</UL>
+<BR><BR><BR><BR>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<FONT FACE=ARIAL SIZE=3 COLOR=BLACK>
+<I><B>Further Support:</B></I></FONT>
+<BR><BR>
+<TABLE WIDTH=100%>
+<TR>
+<TD WIDTH=5%>
+</TD>
+<TD>
+<FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For a complete list of Frequently Asked Questions relating to your Unwired Product, please click <A HREF=https://www.unwired.com.au/support/faq.php>
+ Here</A></B></FONT>
+ <BR><BR>
+ <FONT FACE=ARIAL SIZE=2 COLOR=GREEN><B>For tips on how to get the best connectivity, please click <A HREF=https://www.unwired.com.au/support/connectivity.php>
+ Here</a></B>  
+ </FONT>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

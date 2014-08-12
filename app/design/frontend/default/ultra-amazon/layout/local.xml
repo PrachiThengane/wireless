@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="head">
+			<action method="addCss"><stylesheet>css/skin.css</stylesheet></action>
+			<action method="addJs"><script>mec/trigger.js</script></action>
+        </reference>
+
+	    <reference name="right">
+	       	<remove name="cart_sidebar" />
+			<remove name="paypal.partner.right.logo"/>
+			<remove name="right.permanent.callout"/>
+
+		</reference>
+        <reference name="left">
+        	<remove name="cart_sidebar" />
+			<remove name="left.permanent.callout" />
+			<remove name="left.newsletter" />
+		</reference>
+        <reference name="header">
+
+            <block type="page/switch" name="store_language_header" as="store_language_header" template="page/switch/languages.phtml"/>
+            <block type="page/switch" name="store_switcher_header" as="store_switcher_header" template="page/switch/stores.phtml"/>
+        </reference>
+    
+        <reference name="footer">
+		<!--
+            <block type="cms/block" name="page_footer_block" before="-">
+  	            <action method="setBlockId"><block_id>page_footer_block</block_id></action>
+      	    </block>
+		-->
+		<remove name="footer_links" />
+		<remove name="store_switcher" />
+        </reference>
+
+	</default>
+<review_product_list translate="label">
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+</review_product_list>
+
+<catalog_product_view translate="label">
+<reference name="root">
+<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+</reference>
+<reference name="left">
+<block type="catalog/product_list_related" name="catalog.product.related.left" before="-" template="catalog/product/list/related.phtml"/>
+</reference>
+</catalog_product_view>
+</layout>

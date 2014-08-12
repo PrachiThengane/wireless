@@ -1,0 +1,63 @@
+<div class="layer-comtent">
+	<?php
+		function canShow($code){
+			$table1 = "eav_attribute";
+			$table2 = "mec_navigation_attribute";
+			$dbname = (string)Mage::getConfig()->getNode('global/resources/default_setup/connection/dbname');
+			$username = (string)Mage::getConfig()->getNode('global/resources/default_setup/connection/username');
+			$password = (string)Mage::getConfig()->getNode('global/resources/default_setup/connection/password');
+			$con = mysql_connect("localhost", $username, $password);
+			if (!$con){
+				die('Could not connect: ' . mysql_error());
+			}
+
+			mysql_select_db($dbname, $con);
+
+			$result = mysql_query("SELECT attribute_id FROM $table1 WHERE attribute_code='$code'");
+			$return = false;
+			while($row = mysql_fetch_array($result))
+			{
+				$Id = $row['attribute_id'];
+				//Mage::log($Id);
+				if($Id){
+					$_result = mysql_query("SELECT show_in_content FROM $table2 WHERE attribute_id=$Id");
+					while($_row = mysql_fetch_array($_result))
+					{
+						if($_row['show_in_content']){
+							if($_row['show_in_content']=='1'){
+								$return = true;
+							}
+						}
+					}
+				}
+			}
+			mysql_close($con);
+			return $return;
+		}
+
+		function IsActive($code){
+			if($active_element = Mage::app()->getFrontController()->getRequest()->getParam($code)){
+				Mage::log($active_element);
+			}
+        
+		}
+
+		$layered_nav = Mage::registry('layerview_nav');
+        if(!$layered_nav) { $layered_nav = $this->getLayout()->createBlock('catalog/layer_view'); }
+        $filters = $layered_nav->getFilters();
+		foreach($filters as $_filter){
+			if($_filter->getItemsCount()){
+				$attr_code = $_filter->getPopupId();
+				if(canShow($attr_code)){
+					echo $_filter->getName();
+					foreach ($_filter->getItems() as $item) {
+						//var_dump($item->getActive());
+					}
+					echo $_filter->getHtml();
+					
+				}
+			}
+		}
+	?>
+</div>
+

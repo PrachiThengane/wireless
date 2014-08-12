@@ -1,0 +1,36 @@
+<div class="block block-list footer-list">
+<h2><strong>Continue Shopping: Featured products</strong></h2>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.jcarousel.pack.js') ?>"></script>
+<?php 
+$_productCollection=$this->getLoadedProductCollection() 
+?>
+<?php 
+if($_productCollection->count()): ?>
+<div class="fr sale-pro">
+<?php $_iterator = 0; ?>
+<ul id="mycarousel" class="jcarousel-skin-tango">
+        <?php foreach($_productCollection as $_item): ?>
+            <li >
+                    <a class="ih" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image">
+						<span class="ih">
+						<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(122) ?>" width="122" height="122" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" />
+						</span>
+					</a>
+                    <h3 class="product-name">
+                        <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+					</h3>
+						<?php echo $this->getReviewsSummaryHtml($_item, false, true)?>
+					 <?php echo $this->getPriceHtml($_item, true, '-ft') ?>
+					<div class="shortDescription" title="<?php echo nl2br($_item->getShortDescription()); ?>">
+	                <?php echo nl2br($_item->getShortDescription()); ?>
+                </div>
+            </li>
+        <?php endforeach ?>
+        </ul>
+			
+</div>	
+<?php endif; ?>
+<script type="text/javascript">
+jQuery.noConflict();jQuery(document).ready(function(){jQuery('#mycarousel').jcarousel({visible:4})});
+</script>				
+</div>				

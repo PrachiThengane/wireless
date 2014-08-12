@@ -1,0 +1,172 @@
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Rma
+ * @copyright  Copyright (c) 2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+.awafpslider { font-family: Verdana;margin:0 auto; }
+
+/* Switch effect fade/appear */
+.afp-effect-fade-appear div.afp-slider-item { position: absolute; z-index:1 !important;}
+
+.awafpslider .afp-slider-controls {
+    position: relative;}
+
+.awfpslider-horizontal div.afp-slider-item div.afp-thumbnail {
+    float: left;
+    height: 200px;
+    width: 200px; }
+
+.awfpslider-vertical div.afp-slider-item div.afp-thumbnail {
+    height: 190px;
+    text-align: center;
+    width: 100%; }
+
+.awfpslider-horizontal div.afp-slider-item div.afp-product-info { margin-left: 210px; }
+
+.awfpslider-vertical .afp-thumbnail .onsale-category-container-list { float:none!important;margin: 0 auto; }
+
+.awafpslider div.afp-slider-item div.afp-product-info .awafptitle a {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none; }
+
+    .awafpslider div.afp-slider-item div.afp-product-info .awafptitle a:hover { text-decoration: underline; }
+
+.awafpslider div.afp-slider-item div.afp-product-info .afp-details {
+    color: #666;
+    font-size: 12px; }
+
+.awfpslider-vertical div.afp-slider-item div.afp-product-info .afp-details { text-align: center; }
+
+.awafpslider .afp-slider-controls .afp-left {
+    float: left;
+    height: 22px;
+    padding-left: 20px;
+    text-align: right;
+    width: 22px; }
+
+    .awafpslider .afp-slider-controls .afp-left button, .awafpslider .afp-slider-controls .afp-right button { position: relative; }
+
+    .awafpslider .afp-slider-controls .afp-left button.button, .awafpslider .afp-slider-controls .afp-right button.button {
+        border: 0px;
+        cursor: pointer; }
+
+    .awafpslider .afp-slider-controls .afp-left button {
+        background: url("../../../../images/y.gif") no-repeat scroll -3px -363px transparent;
+        height: 24px;
+        width: 24px; }
+
+
+.awafpslider .afp-slider-controls .afp-right {
+    float: right;
+    height: 22px;
+    padding-right: 20px;
+    position: relative;
+    text-align: right;
+    top: -22px;
+    width: 22px; }
+
+    .awafpslider .afp-slider-controls .afp-right button {
+        background: url("../../../../images/y.gif") no-repeat scroll -3px -402px transparent;
+        height: 24px;
+        width: 34px; }
+
+.awafpslider .afp-slider-controls .afp-center {
+    line-height: 22px;
+    margin: 0px 50px;
+    text-align: center; }
+
+    .awafpslider .afp-slider-controls .afp-center button.button {
+        background-color: transparent;
+        border: 0px;
+        height: 12px;
+        width: 12px; }
+
+    .awafpslider .afp-slider-controls .afp-center button.afp-s-current {}
+
+    .awafpslider .afp-slider-controls .afp-center button.button:hover {  }
+
+.awfpslider-horizontal .price-box {
+    float: left;
+    margin: 7px 0;
+    padding: 0px;
+    text-align: left;
+    width: 150px; 
+	color:#8F0509;
+	}
+
+.awfpslider-vertical .price-box {
+    text-align: center;
+    width: 100%; }
+
+.awafpslider .price-box .price {
+    color: #FC865D;
+    font-size: 16px;
+    font-weight: normal; }
+
+.awafpslider .price-box span, .awafpslider .price-box a { color: #000; }
+
+.awfpslider-horizontal .afp-addtocart {
+    margin: 7px 0px;
+    text-align: left; }
+
+.awfpslider-vertical .afp-addtocart {
+    margin: 7px 0px;
+    text-align: center; }
+
+.awafpslider .afp-addtocart button {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    font-size: 12px; }
+
+    .awafpslider .afp-addtocart button div {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    height: 22px;
+    left: 14px;
+    line-height: 22px;
+    position: absolute;
+    -text-indent: -10000px;
+    top: 4px;
+    width: 78px; }
+
+.awfpslider-vertical div.afp-slider-item .awafptitle { text-align: center; }
+
+    .awfpslider-vertical div.afp-slider-item .awafptitle a {
+        color: #000;
+        font-family: Verdana;
+        font-size: 16px;
+        margin: 7px 0;
+        text-decoration: none; }
+
+        .awfpslider-vertical div.afp-slider-item .awafptitle a:hover { text-decoration: underline; }
+
+.afp-effect-simple-slider {
+    overflow: hidden;
+    position: relative; }
+
+    .afp-effect-simple-slider div.afp-slider-item { float: left; }
+
+.afp-effect-blind-up-down div.afp-slider-item { position: absolute;z-index:2 !important; }
+
+.afp-effect-blind-up-down .afp-slider-controls {
+    position: relative;
+    z-index: 2; }
+
+.afp-effect-slide-up-down div.afp-slider-item { position: absolute; z-index:9 !important;}
+
+.afp-effect-slide-up-down .afp-slider-controls {
+    position: relative;
+    z-index: 10; }

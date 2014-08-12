@@ -1,0 +1,29 @@
+<script language='javascript'>
+function giftpopupcode(){
+  $('popup-gift-bg').appear({ duration: 0.7 });
+  $('popup-gift-content').appear({ duration: 0.7 });
+}
+</script>
+
+<div id="popup-gift-bg" class="groupdeals-popup-gift-bg" style="display:none;"></div>
+<div id="popup-gift-content" class="groupdeals-popup-gift-content" style="display:none;"> 
+	<div class="content">
+		<div class="title">
+			<h1><?php echo $this->__('Gift Options') ?></h1>
+			<p><?php echo $this->__('Fill out the form below to send the coupon(s) as a gift!') ?></p>
+		</div>
+		<form  name="groupdeals-give-as-gift" id="groupdeals-give-as-gift" onsubmit="new Ajax.Updater({success:'groupdeals-give-as-gift'}, '<?php echo $this->getUrl('groupdeals/coupons/saveGift') ?>', {asynchronous:true, evalScripts:true, onComplete:function(request, json){$('popup-gift-bg').fade(); $('popup-gift-content').fade(); Element.show('actions');Element.hide('gift-please-wait'); changeText();}, onLoading:function(request, json){Element.hide('actions');Element.show('gift-please-wait')}, parameters:Form.serialize(this)}); return false;" method="post">
+			<?php echo $this->getChildHtml('groupdeals.gift'); ?>
+		</form>
+		<script type="text/javascript">
+		//<![CDATA[
+			var groupdealsSubscriberFormDetail = new VarienForm('groupdeals-give-as-gift');
+		//]]>
+		function changeText(){
+			var name = document.getElementById('coupon_to').value;
+			document.getElementById('link').innerHTML = '<?php echo $this->__('Gift for:') ?> <strong>' + name + '</strong><br/><span id="link-actions"><a href="#" onClick="giftpopupcode(); return false;"><?php echo $this->__('Edit') ?></a> <?php echo $this->__('or') ?> <a href="#" onClick="new Ajax.Updater(\'link\', \'<?php echo $this->getUrl('groupdeals/coupons/removeGift') ?>\', {asynchronous:true, evalScripts:true, onComplete:function(request, json){ changeTextRemove(); }, onLoading:function(request, json){Element.hide(\'link-actions\');Element.show(\'gift-please-wait-link\')}}); "><?php echo $this->__('Remove') ?></a></span><span class="please-wait" id="gift-please-wait-link" style="display:none;"><img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading...') ?>" title="<?php echo $this->__('Loading...') ?>" class="v-middle" /> <?php echo $this->__('Loading...') ?></span>';
+		}
+		</script>
+	</div>
+</div>
+
