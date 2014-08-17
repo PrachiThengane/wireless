@@ -33,8 +33,16 @@
 					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(156,156); ?>" width="156" height="156" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
 									<?php $product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
 					<?php if ($product->getProductIconList() != null && $product->getProductIconList() != 'no_selection'):?>
-                      <div class="list-icon"><img src="<?php echo $this->helper('catalog/image')->init($product, 'product_icon_list')->resize(120,155); ?>"/></div>
-                      <?php echo Mage::helper('icons')->getImages(); ?>
+                      <div class="list-icon">
+                        <img src="<?php echo $this->helper('catalog/image')->init($product, 'product_icon_list')->resize(120,155); ?>"/>
+                      </div>
+                      <?php 
+                        
+                        $icon_block = $this->getLayout()->createBlock('icons/list');
+                        $icon_block->setData("product",$product );
+                        echo $icon_block->setTemplate('icons/list.phtml')->toHtml(); 
+                      ?>
+                   
 					<?php endif;?>
 				
 					</div>

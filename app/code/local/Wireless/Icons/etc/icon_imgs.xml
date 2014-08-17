@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<images>
+    <location>    </location>
+    <list>
+        <laptops>
+            
+        </laptops>
+        <mobile_phones>
+            <screen>     
+            </screen>
+            <processor>
+            </processor>
+            <internal_storage>
+            </internal_storage>
+            <mobile_networks>
+               <2g></2g> 
+               <2g></2g> 
+               <3g_4g></3g_4g> 
+               <4g></4g> 
+            </mobile_networks>
+            <camera>
+            </camera>                    
+        </mobile_phones>
+    </list>
+    <detail>
+    
+    </detail>
+    
+</images>

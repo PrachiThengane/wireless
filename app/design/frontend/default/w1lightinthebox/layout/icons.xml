@@ -1,0 +1,11 @@
+<layout version="0.1.0">
+     <default>
+          <reference name="content">
+          </reference>
+      </default>
+      <routeurfrontend_index_index>
+           <reference name="content">
+                <block type="icons/list"  name="icons_list" template="icons/list.phtml" />
+           </reference>
+      </routeurfrontend_index_index>
+</layout>

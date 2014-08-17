@@ -1,5 +1,5 @@
 <?php
-class Kanavan_Searchautocomplete_Block_Suggest extends Mage_Core_Block_Template
+class Wireless_Icons_Block_List extends Mage_Core_Block_Template
 {
 	public function _prepareLayout()
     {

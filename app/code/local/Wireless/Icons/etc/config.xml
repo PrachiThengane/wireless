@@ -35,12 +35,35 @@
         <Wireless_Icons>
             <version>0.0.1</version>
         </Wireless_Icons>
-    </modules>
+    </modules>    
+    <frontend>
+        <routers>
+            <routeurfrontend>
+                <use>standard</use>
+                <args>
+                    <module>Wireless_Icons</module>
+                    <frontName>icons</frontName>
+                </args>
+            </routeurfrontend>
+        </routers>
+       <layout>
+           <updates>
+                <icons>
+                     <file>icons.xml</file>
+                 </icons>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <helpers>
             <icons>
                 <class>Wireless_Icons_Helper</class>
             </icons>
-        </helpers>        
+        </helpers>
+        <blocks>
+            <icons>
+                <class>Wireless_Icons_Block</class>
+            </icons>
+        </blocks>
   </global>
 </config>
