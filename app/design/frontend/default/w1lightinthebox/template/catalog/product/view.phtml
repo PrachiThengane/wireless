@@ -52,11 +52,19 @@
 			
 			<?php if ($_product->getProductIconView() != null && $_product->getProductIconView() != 'no_selection'):?>
                       
-						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'product_icon_view'); ?>"/>
-				
-                      <?php //var_dump($_product->getProductIconView()); ?>
-                        
-					<?php endif;?>
+				<img src="<?php echo $this->helper('catalog/image')->init($_product, 'product_icon_view'); ?>"/>
+		
+              <?php //var_dump($_product->getProductIconView()); ?>
+                
+			<?php endif;?>
+            
+             <div class="detail-icon"> 
+                <?php                         
+                    $icon_block = $this->getLayout()->createBlock('icons/images');
+                    $icon_block->setData("product",$product );
+                    echo $icon_block->setTemplate('icons/detail.phtml')->toHtml(); 
+                ?>
+             </div>
 			
 			
 			<!--here end-->

@@ -1,10 +1,9 @@
 <?php 
     
-    $product = $this->getData("product");
-    $icon_imgs = $this->getIconData($product,"list");
+    $product = Mage::registry('current_product');    
+    $icon_imgs = $this->getIconData($product,"detail");
     
     $base_folder = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."/icons/";
-    
     
     foreach ($icon_imgs as $attribute_code => $img_loc) {
            
@@ -14,12 +13,12 @@
             $attribute_value = $attribute ->getFrontend()->getValue($product);
         }
 ?>
-        <div>
-           <div> 
+        <ul>
+           <li style="width: 49%; float: left;"> 
                 <img src="<?php echo $base_folder.$attribute_code."/".$img_loc; ?>"/>
                 <span><?php echo substr($attribute_value, 0, 15);   ?>  </span>
-           </div>
-        </div>
+           </ul>
+        </ul>
 <?php        
     }
 ?>

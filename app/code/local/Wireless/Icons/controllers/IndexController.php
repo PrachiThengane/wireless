@@ -3,7 +3,7 @@
 
      public function indexAction()
      {
-         
+          
           $this->loadLayout();
           $this->renderLayout();
      }

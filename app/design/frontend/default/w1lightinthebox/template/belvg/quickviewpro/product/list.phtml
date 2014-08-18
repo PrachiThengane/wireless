@@ -159,7 +159,15 @@
                 
 					<?php $product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
 					<?php if ($product->getProductIconList() != null && $product->getProductIconList() != 'no_selection'):?>
-                      <div class="list-icon"><img src="<?php echo $this->helper('catalog/image')->init($product, 'product_icon_list')->resize(120,155); ?>"/></div>
+                      <div class="list-icon">
+                        <!-- <img src="<?php echo $this->helper('catalog/image')->init($product, 'product_icon_list')->resize(120,155); ?>"/> -->
+                        <?php                         
+                            $icon_block = $this->getLayout()->createBlock('icons/images');
+                            $icon_block->setData("product",$product );
+                            echo $icon_block->setTemplate('icons/list.phtml')->toHtml(); 
+                            
+                        ?>
+                      </div>
 					<?php endif;?>
 				
 				

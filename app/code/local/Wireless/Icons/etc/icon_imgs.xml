@@ -1,29 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<images>
-    <location>    </location>
-    <list>
-        <laptops>
-            
-        </laptops>
-        <mobile_phones>
-            <screen>     
-            </screen>
-            <processor>
-            </processor>
-            <internal_storage>
-            </internal_storage>
+<images>    
+    <list>   
+        <Computers>  
+              <!--
+                    attribute code.
+              -->
+            <computer_screen_size>
+                <!--
+                    The attribute value names starts with _ because some attributes starts with number. And it should be in lowercase
+                 -->     
+                <_10_inch>15inch_list.png</_10_inch>   <!-- 10 inch converted to _10_inch -->
+                <_14_inch></_14_inch> 
+                <_15_inch>15inch_list.png</_15_inch> 
+                <_17_inch></_17_inch> 
+                <_20_inch></_20_inch> 
+                <_22_inch></_22_inch> 
+                <_24_inch></_24_inch> 
+                <_27_inch></_27_inch> 
+                <_7_inch></_7_inch> 
+                <_8_inch></_8_inch> 
+                <_9_inch></_9_inch>                
+            </computer_screen_size>
+            <processor>process_list.png</processor>
+            <internal_storage>storage_list.png</internal_storage>
             <mobile_networks>
-               <2g></2g> 
-               <2g></2g> 
-               <3g_4g></3g_4g> 
-               <4g></4g> 
+               <!--
+                    The attribute value names starts with _ because some attributes starts with number
+                 -->  
+               <_2g>2g_list.png</_2g> 
+               <_3g>3g_list.png</_3g> 
+               <_3g_4g>3g_4g_list.png</_3g_4g> 
+               <_4g>4g_list.png</_4g> 
             </mobile_networks>
-            <camera>
-            </camera>                    
-        </mobile_phones>
+            <camera>camera.png</camera>                        
+        </Computers>
+        <Networking>
+            <nw_wireless>     
+                <_Wireless-G></_Wireless-G> 
+                <_Wireless-N></_Wireless-N> 
+                <_Wireless-AC>wireless_ac_list.png</_Wireless-AC>                 
+            </nw_wireless>
+            <stored_weight>weight_list.png</stored_weight>                                    
+        </Networking>               
     </list>
-    <detail>
     
+    <detail>    
+        <Computers>  
+              <!--
+                    attribute code.
+              -->
+            <computer_screen_size>
+                <!--
+                    The attribute value names starts with _ because some attributes starts with number. And it should be in lowercase
+                 -->     
+                <_10_inch>15inch_list.png</_10_inch>   <!-- 10 inch converted to _10_inch -->
+                <_14_inch></_14_inch> 
+                <_15_inch>15inch_list.png</_15_inch> 
+                <_17_inch></_17_inch> 
+                <_20_inch></_20_inch> 
+                <_22_inch></_22_inch> 
+                <_24_inch></_24_inch> 
+                <_27_inch></_27_inch> 
+                <_7_inch></_7_inch> 
+                <_8_inch></_8_inch> 
+                <_9_inch></_9_inch>                
+            </computer_screen_size>
+            <processor>process_list.png</processor>
+            <internal_storage>storage_list.png</internal_storage>
+            <mobile_networks>
+               <!--
+                    The attribute value names starts with _ because some attributes starts with number
+                 -->  
+               <_2g>2g_list.png</_2g> 
+               <_3g>3g_list.png</_3g> 
+               <_3g_4g>3g_4g_list.png</_3g_4g> 
+               <_4g>4g_list.png</_4g> 
+            </mobile_networks>
+            <camera>camera.png</camera>                        
+        </Computers>
+        <Networking>
+            <nw_wireless>     
+                <_Wireless-G></_Wireless-G> 
+                <_Wireless-N></_Wireless-N> 
+                <_Wireless-AC>wireless_ac_list.png</_Wireless-AC>                 
+            </nw_wireless>
+            <stored_weight>weight_list.png</stored_weight>                                    
+        </Networking>    
     </detail>
     
 </images>
