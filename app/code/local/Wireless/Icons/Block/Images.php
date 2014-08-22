@@ -35,11 +35,15 @@ class Wireless_Icons_Block_Images extends Mage_Core_Block_Template
             if ($attribute)
             {
                 $attribute_value = $attribute ->getFrontend()->getValue($product);
+                
+               
+                
                 if (($attribute_value == null ) || (trim($attribute_value) == "")){
                     continue;
                 }
                 
                 $attribute_value = str_replace(" ", "_", trim($attribute_value));
+                 
                 
                 if (sizeof($value)>0) {// Dropdown list attirbute
                     $p_value = "_".$attribute_value;    

@@ -32,7 +32,15 @@
                <_3g_4g>3g_4g_list.png</_3g_4g> 
                <_4g>4g_list.png</_4g> 
             </mobile_networks>
-            <camera>camera.png</camera>                        
+            <camera>camera.png</camera>
+            <operation_system>                
+                <_Windows_8>windows_8_list.png</_Windows_8>
+                <_Windows_7>windows_7_list.png</_Windows_7>
+                <_Chrome_OS>chrome_os_list.png</_Chrome_OS>
+                <_Android>android_list.png</_Android>
+                <_Mac_OS_X>mac_os_x.png</_Mac_OS_X>
+                
+            </operation_system>                       
         </Computers>
         <Networking>
             <nw_wireless>     
