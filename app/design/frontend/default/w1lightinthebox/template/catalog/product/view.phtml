@@ -10,20 +10,7 @@
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
-<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
-	<div class="cash-sticker"><span class="cbprice"><?php echo $this->__("$%s", Mage::helper('core')->currency($_product->getCashback(), false, false)); ?></span><br />CASH<br />BACK<span class="asterix">*</span></div>
-<?php elseif ($_product->getWeight() == '0.0000'): ?>
-	<div class="free-sticker"><span>FREE</span> SHIPPING</div>
-<?php elseif ($_product->getAttributeText('demo_unit') == 'True'): ?>
-	<div class="demo-sticker"><span>DEMO</span> UNIT</div>
-<?php elseif ($_product->getSpecialPrice() != null && time() > strtotime($_product->getSpecialFromDate()) && time() < strtotime($_product->getSpecialToDate())):?>
-	<div class="hot-sticker"><span>HOT</span> DEAL</div>
-<?php elseif ($_product->getAttributeText('condition') == 'Refurbished'): ?>
-	<div class="refurb-sticker">
-		<span><?php echo $_product->getAttributeText('manufacturer'); ?><br />Certified<br />Resealed<br /></span>
-		12 month full<br />warranty*
-	</div>
-<?php endif; ?>
+<?php echo $this->getChildHtml('stickers'); ?>
 
 <div class="product-view">
 	<div class="testfreaks-badge">
@@ -50,23 +37,14 @@
 			<?php //var_dump($_product->getProductIconList()); ?>
 
 			
-			<?php if ($_product->getProductIconView() != null && $_product->getProductIconView() != 'no_selection'):?>
-                      
-				<img src="<?php echo $this->helper('catalog/image')->init($_product, 'product_icon_view'); ?>"/>
-		
-              <?php //var_dump($_product->getProductIconView()); ?>
-                
-			<?php endif;?>
-            
-             <div class="detail-icon"> 
+			 <div class="detail-icon"> 
                 <?php                         
                     $icon_block = $this->getLayout()->createBlock('icons/images');
                     $icon_block->setData("product",$product );
                     echo $icon_block->setTemplate('icons/detail.phtml')->toHtml(); 
                 ?>
              </div>
-			
-			
+             <div style="clear:both"></div>
 			<!--here end-->
 			<!-- add for brand -->
 			<?php if (Mage::helper('aitmanufacturers')->getManufacturerLink($_product) != null): ?>
@@ -110,27 +88,8 @@
 					</div>
 				
 				</div>
-				
-				<?php if($now < $prds && $_product->getProductReleaseDate() != null):?>
-					<span class="pre-order-eta"><?php echo $this->__('Limited Stock Arriving')?>&nbsp;<?php echo date('d/m/Y',strtotime($_product->getProductReleaseDate()))?></span>
-				<?php endif ?>
-				<?php $_Price = 0; ?>
-				<?php if($_product->getSpecialPrice() != ""): ?>
-					<?php $_Price = $_product->getSpecialPrice(); ?>
-				<?php else: ?>
-					<?php $_Price = $_product->getPrice(); ?>
-				<?php endif; ?>
-				
-				<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
-					<?php //echo $this->__('%s Cashback until %s', Mage::helper('core')->currency($_product->getCashback(), true, false), date('d-m-Y',strtotime($_product->getExpiredate()))); ?>
-					<br />
-					<span class="cashback-notice"><?php echo $this->__("* Buy before %s to get $%s Cashback from %s", date('d/m/Y',strtotime($_product->getExpiredate())), Mage::helper('core')->currency($_product->getCashback(), false, false), $_product->getAttributeText('manufacturer')); ?></span><br />
-					<span class="cashback-notice"><?php echo $this->__("Price after redemption is %s", Mage::helper('core')->currency($_Price - $_product->getCashback(), true, false)); ?></span>
-				<?php endif; ?>
-				
-				<?php if($_product->getWeight() == '0.0000'): ?>
-					<span class="free-ship-notice">Free Shipping is available on this product</span>
-				<?php endif; ?>
+
+				<?php echo $this->getChildHtml('subinfo') ?>
 			
 			</div>
 			</div>

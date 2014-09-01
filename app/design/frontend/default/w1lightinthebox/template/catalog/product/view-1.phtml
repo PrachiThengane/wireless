@@ -1,26 +1,34 @@
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Buy Now'); ?>
-<?php $now = Mage::getModel('core/date')->timestamp(time());?>
+<?php $now = Mage::getModel('core/date')->timestamp(time()); ?>
 <?php $prds = Mage::getModel('core/date')->timestamp($_product->getProductReleaseDate());?>
 <?php $exper_time = Mage::getModel('core/date')->timestamp($_product->getExpiredate()); ?>
-
 <script src="http://js.testfreaks.com/badge/wireless1.com.au/head.js"></script>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+
+<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
+	<div class="cash-sticker"><span class="cbprice"><?php echo $this->__("$%s", Mage::helper('core')->currency($_product->getCashback(), false, false)); ?></span><br />CASH<br />BACK<span class="asterix">*</span></div>
+<?php elseif ($_product->getWeight() == '0.0000'): ?>
+	<div class="free-sticker"><span>FREE</span> SHIPPING</div>
+<?php elseif ($_product->getAttributeText('demo_unit') == 'True'): ?>
+	<div class="demo-sticker"><span>DEMO</span> UNIT</div>
+<?php elseif ($_product->getSpecialPrice() != null && time() > strtotime($_product->getSpecialFromDate()) && time() < strtotime($_product->getSpecialToDate())):?>
+	<div class="hot-sticker"><span>HOT</span> DEAL</div>
+<?php elseif ($_product->getAttributeText('condition') == 'Refurbished'): ?>
+	<div class="refurb-sticker">
+		<span><?php echo $_product->getAttributeText('manufacturer'); ?><br />Certified<br />Resealed<br /></span>
+		12 month full<br />warranty*
+	</div>
+<?php endif; ?>
+
 <div class="product-view">
 	<div class="testfreaks-badge">
 		<div id="tfw-badge"></div>
 	</div>
-
-<!--    <?php if($_product->getDemoUnit() == 641):?>
-	<div class="demo-sticker">DEMO UNIT</div>
-    <?php elseif($_product->getCondition() == 268):?>
-	<div class="refurb-sticker"><?php echo $_product->getAttributeText('manufacturer'); ?> Factory Resealed<br /><span class="refurb-sticker-sub">Full 12 month warranty*</span></div>
-    <?php endif;?> -->
-
     <div class="product-essential">
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <div class="no-display">
@@ -44,11 +52,19 @@
 			
 			<?php if ($_product->getProductIconView() != null && $_product->getProductIconView() != 'no_selection'):?>
                       
-						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'product_icon_view'); ?>"/>
-				
-                      <?php //var_dump($_product->getProductIconView()); ?>
-                        
-					<?php endif;?>
+				<img src="<?php echo $this->helper('catalog/image')->init($_product, 'product_icon_view'); ?>"/>
+		
+              <?php //var_dump($_product->getProductIconView()); ?>
+                
+			<?php endif;?>
+            
+             <div class="detail-icon"> 
+                <?php                         
+                    $icon_block = $this->getLayout()->createBlock('icons/images');
+                    $icon_block->setData("product",$product );
+                    echo $icon_block->setTemplate('icons/detail.phtml')->toHtml(); 
+                ?>
+             </div>
 			
 			
 			<!--here end-->
@@ -93,15 +109,10 @@
 						
 					</div>
 				
-			
 				</div>
-			
-			
-													
 				
-				<?php if($now<$prds && $_product->getProductReleaseDate() != ""):?>
-					<span class="pre-order-eta"><?php echo $this->__('ETA ') ?><span class="releaseTime"><?php echo date('d/m/Y',strtotime($_product->getProductReleaseDate()))?></span></span>
-				<?php else: ?>
+				<?php if($now < $prds && $_product->getProductReleaseDate() != null):?>
+					<span class="pre-order-eta"><?php echo $this->__('Limited Stock Arriving')?>&nbsp;<?php echo date('d/m/Y',strtotime($_product->getProductReleaseDate()))?></span>
 				<?php endif ?>
 				<?php $_Price = 0; ?>
 				<?php if($_product->getSpecialPrice() != ""): ?>
@@ -110,30 +121,34 @@
 					<?php $_Price = $_product->getPrice(); ?>
 				<?php endif; ?>
 				
-				<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != "" && $now < $exper_time): ?>
+				<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
 					<?php //echo $this->__('%s Cashback until %s', Mage::helper('core')->currency($_product->getCashback(), true, false), date('d-m-Y',strtotime($_product->getExpiredate()))); ?>
-					<?php echo $this->__("When you buy before %s you can get %s Cashback.  Price after cashback is %s", date('d-m-Y',strtotime($_product->getExpiredate())), Mage::helper('core')->currency($_product->getCashback(), true, false), Mage::helper('core')->currency($_Price - $_product->getCashback(), true, false)); ?>
+					<br />
+					<span class="cashback-notice"><?php echo $this->__("* Buy before %s to get $%s Cashback from %s", date('d/m/Y',strtotime($_product->getExpiredate())), Mage::helper('core')->currency($_product->getCashback(), false, false), $_product->getAttributeText('manufacturer')); ?></span><br />
+					<span class="cashback-notice"><?php echo $this->__("Price after redemption is %s", Mage::helper('core')->currency($_Price - $_product->getCashback(), true, false)); ?></span>
 				<?php endif; ?>
 				
-		
-
+				<?php if($_product->getWeight() == '0.0000'): ?>
+					<span class="free-ship-notice">Free Shipping is available on this product</span>
+				<?php endif; ?>
 			
 			</div>
 			</div>
 
 			<?php if($_product->isSaleable()): ?>
-				<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-			<?php eifif($now<$prds && $_product->getProductReleaseDate() != ""):?>
-				<button type="button" title="<?php echo $this->__('Pre-order Now') ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>			
-			<!-- <button type="button" title="Out of Stock" class="button btn-cart" ><span><span>Out of Stock</span></span></button> -->
+				<?php if($now < $prds && $_product->getProductReleaseDate() != null):?>
+					<button type="button" title="<?php echo $this->__('Pre-Order Now'); ?>" class="button-pre button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $this->__('Pre-Order Now'); ?></span></span></button>
+				<?php else: ?>
+					<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+				<?php endif; ?>
 			<?php endif; ?>
 
 			<div class="related-list">
-			<?php if($_product->getTypeId() != 'bundle'): ?>
+			<?php if($_product->getTypeId() != 'bundle'){ ?>
 				<?php echo $this->getChildHtml('related2') ?>
-			<?php else: ?>
+			<?php }else{ ?>
 				
-			<?php endif; ?>
+			<?php } ?>
 		
 			</div>
 			

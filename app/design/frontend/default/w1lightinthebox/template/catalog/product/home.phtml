@@ -13,37 +13,33 @@
     <?php $_columnCount = $this->getColumnCount(); ?>	
 	<ul class="products-grid">
     <?php $i=0; foreach ($_productCollection as $_product): ?>
-	<?php $prds = Mage::getModel('core/date')->timestamp($_product->getProductReleaseDate());?>
-	<?php $exper_time = Mage::getModel('core/date')->timestamp($_product->getExpiredate()); ?>
 	<?php $i++;?>
 
             <li class="item">
 				<div class="item-inner">
-					<?php if($_product->getCashback() > 0 && $_product->getExpiredate() != null && $now < $exper_time): ?>
-						<div class="cash-sticker-sml-grid"><span class="cbprice"><?php echo $this->__("$%s", Mage::helper('core')->currency($_product->getCashback(), false, false)); ?></span><br />CASH<br />BACK<span class="asterix">*</span></div>
-					<?php elseif ($_product->getWeight() == '0.0000'): ?>
-						<div class="free-sticker-sml-grid"><span>FREE</span> SHIPPING</div>
-					<?php elseif ($_product->getAttributeText('demo_unit') == 'True'): ?>
-						<div class="demo-sticker-sml-grid"><span>DEMO</span> UNIT</div>
-					<?php elseif ($_product->getSpecialPrice() != null && time() > strtotime($_product->getSpecialFromDate()) && time() < strtotime($_product->getSpecialToDate())):?>
-				       		<div class="hot-sticker-sml-grid"><span>HOT</span> DEAL</div>
-					<?php endif; ?>
+
+					<?php 
+					//	/* Gallery Stickers Grid View */
+					//	$gallerystickersgrid = $this->getChild('gallerystickersgrid');
+					//	$gallerystickersgrid->assign('_product', $_product);
+					//	echo $gallerystickersgrid->_toHtml();
+					?>
+
 					<div class="onsale-category-container-grid">
-					<?php echo Mage::helper('onsale')->getCategoryLabelHtml($_product); ?>
-					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(156,156); ?>" width="156" height="156" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
-									<?php $product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
-					<?php if ($product->getProductIconList() != null && $product->getProductIconList() != 'no_selection'):?>
-                      <div class="list-icon">
-                        <!-- <img src="<?php echo $this->helper('catalog/image')->init($product, 'product_icon_list')->resize(120,155); ?>"/> -->
-                        <?php                         
-                            $icon_block = $this->getLayout()->createBlock('icons/images');
-                            $icon_block->setData("product",$product );
-                            echo $icon_block->setTemplate('icons/list.phtml')->toHtml(); 
-                        ?>
-                      </div>
-                      
-					<?php endif;?>
-				
+					    <?php echo Mage::helper('onsale')->getCategoryLabelHtml($_product); ?>
+					    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(156,156); ?>" width="156" height="156" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
+					    <?php $product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
+					    
+                          <div class="list-icon">
+                            
+                            <?php                         
+                                $icon_block = $this->getLayout()->createBlock('icons/images');
+                                $icon_block->setData("product",$product );
+                                echo $icon_block->setTemplate('icons/list.phtml')->toHtml(); 
+                            ?>
+                          </div>
+					    
+					
 					</div>
 					<?php //var_dump(strlen($_product->getName())); ?>
 					<?php if(strlen($_product->getName()) <= 80):?>

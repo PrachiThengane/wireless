@@ -5730,10 +5730,7 @@ top:50px;
   font-size: 16px;}
 .onestepcheckout-place-order-wrapper .onestepcheckout-place-order{/*background:url("/skin/frontend/default/w1lightinthebox/images/cplace-order-now.gif") no-repeat 0 0;*/}
 
-.list-icon{float:right; margin-right:-6px;}
-.list-icon img{
-    vertical-align: middle;
-}
+
 .onsale-category-container-grid .product-image{float:left;}
 #addqty{background: url("/skin/frontend/default/w1lightinthebox/images/qty-add.gif") no-repeat scroll 0 center transparent;
   float: left;

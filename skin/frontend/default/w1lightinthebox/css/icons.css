@@ -1,0 +1,22 @@
+.list-icon {
+    float: right;
+    margin-right: 2px;
+}
+
+.list-icon div div span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #5d5d5d;
+}
+
+.list-icon img{
+    vertical-align: middle;
+    height: 32px;
+}
+
+.product-view .product-shop .product-shop-left-inner .detail-icon img{
+    height: auto;
+    width: auto;
+    vertical-align: middle;
+    margin-top: 0px;
+}
