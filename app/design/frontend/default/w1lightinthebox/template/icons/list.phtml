@@ -3,7 +3,7 @@
     $product = $this->getData("product");
     $icon_imgs = $this->getIconData($product,"list");
     
-    $base_folder = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."/icons/";
+    $base_folder = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$this->base_dir;
     
     
     foreach ($icon_imgs as $attribute_code => $img_loc) {
