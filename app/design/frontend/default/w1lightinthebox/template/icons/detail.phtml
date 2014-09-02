@@ -3,6 +3,8 @@
     $product = Mage::registry('current_product');    
     $icon_imgs = $this->getIconData($product,"detail");
     
+    
+    
     $base_folder = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$this->base_dir;
     
     foreach ($icon_imgs as $attribute_code => $img_loc) {
@@ -16,7 +18,7 @@
         <ul>
            <li style="width: 49%; float: left;"> 
                 <img src="<?php echo $base_folder.$attribute_code."/".$img_loc; ?>"/>
-                <span><?php echo substr($attribute_value, 0, 15);   ?>  </span>
+                <span><?php echo substr($attribute_value, 0, 20);?></span>
            </ul>
         </ul>
 <?php        

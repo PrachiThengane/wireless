@@ -1,17 +1,21 @@
-.list-icon {
+﻿.list-icon {
     float: right;
-    margin-right: 2px;
+    margin-right: -2px;
 }
 
 .list-icon div div span {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     color: #5d5d5d;
+    display: inline-block;
+    width: 70px;
+    line-height: 11px;
+    vertical-align: middle;
 }
 
 .list-icon img{
     vertical-align: middle;
-    height: 32px;
+    height: 26px;
 }
 
 .product-view .product-shop .product-shop-left-inner .detail-icon img{

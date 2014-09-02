@@ -1,99 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<images>    
-    <list>   
-        <Computers>  
-              <!--
-                    attribute code.
-              -->
-            <computer_screen_size>
-                <!--
-                    The attribute value names starts with _ because some attributes starts with number. And it should be in lowercase
-                 -->     
-                <_10_inch>15inch_list.png</_10_inch>   <!-- 10 inch converted to _10_inch -->
-                <_14_inch></_14_inch> 
-                <_15_inch>15inch_list.png</_15_inch> 
-                <_17_inch></_17_inch> 
-                <_20_inch></_20_inch> 
-                <_22_inch></_22_inch> 
-                <_24_inch></_24_inch> 
-                <_27_inch></_27_inch> 
-                <_7_inch></_7_inch> 
-                <_8_inch></_8_inch> 
-                <_9_inch></_9_inch>                
-            </computer_screen_size>
-            <processor>process_list.png</processor>
+
+<!-- The attribute value names starts with _ because some attributes starts with number, and it should be in lowercase. -->
+
+<images>
+
+    <list>
+
+        <Computers> <!-- Attribute Set Name -->
+            <computer_screen_size>screen_size.png</computer_screen_size>
+            <cpu_speed>
+                <_AMD_A10>amd_cpu.png</_AMD_A10>
+                <_AMD_A6>amd_cpu.png</_AMD_A6>
+                <_AMD_A8>amd_cpu.png</_AMD_A8>
+                <_AMD_Phenom>amd_cpu.png</_AMD_Phenom>
+                <_AMD_Sempron>amd_cpu.png</_AMD_Sempron>
+                <_AMD_Turion>amd_cpu.png</_AMD_Turion>
+                <_Intel_Atom>intel_cpu.png</_Intel_Atom>
+                <_Intel_Celeron>intel_cpu.png</_Intel_Celeron>
+                <_Intel_Core_2_Duo>intel_cpu.png</_Intel_Core_2_Duo>
+                <_Intel_Core_2_Solo>intel_cpu.png</_Intel_Core_2_Solo>
+                <_Intel_Core_Duo>intel_cpu.png</_Intel_Core_Duo>
+                <_Intel_Core_i3>intel_cpu.png</_Intel_Core_i3>
+                <_Intel_Core_i5>intel_cpu.png</_Intel_Core_i5>
+                <_Intel_Core_i7>intel_cpu.png</_Intel_Core_i7>
+                <_Intel_Core_Solo>intel_cpu.png</_Intel_Core_Solo>
+                <_Intel_Pentium>intel_cpu.png</_Intel_Pentium>
+            </cpu_speed>
+            <memory>ram_memory.png</memory>
+            <hard_drive>hdd_storage.png</hard_drive>
+            <computer_graphics>
+                <_Intel>intel_graphics.png</_Intel>
+                <_GeForce>nvidia_graphics.png</_GeForce>
+                <_Radeon>amd_graphics.png</_Radeon>
+                <_GeForce_1GB>nvidia_graphics.png</_GeForce_1GB>
+                <_GeForce_2GB>nvidia_graphics.png</_GeForce_2GB>
+                <_GeForce_3GB>nvidia_graphics.png</_GeForce_3GB>
+                <_GeForce_4GB>nvidia_graphics.png</_GeForce_4GB>
+                <_GeForce_5GB>nvidia_graphics.png</_GeForce_5GB>
+                <_GeForce_6GB>nvidia_graphics.png</_GeForce_6GB>
+                <_GeForce_7GB>nvidia_graphics.png</_GeForce_7GB>
+                <_GeForce_8GB>nvidia_graphics.png</_GeForce_8GB>
+                <_Radeon_1GB>amd_graphics.png</_Radeon_1GB>
+                <_Radeon_2GB>amd_graphics.png</_Radeon_2GB>
+                <_Radeon_3GB>amd_graphics.png</_Radeon_3GB>
+                <_Radeon_4GB>amd_graphics.png</_Radeon_4GB>
+                <_Radeon_5GB>amd_graphics.png</_Radeon_5GB>
+                <_Radeon_6GB>amd_graphics.png</_Radeon_6GB>
+                <_Radeon_7GB>amd_graphics.png</_Radeon_7GB>
+                <_Radeon_8GB>amd_graphics.png</_Radeon_8GB>
+            </computer_graphics>
+            <operation_system>
+                <_Windows_8>win8_os.png</_Windows_8>
+                <_Windows_7>win7_os.png</_Windows_7>
+                <_Chrome_OS>chrome_os.png</_Chrome_OS>
+                <_Android>android_os.png</_Android>
+                <_Mac_OS_X>apple_os.png</_Mac_OS_X>
+            </operation_system>
+        </Computers>
+
+        <Mobile_Phones> <!-- Attribute Set Name -->
+            <phone_screen></phone_screen>
+            <phonetab_cpu></phonetab_cpu>
             <internal_storage>storage_list.png</internal_storage>
             <mobile_networks>
-               <!--
-                    The attribute value names starts with _ because some attributes starts with number
-                 -->  
-               <_2g>2g_list.png</_2g> 
-               <_3g>3g_list.png</_3g> 
-               <_3g_4g>3g_4g_list.png</_3g_4g> 
-               <_4g>4g_list.png</_4g> 
+               <_2g>2g_list.png</_2g>
+               <_3g>3g_list.png</_3g>
+               <_3g_4g>3g_4g_list.png</_3g_4g>
+               <_4g>4g_list.png</_4g>
             </mobile_networks>
-            <camera>camera.png</camera>
-            <operation_system>                
+            <phone_camera>camera.png</phone_camera>
+            <operation_system>
                 <_Windows_8>windows_8_list.png</_Windows_8>
                 <_Windows_7>windows_7_list.png</_Windows_7>
                 <_Chrome_OS>chrome_os_list.png</_Chrome_OS>
                 <_Android>android_list.png</_Android>
                 <_Mac_OS_X>mac_os_x.png</_Mac_OS_X>
-                
-            </operation_system>                       
-        </Computers>
-        <Networking>
-            <nw_wireless>     
-                <_Wireless-G></_Wireless-G> 
-                <_Wireless-N></_Wireless-N> 
-                <_Wireless-AC>wireless_ac_list.png</_Wireless-AC>                 
+            </operation_system>
+        </Mobile_Phones>
+
+        <Tablets> <!-- Attribute Set Name -->
+            <phone_screen></phone_screen>
+            <phonetab_cpu></phonetab_cpu>
+            <internal_storage>storage_list.png</internal_storage>
+            <tablet_connectivity>
+               <_WiFi>2g_list.png</_WiFi>
+               <_WiFi___Cellular>3g_list.png</_WiFi___Cellular>
+            </tablet_connectivity>
+            <operation_system>
+                <_Windows_8>windows_8_list.png</_Windows_8>
+                <_Windows_7>windows_7_list.png</_Windows_7>
+                <_Chrome_OS>chrome_os_list.png</_Chrome_OS>
+                <_Android>android_list.png</_Android>
+                <_Mac_OS_X>mac_os_x.png</_Mac_OS_X>
+            </operation_system>
+        </Tablets>
+
+        <Networking> <!-- Attribute Set Name -->
+            <nw_product_type></nw_product_type>
+            <nw_wireless>
+                <_Wireless-G></_Wireless-G>
+                <_Wireless-N></_Wireless-N>
+                <_Wireless-AC>wireless_ac_list.png</_Wireless-AC>
             </nw_wireless>
-            <stored_weight>weight_list.png</stored_weight>                                    
-        </Networking>               
+            <nw_ethernet></nw_ethernet>
+            <warranty></warranty>
+        </Networking>
+
     </list>
     
-    <detail>    
-        <Computers>  
-              <!--
-                    attribute code.
-              -->
-            <computer_screen_size>
-                <!--
-                    The attribute value names starts with _ because some attributes starts with number. And it should be in lowercase
-                 -->     
-                <_10_inch>15inch_list.png</_10_inch>   <!-- 10 inch converted to _10_inch -->
-                <_14_inch></_14_inch> 
-                <_15_inch>15inch_list.png</_15_inch> 
-                <_17_inch></_17_inch> 
-                <_20_inch></_20_inch> 
-                <_22_inch></_22_inch> 
-                <_24_inch></_24_inch> 
-                <_27_inch></_27_inch> 
-                <_7_inch></_7_inch> 
-                <_8_inch></_8_inch> 
-                <_9_inch></_9_inch>                
-            </computer_screen_size>
-            <processor>process_list.png</processor>
+    <detail>
+
+        <Computers> <!-- Attribute Set Name -->
+            <computer_screen_size>screen_size.png</computer_screen_size>
+            <cpu_speed>
+                <_AMD_A10>amd_cpu.png</_AMD_A10>
+                <_AMD_A6>amd_cpu.png</_AMD_A6>
+                <_AMD_A8>amd_cpu.png</_AMD_A8>
+                <_AMD_Phenom>amd_cpu.png</_AMD_Phenom>
+                <_AMD_Sempron>amd_cpu.png</_AMD_Sempron>
+                <_AMD_Turion>amd_cpu.png</_AMD_Turion>
+                <_Intel_Atom>intel_cpu.png</_Intel_Atom>
+                <_Intel_Celeron>intel_cpu.png</_Intel_Celeron>
+                <_Intel_Core_2_Duo>intel_cpu.png</_Intel_Core_2_Duo>
+                <_Intel_Core_2_Solo>intel_cpu.png</_Intel_Core_2_Solo>
+                <_Intel_Core_Duo>intel_cpu.png</_Intel_Core_Duo>
+                <_Intel_Core_i3>intel_cpu.png</_Intel_Core_i3>
+                <_Intel_Core_i5>intel_cpu.png</_Intel_Core_i5>
+                <_Intel_Core_i7>intel_cpu.png</_Intel_Core_i7>
+                <_Intel_Core_Solo>intel_cpu.png</_Intel_Core_Solo>
+                <_Intel_Pentium>intel_cpu.png</_Intel_Pentium>
+            </cpu_speed>
+            <memory>ram_memory.png</memory>
+            <hard_drive>hdd_storage.png</hard_drive>
+            <computer_graphics>
+                <_Intel>intel_graphics.png</_Intel>
+                <_GeForce>nvidia_graphics.png</_GeForce>
+                <_Radeon>amd_graphics.png</_Radeon>
+                <_GeForce_1GB>nvidia_graphics.png</_GeForce_1GB>
+                <_GeForce_2GB>nvidia_graphics.png</_GeForce_2GB>
+                <_GeForce_3GB>nvidia_graphics.png</_GeForce_3GB>
+                <_GeForce_4GB>nvidia_graphics.png</_GeForce_4GB>
+                <_GeForce_5GB>nvidia_graphics.png</_GeForce_5GB>
+                <_GeForce_6GB>nvidia_graphics.png</_GeForce_6GB>
+                <_GeForce_7GB>nvidia_graphics.png</_GeForce_7GB>
+                <_GeForce_8GB>nvidia_graphics.png</_GeForce_8GB>
+                <_Radeon_1GB>amd_graphics.png</_Radeon_1GB>
+                <_Radeon_2GB>amd_graphics.png</_Radeon_2GB>
+                <_Radeon_3GB>amd_graphics.png</_Radeon_3GB>
+                <_Radeon_4GB>amd_graphics.png</_Radeon_4GB>
+                <_Radeon_5GB>amd_graphics.png</_Radeon_5GB>
+                <_Radeon_6GB>amd_graphics.png</_Radeon_6GB>
+                <_Radeon_7GB>amd_graphics.png</_Radeon_7GB>
+                <_Radeon_8GB>amd_graphics.png</_Radeon_8GB>
+            </computer_graphics>
+            <operation_system>
+                <_Windows_8>win8_os.png</_Windows_8>
+                <_Windows_7>win7_os.png</_Windows_7>
+                <_Chrome_OS>chrome_os.png</_Chrome_OS>
+                <_Android>android_os.png</_Android>
+                <_Mac_OS_X>apple_os.png</_Mac_OS_X>
+            </operation_system>
+        </Computers>
+
+        <Mobile_Phones> <!-- Attribute Set Name -->
+            <phone_screen></phone_screen>
+            <phonetab_cpu></phonetab_cpu>
             <internal_storage>storage_list.png</internal_storage>
             <mobile_networks>
-               <!--
-                    The attribute value names starts with _ because some attributes starts with number
-                 -->  
-               <_2g>2g_list.png</_2g> 
-               <_3g>3g_list.png</_3g> 
-               <_3g_4g>3g_4g_list.png</_3g_4g> 
-               <_4g>4g_list.png</_4g> 
+               <_2g>2g_list.png</_2g>
+               <_3g>3g_list.png</_3g>
+               <_3g_4g>3g_4g_list.png</_3g_4g>
+               <_4g>4g_list.png</_4g>
             </mobile_networks>
-            <camera>camera.png</camera>                        
-        </Computers>
-        <Networking>
-            <nw_wireless>     
-                <_Wireless-G></_Wireless-G> 
-                <_Wireless-N></_Wireless-N> 
-                <_Wireless-AC>wireless_ac_list.png</_Wireless-AC>                 
+            <phone_camera>camera.png</phone_camera>
+            <operation_system>
+                <_Windows_8>windows_8_list.png</_Windows_8>
+                <_Windows_7>windows_7_list.png</_Windows_7>
+                <_Chrome_OS>chrome_os_list.png</_Chrome_OS>
+                <_Android>android_list.png</_Android>
+                <_Mac_OS_X>mac_os_x.png</_Mac_OS_X>
+            </operation_system>
+        </Mobile_Phones>
+
+        <Tablets> <!-- Attribute Set Name -->
+            <phone_screen></phone_screen>
+            <phonetab_cpu></phonetab_cpu>
+            <internal_storage>storage_list.png</internal_storage>
+            <tablet_connectivity>
+               <_WiFi>2g_list.png</_WiFi>
+               <_WiFi___Cellular>3g_list.png</_WiFi___Cellular>
+            </tablet_connectivity>
+            <operation_system>
+                <_Windows_8>windows_8_list.png</_Windows_8>
+                <_Windows_7>windows_7_list.png</_Windows_7>
+                <_Chrome_OS>chrome_os_list.png</_Chrome_OS>
+                <_Android>android_list.png</_Android>
+                <_Mac_OS_X>mac_os_x.png</_Mac_OS_X>
+            </operation_system>
+        </Tablets>
+
+        <Networking> <!-- Attribute Set Name -->
+            <nw_product_type></nw_product_type>
+            <nw_wireless>
+                <_Wireless-G></_Wireless-G>
+                <_Wireless-N></_Wireless-N>
+                <_Wireless-AC>wireless_ac_list.png</_Wireless-AC>
             </nw_wireless>
-            <stored_weight>weight_list.png</stored_weight>                                    
-        </Networking>    
+            <nw_ethernet></nw_ethernet>
+            <warranty></warranty>
+        </Networking>
+    
     </detail>
     
 </images>

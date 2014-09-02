@@ -13,13 +13,14 @@ class Wireless_Icons_Block_Images extends Mage_Core_Block_Template
         
         
         $xml=simplexml_load_file($this->icon_img_file_path);
+        
         //Get Attribute Set
         
         $attributeSetModel = Mage::getModel("eav/entity_attribute_set");
         $attributeSetModel->load($product->getAttributeSetId());
         $attributeSetName  = $attributeSetModel->getAttributeSetName();
        
-        
+        $attributeSetName = str_replace(" ", "_", trim($attributeSetName));
         $list_images =  $xml->$type; 
         
         $icon_imgs=array(); // used as return value "attributecode" => "image location"
@@ -43,6 +44,7 @@ class Wireless_Icons_Block_Images extends Mage_Core_Block_Template
                 }
                 
                 $attribute_value = str_replace(" ", "_", trim($attribute_value));
+                $attribute_value = str_replace("+", "_", trim($attribute_value));
                  
                 
                 if (sizeof($value)>0) {// Dropdown list attirbute
